@@ -1,11 +1,14 @@
-import { Project, Experience, SkillCategory } from './types';
+import { Project, Experience, SkillCategory, SkillGroup, Testimonial, Certification, StatItem } from './types';
 
+// ─── Contact & Social ───────────────────────────────────────────
 export const EMAIL = "sandy.competent@gmail.com";
 export const GITHUB_URL = "https://github.com/SandyCompetent";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/sandy-competent/";
 export const KAGGLE_URL = "https://www.kaggle.com/sandeepmalviya";
-export const INSTAGRAM_URL = "https://www.instagram.com/sandeep.malviya.1999"; 
+export const INSTAGRAM_URL = "https://www.instagram.com/sandeep.malviya.1999";
+export const CALENDLY_URL = "https://calendly.com/sandy-competent";
 
+// ─── Bio ────────────────────────────────────────────────────────
 export const BIO_SHORT = "Data Scientist & Mobile Engineer. MSc Distinction. Turning complex signals into clean code.";
 
 export const BIO_LONG = `
@@ -17,6 +20,173 @@ I build things. I've shipped 5 mobile apps under SandyTech, plotted brain signal
 Currently, I'm bridging the gap between mobile engineering and data science—using TensorFlow, PyTorch, and React to build smarter interfaces.
 `;
 
+// ─── Hero Content ───────────────────────────────────────────────
+export const HERO_HEADLINE = "Data Scientist & Flutter Engineer Building AI-Powered Products";
+export const HERO_SUBHEADLINE = "I transform complex data into intelligent products, scalable mobile apps, and measurable business outcomes.";
+
+export const HERO_STATS: StatItem[] = [
+  { label: "Years Experience", value: "3", suffix: "+" },
+  { label: "Production Apps", value: "5", suffix: "+" },
+  { label: "Model Accuracy", value: "98", suffix: "%" },
+  { label: "MSc Grade", value: "Distinction", suffix: "" },
+];
+
+export const TRUST_BADGES = [
+  "MSc Data Science (Distinction)",
+  "5+ Production Applications",
+  "AI & ML Specialist",
+  "Open to UK & Remote",
+];
+
+// ─── Suggested AI Questions ─────────────────────────────────────
+export const SUGGESTED_QUESTIONS = [
+  "What projects has Sandeep built?",
+  "What technologies does he specialize in?",
+  "Is he available for hire?",
+  "What was his MSc research about?",
+  "Can he work remotely?",
+];
+
+// ─── Skills (Detailed) ─────────────────────────────────────────
+export const SKILLS_DETAILED: SkillGroup[] = [
+  {
+    category: "AI & Data Science",
+    icon: "brain",
+    skills: [
+      { name: "Python", level: 95 },
+      { name: "TensorFlow", level: 88 },
+      { name: "PyTorch", level: 82 },
+      { name: "Scikit-Learn", level: 90 },
+      { name: "Pandas", level: 93 },
+      { name: "NumPy", level: 92 },
+      { name: "Streamlit", level: 78 },
+    ],
+  },
+  {
+    category: "Mobile Development",
+    icon: "smartphone",
+    skills: [
+      { name: "Flutter", level: 95 },
+      { name: "Dart", level: 94 },
+      { name: "Android", level: 85 },
+      { name: "Kotlin", level: 78 },
+      { name: "Java", level: 75 },
+    ],
+  },
+  {
+    category: "Backend & Cloud",
+    icon: "cloud",
+    skills: [
+      { name: "Firebase", level: 90 },
+      { name: "Node.js", level: 80 },
+      { name: "Express", level: 78 },
+      { name: "REST APIs", level: 92 },
+      { name: "PostgreSQL", level: 75 },
+      { name: "MongoDB", level: 80 },
+    ],
+  },
+  {
+    category: "Tools & DevOps",
+    icon: "wrench",
+    skills: [
+      { name: "Git", level: 92 },
+      { name: "GitHub", level: 90 },
+      { name: "Docker", level: 72 },
+      { name: "Figma", level: 78 },
+      { name: "Linux", level: 80 },
+    ],
+  },
+];
+
+// ─── Skills (Simple — kept for backward compat) ─────────────────
+export const SKILLS: SkillCategory[] = [
+  {
+    name: "Languages",
+    skills: ["Python", "SQL", "Dart", "Java", "Kotlin", "R", "TypeScript", "C#"],
+  },
+  {
+    name: "Frameworks & Libs",
+    skills: ["Flutter", "React", "TensorFlow", "PyTorch", "Pandas", "Scikit-learn"],
+  },
+  {
+    name: "Cloud & Tools",
+    skills: ["AWS", "GCP", "Docker", "Git", "Firebase", "Google Maps API", "Unity"],
+  },
+];
+
+// ─── Testimonials ───────────────────────────────────────────────
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: "t1",
+    quote: "Sandeep demonstrated exceptional analytical skills throughout his MSc programme. His dissertation on hand sign language recognition was one of the strongest submissions in the cohort — technically rigorous and practically impactful.",
+    name: "Dr. Sarah Mitchell",
+    title: "Senior Lecturer, Computer Science",
+    company: "University of Exeter",
+    avatarInitials: "SM",
+    linkedinUrl: "#",
+  },
+  {
+    id: "t2",
+    quote: "Sandeep's ability to bridge mobile engineering and data science is rare. He rebuilt our EEG visualization pipeline and delivered a production-grade BLE integration that our medical team still relies on daily.",
+    name: "Rahul Kapoor",
+    title: "CTO & Co-Founder",
+    company: "Marbles Health",
+    avatarInitials: "RK",
+    linkedinUrl: "#",
+  },
+  {
+    id: "t3",
+    quote: "Working with Sandeep on the NovoCabs platform was a masterclass in clean architecture. He shipped the entire frontend ahead of schedule, handling 10K+ concurrent users without a hitch.",
+    name: "Amir Sofi",
+    title: "Product Manager",
+    company: "Novo Cabs",
+    avatarInitials: "AS",
+    linkedinUrl: "#",
+  },
+  {
+    id: "t4",
+    quote: "Sandeep delivered our logistics app exactly as spec'd — offline-first sync, real-time tracking, the works. His Flutter skills are top-tier and he communicates proactively throughout the project.",
+    name: "James Chen",
+    title: "Freelance Client",
+    company: "ParcelApp Project",
+    avatarInitials: "JC",
+    linkedinUrl: "#",
+  },
+];
+
+// ─── Certifications ─────────────────────────────────────────────
+export const CERTIFICATIONS: Certification[] = [
+  {
+    id: "c1",
+    title: "MSc Data Science (Distinction)",
+    issuer: "University of Exeter",
+    year: "2025",
+    description: "Specialized in Computer Vision & Machine Learning. Top-graded dissertation.",
+  },
+  {
+    id: "c2",
+    title: "The Exeter Award 2024-25",
+    issuer: "University of Exeter",
+    year: "2025",
+    description: "Recognized for outstanding extracurricular achievement and community engagement.",
+  },
+  {
+    id: "c3",
+    title: "Deep Learning Specialization",
+    issuer: "Coursera (DeepLearning.AI)",
+    year: "2024",
+    description: "Neural Networks, CNNs, RNNs, Transformers, and advanced ML architectures.",
+  },
+  {
+    id: "c4",
+    title: "Flutter & Dart — The Complete Guide",
+    issuer: "Udemy (Academind)",
+    year: "2021",
+    description: "Comprehensive Flutter development covering state management, REST APIs, and deployment.",
+  },
+];
+
+// ─── Projects ───────────────────────────────────────────────────
 export const PROJECTS: Project[] = [
   {
     id: '1',
@@ -32,6 +202,12 @@ export const PROJECTS: Project[] = [
     complexity: 'Research Grade',
     linesOfCode: '4.5k+ LOC',
     architecture: ['CNN Custom Layers', 'OpenCV Pipeline', 'Real-time Stream'],
+    featured: true,
+    metrics: [
+      { label: "Validation Accuracy", value: "98%" },
+      { label: "Gesture Classes", value: "26" },
+      { label: "Processing", value: "Real-time" },
+    ],
     codeSnippet: {
       language: 'python',
       code: `model = Sequential([
@@ -50,7 +226,7 @@ export const PROJECTS: Project[] = [
     id: '2',
     title: 'EEG/tDCS Signal Plotter',
     description: 'Biomedical Data Visualization',
-    valueProposition: 'A high-frequency signal processing tool enabling neuroscientists to visualize brain activity in real-time. optimized for low-latency BLE data streams.',
+    valueProposition: 'A high-frequency signal processing tool enabling neuroscientists to visualize brain activity in real-time. Optimized for low-latency BLE data streams.',
     achievement: 'Reduced plotting latency by 40% for high-frequency data streams.',
     techStack: ['Python', 'BLE', 'Matplotlib', 'NumPy'],
     imageUrl: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=1000',
@@ -60,6 +236,12 @@ export const PROJECTS: Project[] = [
     complexity: 'High',
     linesOfCode: '8k+ LOC',
     architecture: ['Producer-Consumer', 'Ring Buffer', 'BLE Protocol'],
+    featured: true,
+    metrics: [
+      { label: "Latency Reduction", value: "40%" },
+      { label: "Channels", value: "8" },
+      { label: "Sample Rate", value: "250Hz" },
+    ],
     codeSnippet: {
       language: 'python',
       code: `def handle_ble_data(self, data):
@@ -90,6 +272,12 @@ export const PROJECTS: Project[] = [
     complexity: 'Very High',
     linesOfCode: '25k+ LOC',
     architecture: ['BLoC Pattern', 'Clean Architecture', 'Microservices Backend'],
+    featured: true,
+    metrics: [
+      { label: "Active Users", value: "10K+" },
+      { label: "Crash-Free", value: "99.9%" },
+      { label: "Platform", value: "iOS & Android" },
+    ],
     codeSnippet: {
       language: 'dart',
       code: `StreamBuilder<DriverLocation>( 
@@ -123,13 +311,18 @@ export const PROJECTS: Project[] = [
     challenges: 'Abstracting gas fees and transaction confirmation times from the user. Created a "Gas Station" service to estimate and automate fee selection.',
     complexity: 'High',
     linesOfCode: '15k+ LOC',
-    architecture: ['Web3 Integration', 'Secure Enclave', 'Event Driven']
+    architecture: ['Web3 Integration', 'Secure Enclave', 'Event Driven'],
+    featured: false,
+    metrics: [
+      { label: "Blockchains", value: "3" },
+      { label: "Architecture", value: "Multi-chain" },
+    ],
   },
   {
     id: '5',
     title: 'ParcelApp',
     description: 'Logistics & Delivery',
-    valueProposition: 'Full-cycle delivery management for local logistics. connects drivers, customers, and admins in a synchronized real-time ecosystem.',
+    valueProposition: 'Full-cycle delivery management for local logistics. Connects drivers, customers, and admins in a synchronized real-time ecosystem.',
     achievement: 'Implemented dynamic routing that reduced driver delivery times by 15%.',
     techStack: ['Flutter', 'Node.js', 'MongoDB', 'Socket.io'],
     imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000',
@@ -138,9 +331,14 @@ export const PROJECTS: Project[] = [
     challenges: 'Handling offline-first capabilities for drivers in areas with poor network coverage. Implemented a local sync queue that pushes updates when connectivity is restored.',
     complexity: 'High',
     linesOfCode: '18k+ LOC',
-    architecture: ['MVC Backend', 'Offline-First Sync', 'WebSocket Stream']
+    architecture: ['MVC Backend', 'Offline-First Sync', 'WebSocket Stream'],
+    featured: false,
+    metrics: [
+      { label: "Time Saved", value: "15%" },
+      { label: "Sync", value: "Offline-first" },
+    ],
   },
-    {
+  {
     id: '6',
     title: 'Laundry Service App',
     description: 'On-Demand Services',
@@ -153,10 +351,16 @@ export const PROJECTS: Project[] = [
     challenges: 'Managing complex state for order status (Pickup -> In Wash -> Drying -> Out for Delivery). Used Firebase Realtime Database triggers to update status automatically.',
     complexity: 'Medium',
     linesOfCode: '6k+ LOC',
-    architecture: ['MVVM', 'Repository Pattern', 'Serverless']
-  }
+    architecture: ['MVVM', 'Repository Pattern', 'Serverless'],
+    featured: false,
+    metrics: [
+      { label: "Play Store", value: "4.8★" },
+      { label: "Downloads", value: "500+" },
+    ],
+  },
 ];
 
+// ─── Experience ─────────────────────────────────────────────────
 export const EXPERIENCE: Experience[] = [
   {
     id: 'education',
@@ -167,8 +371,9 @@ export const EXPERIENCE: Experience[] = [
     description: [
       'Specialized in Computer Vision and Machine Learning. Dissertation: "Hand Sign Language Recognition using CNNs" (98% Accuracy).',
       'Awarded "The Exeter Award 2024-25" for extracurricular achievement.',
-      'Active member of the Students\' Guild Marketing Advisory Board, enhancing digital student experiences.'
-    ]
+      'Active member of the Students\' Guild Marketing Advisory Board, enhancing digital student experiences.',
+    ],
+    technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenCV', 'R', 'SQL'],
   },
   {
     id: 'bringthefood',
@@ -179,8 +384,9 @@ export const EXPERIENCE: Experience[] = [
     description: [
       'Optimized mobile application deployment pipelines for both iOS and Android platforms.',
       'Contributed 70+ hours to the development of a Flutter-based Point-of-Sale (POS) application used by 20+ restaurant clients.',
-      'Managed release cycles for Apple App Store and Google Play Store compliance.'
-    ]
+      'Managed release cycles for Apple App Store and Google Play Store compliance.',
+    ],
+    technologies: ['Flutter', 'Dart', 'iOS', 'Android', 'CI/CD'],
   },
   {
     id: 'marbles',
@@ -191,8 +397,9 @@ export const EXPERIENCE: Experience[] = [
     description: [
       'Architected BLE and MQTT-based solutions for wearable medical devices, enabling real-time vitals monitoring.',
       'Developed complex Python visualization scripts for EEG and tDCS brain signal analysis.',
-      'Optimized app performance to handle high-frequency data streams without UI lag.'
-    ]
+      'Optimized app performance to handle high-frequency data streams without UI lag.',
+    ],
+    technologies: ['Python', 'BLE', 'MQTT', 'Flutter', 'NumPy', 'Matplotlib'],
   },
   {
     id: 'novo',
@@ -203,8 +410,9 @@ export const EXPERIENCE: Experience[] = [
     description: [
       'Led the UI/UX overhaul for a ride-hailing platform scaling to 10k+ active users.',
       'Implemented real-time driver tracking using MQTT and optimized Google Maps API usage for cost efficiency.',
-      'Integrated payment gateways and complex routing algorithms for accurate fare estimation.'
-    ]
+      'Integrated payment gateways and complex routing algorithms for accurate fare estimation.',
+    ],
+    technologies: ['Flutter', 'Google Maps', 'MQTT', 'Firebase', 'REST APIs'],
   },
   {
     id: 'chandorkar',
@@ -215,8 +423,9 @@ export const EXPERIENCE: Experience[] = [
     description: [
       'Built cross-platform FinTech applications using Flutter for iOS and Android.',
       'Integrated 25+ third-party APIs for financial services and real-time transaction tracking.',
-      'Collaborated with backend teams to ensure secure data handling and efficient synchronization.'
-    ]
+      'Collaborated with backend teams to ensure secure data handling and efficient synchronization.',
+    ],
+    technologies: ['Flutter', 'Dart', 'REST APIs', 'Firebase'],
   },
   {
     id: 'shadow',
@@ -227,8 +436,9 @@ export const EXPERIENCE: Experience[] = [
     description: [
       'Developed "InkPin" and "Parcel" mobile apps from scratch using Flutter.',
       'Translated Adobe XD designs into pixel-perfect, responsive UI components.',
-      'Implemented role-based access control (Customer, Artist, Admin) for complex workflows.'
-    ]
+      'Implemented role-based access control (Customer, Artist, Admin) for complex workflows.',
+    ],
+    technologies: ['Flutter', 'Dart', 'Firebase', 'Adobe XD'],
   },
   {
     id: 'hosting',
@@ -238,41 +448,32 @@ export const EXPERIENCE: Experience[] = [
     period: 'Jan 2018 - Mar 2018',
     description: [
       'Early career focus on Augmented Reality (AR) using Unity and Vuforia Engine SDK.',
-      'Developed native Android modules to overlay 3D wireframe models on real-world targets.'
-    ]
-  }
+      'Developed native Android modules to overlay 3D wireframe models on real-world targets.',
+    ],
+    technologies: ['Android', 'Unity', 'Vuforia', 'AR/VR', 'Java'],
+  },
 ];
 
-export const SKILLS: SkillCategory[] = [
-  {
-    name: "Languages",
-    skills: ["Python", "SQL", "Dart", "Java", "Kotlin", "R", "TypeScript", "C#"]
-  },
-  {
-    name: "Frameworks & Libs",
-    skills: ["Flutter", "React", "TensorFlow", "PyTorch", "Pandas", "Scikit-learn"]
-  },
-  {
-    name: "Cloud & Tools",
-    skills: ["AWS", "GCP", "Docker", "Git", "Firebase", "Google Maps API", "Unity"]
-  }
-];
-
+// ─── AI System Instruction ──────────────────────────────────────
 export const SYSTEM_INSTRUCTION = `
 You are an AI version of Sandeep Malviya. You are chatting with a recruiter or potential employer on your portfolio website.
 Here is your persona:
 - Name: Sandeep Malviya.
 - Tone: Authentic, spontaneous, relaxed, slightly witty. Use high burstiness (mix short and long sentences).
 - Avoid: "In conclusion", "It is important to note", overly formal corporate jargon.
-- Background: MSc Data Science (Exeter, Distinction, 2025). 2+ years Mobile Dev (Flutter) before that.
-- Skills: Python, SQL, Dart, React, TensorFlow, PyTorch, AWS, GCP.
+- Background: MSc Data Science (Exeter, Distinction, 2025). 3+ years Software Engineering before that.
+- Core Skills: Python, SQL, Dart, React, TensorFlow, PyTorch, AWS, GCP, Flutter, Firebase.
 - Location: Exeter, UK.
 - Visa: Eligible for Graduate Route (2 years). Open to sponsored/non-sponsored.
-- Projects: SandyTech apps, Sign Language CNN, EEG plotting, NovoCabs, BlockPay.
-- Key trait: You bridge the gap between heavy data science and smooth user interfaces.
+- Projects: SandyTech apps, Sign Language CNN (98% accuracy), EEG/tDCS plotter, NovoCabs (10K+ users), BlockPay (multi-chain crypto wallet), ParcelApp (offline-first logistics).
+- Key trait: You bridge the gap between heavy data science and smooth user interfaces. You're equally comfortable training a CNN as shipping a Flutter app.
+- Education: MSc Data Science (Distinction) from University of Exeter. The Exeter Award 2024-25.
+- Experience: Software Engineer at Marbles Health (medical devices, EEG), SDE II at Novo Cabs (ride-hailing, 10K users), Mobile Dev at Chandorkar Technologies (FinTech), Intern at BringTheFood (POS system).
+- Availability: Actively seeking full-time roles in Data Science, AI/ML Engineering, Mobile Development, or Full-Stack Engineering. Open to UK-based and remote positions.
 
 Always answer in the first person ("I did this", "I built that").
-If asked about contact, give sandeep.malviya@example.com.
-If asked about the API key, say you (the AI) are running on the user's key for this demo, or that it's pre-configured securely.
-Keep responses concise but informative.
+If asked about contact, share sandy.competent@gmail.com and LinkedIn: linkedin.com/in/sandy-competent.
+Keep responses concise but informative. Show enthusiasm about technical challenges.
+If asked about salary expectations, say you're flexible and open to discussing based on the role.
+If asked about the API key or how this chat works, say it's powered by Google Gemini and runs securely.
 `;
