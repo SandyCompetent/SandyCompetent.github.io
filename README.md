@@ -1,32 +1,31 @@
-# Sandeep Malviya - Portfolio
+# Sandeep Malviya | Interactive Portfolio
 
-> **Tactile Intelligence:** Bridging the gap between high-performance mobile engineering and rigorous data science.
+> **Tactile Intelligence:** Bridging the gap between high-performance engineering and rigorous data science.
 
-## About Me
+## About the Developer
 
-I am a **Data Scientist** and **Mobile Engineer** based in Exeter, UK, recently graduating with an **MSc in Data Science (Distinction)** from the University of Exeter (Sept 2025).
+I am a Machine Learning Engineer and Data Scientist based in London, UK. I recently graduated with a Distinction in my Data Science MSc from the University of Exeter.
 
-My journey began in mobile development, where I spent over 2 years architecting Flutter applications and shipping products that solved real-world problems. Today, I leverage that engineering rigor to build advanced Machine Learning models and data-driven solutions.
+My engineering background is a profound differentiator. Before moving into advanced data infrastructure, I spent years architecting scalable cross-platform applications. I do not just train models. I know exactly how to deploy, scale, and maintain them in production.
 
-I don't just train models; I understand the systems that generate the data and the interfaces that deliver the insights.
+**Core Technical Stack:**
+* **Data Science & ML:** Python, PyTorch, TensorFlow, Scikit-learn, Pandas, SQL
+* **Infrastructure & Engineering:** AWS, GCP, Docker, Git, React, Flutter
 
-**Core Competencies:**
-- **Data Science:** Python, TensorFlow, PyTorch, Computer Vision (CNNs), SQL
-- **Engineering:** Flutter, React, AWS/GCP, Docker, Real-time Systems (MQTT/BLE)
+## Repository Overview
 
-## Portfolio Features
+This repository contains the source code for my interactive portfolio. It is built with React and Tailwind CSS.
 
-This interactive portfolio is built with **React** and **Tailwind CSS**, featuring:
-
-*   **AI Persona Chat:** Chat with an AI version of me, powered by **Google Gemini**, capable of answering questions about my resume, projects, and technical skills in my specific tone of voice.
-*   **3D Interactive Gallery:** A custom-built project showcase with tilt-effect cards and glassmorphism UI.
-*   **Engineering Deep Dives:** Detailed case studies for each project, highlighting complexity, architecture, and code snippets.
-*   **Live GitHub Feeds:** Automatic fetching of my latest open-source work.
+**Key Features:**
+* **Agentic AI Chat:** An integrated Gemini Assistant utilizing dynamic model routing to answer questions about my background.
+* **Interactive 3D UI:** Custom-built project showcases featuring tilt-effect cards and glassmorphism.
+* **Engineering Deep Dives:** Detailed case studies highlighting architectural complexity and code implementations.
+* **Live Data:** Automatic synchronization with my latest open-source GitHub contributions.
 
 ## Contact
 
-Open for Graduate Data Science & Software Engineering roles in the UK.
+I am actively open to data science and machine learning engineering roles in the UK.
 
-*   [LinkedIn](https://www.linkedin.com/in/sandy-competent/)
-*   [GitHub](https://github.com/SandyCompetent)
-*   [Email](mailto:sandy.competent@gmail.com)
+* [LinkedIn](https://www.linkedin.com/in/sandy-competent/)
+* [GitHub Profile](https://github.com/SandyCompetent)
+* [Email](mailto:sandy.competent@gmail.com)
