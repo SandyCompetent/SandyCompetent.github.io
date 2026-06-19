@@ -19,10 +19,14 @@ export interface Project {
   gallery?: string[]; // Additional images
   details: string; // The full narrative or architecture description
 
-  // Engineering Specs (New)
+  // Engineering Specs
   complexity?: 'Medium' | 'High' | 'Very High' | 'Research Grade';
   linesOfCode?: string; // e.g., "12k+ LOC"
   architecture?: string[]; // e.g., ["BLoC Pattern", "Microservices"]
+
+  // Enhanced fields for redesign
+  featured?: boolean;
+  metrics?: { label: string; value: string }[];
 }
 
 export interface Experience {
@@ -32,11 +36,47 @@ export interface Experience {
   location?: string;
   period: string;
   description: string[];
+  technologies?: string[];
 }
 
 export interface SkillCategory {
   name: string;
   skills: string[];
+}
+
+export interface SkillItem {
+  name: string;
+  level: number; // 0-100 expertise percentage
+}
+
+export interface SkillGroup {
+  category: string;
+  icon: string; // lucide icon name hint
+  skills: SkillItem[];
+}
+
+export interface Testimonial {
+  id: string;
+  quote: string;
+  name: string;
+  title: string;
+  company: string;
+  avatarInitials: string;
+  linkedinUrl?: string;
+}
+
+export interface Certification {
+  id: string;
+  title: string;
+  issuer: string;
+  year: string;
+  description?: string;
+}
+
+export interface StatItem {
+  label: string;
+  value: string;
+  suffix?: string;
 }
 
 export interface ChatMessage {

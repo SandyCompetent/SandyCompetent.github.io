@@ -3,20 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sandeep Malviya | Data Scientist & Mobile Dev</title>
+
+    <!-- Primary SEO -->
+    <title>Sandeep Malviya | Data Scientist & AI Engineer — Flutter Developer Portfolio</title>
+    <meta name="description" content="Sandeep Malviya — Data Scientist, AI Engineer, Flutter Developer & Full-Stack Engineer. MSc Data Science (Distinction) from University of Exeter. Building AI-powered products and scalable mobile apps. View projects, case studies, and get in touch." />
+    <meta name="keywords" content="Data Scientist Portfolio, Flutter Developer Portfolio, AI Engineer UK, Machine Learning Engineer, Mobile App Developer, Full Stack Developer, Data Science Projects, Python Developer, TensorFlow, Sandeep Malviya" />
+    <meta name="author" content="Sandeep Malviya" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://sandycompetent.github.io/Portfolio/" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sandeep Malviya | Data Scientist & AI Engineer" />
+    <meta property="og:description" content="Data Scientist & Flutter Engineer building AI-powered products. MSc Data Science (Distinction) from University of Exeter. View projects and case studies." />
+    <meta property="og:url" content="https://sandycompetent.github.io/Portfolio/" />
+    <meta property="og:site_name" content="Sandeep Malviya Portfolio" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sandeep Malviya | Data Scientist & AI Engineer" />
+    <meta name="twitter:description" content="Data Scientist & Flutter Engineer building AI-powered products. MSc Data Science (Distinction)." />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sandeep Malviya",
+      "url": "https://sandycompetent.github.io/Portfolio/",
+      "jobTitle": "Data Scientist & AI Engineer",
+      "description": "Data Scientist, AI Engineer, Flutter Developer & Full-Stack Engineer building AI-powered products and scalable mobile apps.",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Exeter"
+      },
+      "knowsAbout": ["Data Science", "Machine Learning", "Artificial Intelligence", "Flutter", "Python", "TensorFlow", "PyTorch", "Mobile Development", "Full Stack Development"],
+      "sameAs": [
+        "https://github.com/SandyCompetent",
+        "https://www.linkedin.com/in/sandy-competent/",
+        "https://www.kaggle.com/sandeepmalviya",
+        "https://www.instagram.com/sandeep.malviya.1999"
+      ]
+    }
+    </script>
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#020617" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              display: ['Space Grotesk', 'sans-serif'],
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              display: ['Space Grotesk', 'system-ui', 'sans-serif'],
             },
             colors: {
               primary: '#3b82f6',
               secondary: '#8b5cf6',
+              accent: '#06b6d4',
               dark: '#0f172a',
               darker: '#020617',
               card: '#1e293b',
@@ -24,77 +79,72 @@
             },
             animation: {
               'fade-up': 'fadeUp 0.6s ease-out forwards',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
               'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
               'float': 'float 6s ease-in-out infinite',
+              'glow': 'glow 3s ease-in-out infinite',
+              'shimmer': 'shimmer 2s linear infinite',
+              'scale-in': 'scaleIn 0.4s ease-out forwards',
+              'gradient': 'gradient-shift 8s ease infinite',
             },
             keyframes: {
               fadeUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '0%': { opacity: '0', transform: 'translateY(24px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
               },
               float: {
                 '0%, 100%': { transform: 'translateY(0)' },
                 '50%': { transform: 'translateY(-10px)' },
-              }
-            }
-          }
-        }
+              },
+              glow: {
+                '0%, 100%': { boxShadow: '0 0 5px rgba(59,130,246,0.2), 0 0 10px rgba(59,130,246,0.1)' },
+                '50%': { boxShadow: '0 0 20px rgba(59,130,246,0.4), 0 0 40px rgba(59,130,246,0.2)' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '-200% 0' },
+                '100%': { backgroundPosition: '200% 0' },
+              },
+              scaleIn: {
+                '0%': { opacity: '0', transform: 'scale(0.95)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              'gradient-shift': {
+                '0%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+                '100%': { backgroundPosition: '0% 50%' },
+              },
+            },
+            backgroundSize: {
+              '200%': '200% 200%',
+            },
+          },
+        },
       }
     </script>
-    <style>
-      body {
-        background-color: #020617;
-        color: #e2e8f0;
-      }
-      
-      /* High-end Scrollbar */
-      ::-webkit-scrollbar {
-        width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: rgba(255, 255, 255, 0.2);
-      }
 
-      /* IDE Syntax Highlighting Base */
-      .token-keyword { color: #c678dd; }
-      .token-string { color: #98c379; }
-      .token-func { color: #61afef; }
-      .token-comment { color: #5c6370; font-style: italic; }
-      .token-number { color: #d19a66; }
-      
-      /* Glassmorphism Utilities */
-      .glass-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      }
-    </style>
+    <!-- Global Styles -->
 
-<link rel="stylesheet" href="/index.css">
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
-  }
-}
-</script>
-  <script type="module" crossorigin src="/assets/index-BLp95KvY.js"></script>
-</head>
+    <!-- Import Map -->
+
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+        "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+      }
+    }
+    </script>
+    <script type="module" crossorigin src="/Portfolio/assets/index-YvVMxvI_.js"></script>
+    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-DXonkaw-.css">
+  </head>
   <body>
     <div id="root"></div>
-</body>
+  </body>
 </html>
