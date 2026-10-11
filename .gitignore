@@ -142,6 +142,7 @@ out
 
 ### react ###
 .DS_*
+.DS_Store
 **/*.backup.*
 **/*.back.*
 
@@ -153,4 +154,14 @@ psd
 thumb
 sketch
 
-# End of https://www.toptal.com/developers/gitignore/api/node,react
+# Build & local files (Android / Gradle)
+local.properties
+.gradle/
+build/
+captures/
+.externalNativeBuild
+.cxx/
+
+# IDE files (IntelliJ / Android Studio)
+.idea/
+*.iml
