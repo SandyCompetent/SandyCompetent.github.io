@@ -58,7 +58,7 @@ echo -e "${GREEN}Local build test is complete! Press Ctrl+C to exit preview.${NC
 
 # Run local preview server using Astro or Firebase Emulator
 if [ "$1" == "--firebase" ]; then
-  npx firebase emulators:start --only hosting
+  npx -y firebase-tools@latest emulators:start --only hosting
 else
   npx astro preview
 fi

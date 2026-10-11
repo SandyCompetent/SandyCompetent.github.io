@@ -1,1 +1,0 @@
-import{g as o}from"./index.CzGW6FVa.js";import{S as e}from"./ScrollTrigger.DNECHiyU.js";o.registerPlugin(e);const t=document.querySelectorAll(".ai-reveal");t.forEach(r=>{o.fromTo(r,{opacity:0,y:48},{opacity:1,y:0,duration:.95,ease:"power3.out",scrollTrigger:{trigger:r,start:"top 85%",toggleActions:"play none none reverse"}})});
