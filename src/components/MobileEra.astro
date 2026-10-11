@@ -1,0 +1,510 @@
+---
+// Phase 3: Section 2 - The Mobile Engineering Foundation
+---
+
+<section
+  id="engineering-foundation"
+  class="relative w-full bg-slate-50 py-28 text-slate-900 sm:py-36"
+  aria-labelledby="mobile-era-heading"
+>
+  <!-- Subtle Blueprint Architectural Grid Background -->
+  <div
+    class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.035)_1px,transparent_1px)] bg-[size:4rem_4rem]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-6xl px-6">
+    <!-- Section Header -->
+    <div class="mobile-reveal mb-20 max-w-3xl">
+      <div class="mb-4 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-blue-600">
+        <span class="h-1.5 w-1.5 rounded-full bg-blue-600"></span>
+        <span>01 // Production Mobile Systems (2021 &ndash; 2024)</span>
+      </div>
+      <h2
+        id="mobile-era-heading"
+        class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl"
+      >
+        The Engineering Foundation
+      </h2>
+      <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+        Pragmatic, battle-tested client architecture built from the ground up&mdash;shipping live ride-hailing
+        dispatch, crypto-enabled fintech rails, and real-time logistics systems.
+      </p>
+    </div>
+
+    <!-- Engineering Timeline / Structured Cards -->
+    <div class="space-y-12">
+      <!-- Block 1: NovoCabs (2022 - 2023) -->
+      <article
+        class="mobile-reveal group relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:border-slate-300 hover:shadow-[0_20px_50px_rgb(15,23,42,0.07)] sm:p-12"
+      >
+        <div class="grid gap-10 lg:grid-cols-12 lg:items-center">
+          <div class="lg:col-span-7">
+            <div class="flex flex-wrap items-center gap-3">
+              <span
+                class="rounded-full bg-slate-900 px-3.5 py-1 font-mono text-xs font-medium text-white"
+              >
+                2022 - 2023
+              </span>
+              <span
+                class="rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1 font-mono text-xs font-medium text-slate-700"
+              >
+                Core Frontend Developer
+              </span>
+              <span class="font-mono text-xs text-slate-400">Srinagar, India</span>
+            </div>
+
+            <h3 class="mt-5 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+              NovoCabs (2022 - 2023)
+            </h3>
+
+            <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+              Led frontend architecture for a ride-booking application operating exclusively in Srinagar,
+              India. Built the app from the ground up, managed deployments, and tracked live reporting.
+            </p>
+
+            <!-- Action: Play Store and App Store Buttons -->
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a
+                href="#engineering-foundation"
+                aria-label="Get NovoCabs on Google Play Store"
+                class="inline-flex items-center gap-3.5 rounded-xl bg-slate-900 px-5 py-3 text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md"
+              >
+                <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M3.609 1.814L13.792 12 3.61 22.186a1.986 1.986 0 0 1-.485-1.31V3.124c0-.501.184-.958.484-1.31zm11.258 11.258l2.84 2.84-11.49 6.605 8.65-9.445zm3.93-2.927l2.226 1.28c.83.477.83 1.673 0 2.15l-2.226 1.28-3.164-2.355 3.164-2.355zM6.217 1.497l11.49 6.605-2.84 2.84-8.65-9.445z"
+                  ></path>
+                </svg>
+                <div class="text-left leading-tight">
+                  <span class="block text-[10px] font-mono uppercase tracking-wider text-slate-300">
+                    Get it on
+                  </span>
+                  <span class="text-sm font-semibold tracking-tight">Play Store</span>
+                </div>
+              </a>
+
+              <a
+                href="#engineering-foundation"
+                aria-label="Download NovoCabs on the Apple App Store"
+                class="inline-flex items-center gap-3.5 rounded-xl border border-slate-300 bg-white px-5 py-3 text-slate-900 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-900 hover:bg-slate-50 hover:shadow-md"
+              >
+                <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.33c.64-.78 1.08-1.86.96-2.94-.93.04-2.06.62-2.72 1.4-.58.68-1.1 1.79-.96 2.84 1.04.08 2.08-.52 2.72-1.3"
+                  ></path>
+                </svg>
+                <div class="text-left leading-tight">
+                  <span class="block text-[10px] font-mono uppercase tracking-wider text-slate-500">
+                    Download on the
+                  </span>
+                  <span class="text-sm font-semibold tracking-tight">App Store</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Architectural Telemetry Summary Card -->
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl border border-slate-200/80 bg-slate-50/90 p-6">
+              <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+                <span class="font-mono text-xs font-semibold uppercase tracking-wider text-slate-700">
+                  Dispatch Architecture
+                </span>
+                <span class="inline-flex items-center gap-1.5 font-mono text-xs text-emerald-600">
+                  <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                  Production
+                </span>
+              </div>
+              <dl class="mt-4 grid grid-cols-2 gap-4">
+                <div class="rounded-xl border border-slate-200/70 bg-white p-3.5">
+                  <dt class="font-mono text-[11px] uppercase text-slate-400">Region</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate-900">Srinagar, J&amp;K</dd>
+                </div>
+                <div class="rounded-xl border border-slate-200/70 bg-white p-3.5">
+                  <dt class="font-mono text-[11px] uppercase text-slate-400">Ownership</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate-900">0 &rarr; 1 Frontend</dd>
+                </div>
+                <div class="rounded-xl border border-slate-200/70 bg-white p-3.5">
+                  <dt class="font-mono text-[11px] uppercase text-slate-400">Release Ops</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate-900">iOS &amp; Android</dd>
+                </div>
+                <div class="rounded-xl border border-slate-200/70 bg-white p-3.5">
+                  <dt class="font-mono text-[11px] uppercase text-slate-400">Observability</dt>
+                  <dd class="mt-1 text-sm font-semibold text-slate-900">Live Reporting</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Block 2: BlockPay FinTech (2023 - 2024) -->
+      <article
+        class="mobile-reveal group relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:border-slate-300 hover:shadow-[0_20px_50px_rgb(15,23,42,0.07)] sm:p-12"
+      >
+        <div class="max-w-3xl">
+          <div class="flex flex-wrap items-center gap-3">
+            <span
+              class="rounded-full bg-blue-600 px-3.5 py-1 font-mono text-xs font-medium text-white"
+            >
+              2023 - 2024
+            </span>
+            <span
+              class="rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1 font-mono text-xs font-medium text-slate-700"
+            >
+              Core Frontend Developer
+            </span>
+            <span class="font-mono text-xs text-slate-400">Web3 &amp; BBPS FinTech</span>
+          </div>
+
+          <h3 class="mt-5 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+            BlockPay FinTech (2023 - 2024)
+          </h3>
+
+          <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+            Integrated proprietary BlockCoin cryptocurrency directly into the app. Implemented BBPS
+            services for 35+ utility bill payments and built an MLM commission system.
+          </p>
+        </div>
+
+        <!-- Action: Placeholder <div> for an image carousel for app screenshots -->
+        <div
+          id="blockpay-screenshot-carousel"
+          data-carousel="blockpay-screenshots"
+          class="mt-10 rounded-2xl border border-dashed border-slate-300 bg-slate-50/80 p-6 sm:p-8"
+        >
+          <div class="mb-5 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="font-mono text-xs font-semibold uppercase tracking-wider text-slate-700">
+                App Screenshots Carousel Placeholder
+              </span>
+              <p class="text-xs text-slate-500">
+                Drop screenshot assets into <code class="font-mono text-slate-700">/public/screenshots/blockpay-*.png</code>
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button
+                type="button"
+                id="carousel-prev"
+                aria-label="Previous screenshot frame"
+                class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-100"
+              >
+                &larr;
+              </button>
+              <button
+                type="button"
+                id="carousel-next"
+                aria-label="Next screenshot frame"
+                class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-100"
+              >
+                &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- Horizontal Mobile Frame Track -->
+          <div
+            id="blockpay-carousel-track"
+            class="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 scroll-smooth"
+          >
+            <!-- Frame 1: BlockCoin Wallet -->
+            <div
+              class="w-[260px] shrink-0 snap-start rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:w-[285px]"
+            >
+              <div class="mb-4 flex items-center justify-between">
+                <span class="h-2 w-12 rounded-full bg-slate-200"></span>
+                <span class="font-mono text-[10px] uppercase tracking-wider text-blue-600">
+                  Screen 01
+                </span>
+              </div>
+              <div
+                class="flex aspect-[9/16] max-h-56 w-full flex-col justify-between rounded-xl border border-slate-100 bg-gradient-to-br from-slate-900 to-slate-800 p-4 text-white"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[11px] text-slate-400">BlockCoin Vault</span>
+                  <span class="rounded bg-blue-500/20 px-2 py-0.5 font-mono text-[10px] text-blue-300">
+                    BLC // Live
+                  </span>
+                </div>
+                <div>
+                  <p class="font-mono text-xs text-slate-400">Wallet Balance</p>
+                  <p class="mt-1 text-xl font-bold tracking-tight">14,820.50 BLC</p>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-center font-mono text-[10px]">
+                  <div class="rounded-lg bg-white/10 py-2">Send / Swap</div>
+                  <div class="rounded-lg bg-blue-600 py-2">Staking</div>
+                </div>
+              </div>
+              <p class="mt-3 font-mono text-xs font-medium text-slate-700">
+                01. Proprietary BlockCoin Wallet
+              </p>
+            </div>
+
+            <!-- Frame 2: BBPS 35+ Utility Bill Payments -->
+            <div
+              class="w-[260px] shrink-0 snap-start rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:w-[285px]"
+            >
+              <div class="mb-4 flex items-center justify-between">
+                <span class="h-2 w-12 rounded-full bg-slate-200"></span>
+                <span class="font-mono text-[10px] uppercase tracking-wider text-blue-600">
+                  Screen 02
+                </span>
+              </div>
+              <div
+                class="flex aspect-[9/16] max-h-56 w-full flex-col justify-between rounded-xl border border-slate-200 bg-slate-50 p-4 text-slate-800"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[11px] font-semibold text-slate-700">BBPS Hub</span>
+                  <span class="rounded bg-emerald-100 px-2 py-0.5 font-mono text-[10px] text-emerald-700">
+                    35+ Billers
+                  </span>
+                </div>
+                <div class="grid grid-cols-3 gap-2 text-center font-mono text-[10px] text-slate-600">
+                  <div class="rounded-lg border border-slate-200 bg-white p-2">Power</div>
+                  <div class="rounded-lg border border-slate-200 bg-white p-2">FASTag</div>
+                  <div class="rounded-lg border border-slate-200 bg-white p-2">Fiber</div>
+                  <div class="rounded-lg border border-slate-200 bg-white p-2">Gas</div>
+                  <div class="rounded-lg border border-slate-200 bg-white p-2">Water</div>
+                  <div class="rounded-lg border border-slate-200 bg-white p-2">+30 More</div>
+                </div>
+                <div class="rounded-lg bg-slate-900 py-2 text-center font-mono text-[10px] text-white">
+                  Instant BBPS Settlement
+                </div>
+              </div>
+              <p class="mt-3 font-mono text-xs font-medium text-slate-700">
+                02. 35+ BBPS Utility Bill Rails
+              </p>
+            </div>
+
+            <!-- Frame 3: MLM Commission Ledger -->
+            <div
+              class="w-[260px] shrink-0 snap-start rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:w-[285px]"
+            >
+              <div class="mb-4 flex items-center justify-between">
+                <span class="h-2 w-12 rounded-full bg-slate-200"></span>
+                <span class="font-mono text-[10px] uppercase tracking-wider text-blue-600">
+                  Screen 03
+                </span>
+              </div>
+              <div
+                class="flex aspect-[9/16] max-h-56 w-full flex-col justify-between rounded-xl border border-slate-200 bg-slate-50 p-4 text-slate-800"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[11px] font-semibold text-slate-700">
+                    Commission Tree
+                  </span>
+                  <span class="rounded bg-indigo-100 px-2 py-0.5 font-mono text-[10px] text-indigo-700">
+                    Multi-Tier
+                  </span>
+                </div>
+                <div class="space-y-2 font-mono text-[10px]">
+                  <div class="flex justify-between rounded border border-slate-200 bg-white px-2.5 py-1.5">
+                    <span>Tier 1 Direct</span>
+                    <span class="font-semibold text-emerald-600">+8.5%</span>
+                  </div>
+                  <div class="flex justify-between rounded border border-slate-200 bg-white px-2.5 py-1.5">
+                    <span>Tier 2 Network</span>
+                    <span class="font-semibold text-emerald-600">+3.2%</span>
+                  </div>
+                  <div class="flex justify-between rounded border border-slate-200 bg-white px-2.5 py-1.5">
+                    <span>Downline Nodes</span>
+                    <span class="font-semibold text-slate-900">Real-Time Sync</span>
+                  </div>
+                </div>
+                <div class="rounded-lg bg-blue-600 py-2 text-center font-mono text-[10px] text-white">
+                  Automated Payout Engine
+                </div>
+              </div>
+              <p class="mt-3 font-mono text-xs font-medium text-slate-700">
+                03. MLM Commission Architecture
+              </p>
+            </div>
+
+            <!-- Frame 4: Crypto-to-INR Settlement Bridge -->
+            <div
+              class="w-[260px] shrink-0 snap-start rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:w-[285px]"
+            >
+              <div class="mb-4 flex items-center justify-between">
+                <span class="h-2 w-12 rounded-full bg-slate-200"></span>
+                <span class="font-mono text-[10px] uppercase tracking-wider text-blue-600">
+                  Screen 04
+                </span>
+              </div>
+              <div
+                class="flex aspect-[9/16] max-h-56 w-full flex-col justify-between rounded-xl border border-slate-200 bg-slate-50 p-4 text-slate-800"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[11px] font-semibold text-slate-700">
+                    BLC &rarr; BBPS Bridge
+                  </span>
+                  <span class="rounded bg-blue-100 px-2 py-0.5 font-mono text-[10px] text-blue-700">
+                    Atomic Swap
+                  </span>
+                </div>
+                <div class="space-y-2 font-mono text-[10px]">
+                  <div class="flex justify-between rounded border border-slate-200 bg-white px-2.5 py-1.5">
+                    <span>Rate Feed</span>
+                    <span class="font-semibold text-slate-900">Live Oracle</span>
+                  </div>
+                  <div class="flex justify-between rounded border border-slate-200 bg-white px-2.5 py-1.5">
+                    <span>Latency</span>
+                    <span class="font-semibold text-emerald-600">&lt; 1.2s</span>
+                  </div>
+                </div>
+                <div class="rounded-lg bg-slate-900 py-2 text-center font-mono text-[10px] text-white">
+                  Verified Receipt Ledger
+                </div>
+              </div>
+              <p class="mt-3 font-mono text-xs font-medium text-slate-700">
+                04. Real-Time Settlement Bridge
+              </p>
+            </div>
+
+            <!-- Frame 5: Partner Analytics & Audit Trail -->
+            <div
+              class="w-[260px] shrink-0 snap-start rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:w-[285px]"
+            >
+              <div class="mb-4 flex items-center justify-between">
+                <span class="h-2 w-12 rounded-full bg-slate-200"></span>
+                <span class="font-mono text-[10px] uppercase tracking-wider text-blue-600">
+                  Screen 05
+                </span>
+              </div>
+              <div
+                class="flex aspect-[9/16] max-h-56 w-full flex-col justify-between rounded-xl border border-slate-200 bg-slate-50 p-4 text-slate-800"
+              >
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-[11px] font-semibold text-slate-700">
+                    Network Telemetry
+                  </span>
+                  <span class="rounded bg-emerald-100 px-2 py-0.5 font-mono text-[10px] text-emerald-700">
+                    Audited
+                  </span>
+                </div>
+                <div class="space-y-2 font-mono text-[10px]">
+                  <div class="flex justify-between rounded border border-slate-200 bg-white px-2.5 py-1.5">
+                    <span>Active Nodes</span>
+                    <span class="font-semibold text-slate-900">12,400+</span>
+                  </div>
+                  <div class="flex justify-between rounded border border-slate-200 bg-white px-2.5 py-1.5">
+                    <span>Epoch Payouts</span>
+                    <span class="font-semibold text-blue-600">100% Automated</span>
+                  </div>
+                </div>
+                <div class="rounded-lg bg-blue-600 py-2 text-center font-mono text-[10px] text-white">
+                  Export Statement CSV
+                </div>
+              </div>
+              <p class="mt-3 font-mono text-xs font-medium text-slate-700">
+                05. Network Analytics &amp; Audit
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Block 3: Freelance & Early Hustles (2021 - 2022) -->
+      <article
+        class="mobile-reveal group relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:border-slate-300 hover:shadow-[0_20px_50px_rgb(15,23,42,0.07)] sm:p-12"
+      >
+        <div class="grid gap-8 lg:grid-cols-12 lg:items-center">
+          <div class="lg:col-span-7">
+            <div class="flex flex-wrap items-center gap-3">
+              <span
+                class="rounded-full bg-slate-200 px-3.5 py-1 font-mono text-xs font-semibold text-slate-800"
+              >
+                2021 - 2022
+              </span>
+              <span class="font-mono text-xs text-slate-500">
+                UpWork // Self-Taught Android &amp; Full-Stack
+              </span>
+            </div>
+
+            <h3 class="mt-5 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+              Freelance &amp; Early Hustles (2021 - 2022)
+            </h3>
+
+            <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+              Built full-stack solutions via UpWork including ParcelApp (Google Maps API, live Firebase
+              tracking, Portuguese localization). Previously taught myself Java/XML, published 5
+              educational apps for HSC students, and built a Kotlin/Firebase system for a local laundry
+              business.
+            </p>
+          </div>
+
+          <div class="grid gap-3 sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1">
+            <div class="rounded-2xl border border-slate-200/80 bg-slate-50 p-4">
+              <p class="font-mono text-xs font-semibold text-slate-900">ParcelApp (UpWork)</p>
+              <p class="mt-1 text-xs text-slate-600">
+                Google Maps API, live Firebase tracking &amp; Portuguese (pt-BR/pt-PT) localization.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-200/80 bg-slate-50 p-4">
+              <p class="font-mono text-xs font-semibold text-slate-900">5 HSC Educational Apps</p>
+              <p class="mt-1 text-xs text-slate-600">
+                Self-taught native Java/XML Android engineering shipped to students.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-slate-200/80 bg-slate-50 p-4">
+              <p class="font-mono text-xs font-semibold text-slate-900">Laundry Operations System</p>
+              <p class="mt-1 text-xs text-slate-600">
+                End-to-end Kotlin + Firebase order &amp; dispatch workflow for local business.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Scroll-triggered fade-up reveal for MobileEra blocks
+  const mobileItems = document.querySelectorAll('.mobile-reveal');
+  mobileItems.forEach((item) => {
+    gsap.fromTo(
+      item,
+      { opacity: 0, y: 44 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 86%',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+  });
+
+  // Carousel prev/next buttons for BlockPay FinTech screenshots with wrap-around support
+  const track = document.getElementById('blockpay-carousel-track');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+
+  if (track && prevBtn && nextBtn) {
+    const step = 309;
+    prevBtn.addEventListener('click', () => {
+      if (track.scrollLeft <= 4) {
+        track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: -step, behavior: 'smooth' });
+      }
+    });
+    nextBtn.addEventListener('click', () => {
+      if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 4) {
+        track.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        track.scrollBy({ left: step, behavior: 'smooth' });
+      }
+    });
+  }
+</script>

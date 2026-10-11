@@ -1,0 +1,1 @@
+import{g as r}from"./index.CzGW6FVa.js";import{S as e}from"./ScrollTrigger.DNECHiyU.js";r.registerPlugin(e);const t=document.querySelectorAll(".footer-reveal");t.forEach(o=>{r.fromTo(o,{opacity:0,y:40},{opacity:1,y:0,duration:.9,ease:"power3.out",scrollTrigger:{trigger:o,start:"top 88%",toggleActions:"play none none reverse"}})});

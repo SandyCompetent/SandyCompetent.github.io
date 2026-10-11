@@ -1,8 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import App from '../App';
+import Hero from '../components/Hero.astro';
+import MobileEra from '../components/MobileEra.astro';
+import ParallaxPivot from '../components/ParallaxPivot.astro';
+import AiEra from '../components/AiEra.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
-  <App client:only="react" />
+<Layout
+  title="Sandeep | Software & Agentic AI Engineer"
+  description="Bridging four years of high-performance mobile architecture with autonomous machine learning. Data Science MSc (Distinction) | University of Exeter."
+>
+  <Hero />
+  <MobileEra />
+  <ParallaxPivot />
+  <AiEra />
+  <Footer />
 </Layout>
