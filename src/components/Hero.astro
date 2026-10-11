@@ -1,0 +1,286 @@
+---
+// Phase 2: Section 1 - The Hero (Top Fold)
+---
+
+<section
+  id="hero"
+  class="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-6 pt-28 pb-36 sm:pt-32 sm:pb-40"
+  aria-label="Hero Introduction"
+>
+  <!-- Interactive 2D HTML5 Canvas Node Network -->
+  <canvas
+    id="hero-node-canvas"
+    class="pointer-events-none absolute inset-0 h-full w-full"
+    aria-hidden="true"></canvas>
+
+  <!-- Subtle Radial Vignette for Typography Contrast -->
+  <div
+    class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(248,250,252,0.35)_0%,rgba(248,250,252,0.88)_75%,#f8fafc_100%)]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- Minimalist Top Status Bar -->
+  <div
+    class="hero-reveal absolute top-8 left-6 right-6 mx-auto flex max-w-6xl items-center justify-between text-xs font-mono uppercase tracking-widest text-slate-500"
+  >
+    <div class="flex items-center gap-2.5">
+      <span class="relative flex h-2 w-2">
+        <span
+          class=" absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
+        ></span>
+        <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+      </span>
+      <span>Exeter, UK &mdash; Systems Online</span>
+    </div>
+    <span class="hidden sm:inline-block">Architecture // Autonomous ML</span>
+  </div>
+
+  <!-- Core Hero Typography -->
+  <div class="relative z-10 mx-auto max-w-4xl text-center">
+    <div
+      class="hero-reveal mb-6 inline-flex items-center gap-2 rounded-full border border-slate-200/90 bg-white/80 px-4 py-1.5 text-xs font-mono uppercase tracking-[0.2em] text-slate-600 shadow-sm backdrop-blur-md"
+    >
+      <span>Portfolio // 2021 &mdash; Present</span>
+    </div>
+
+    <h1
+      class="hero-reveal text-balance text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl lg:leading-[1.08]"
+    >
+      Sandeep | Software &amp; Agentic AI Engineer
+    </h1>
+
+    <p
+      class="hero-reveal mx-auto mt-6 max-w-2xl text-pretty text-lg font-normal leading-relaxed text-slate-600 sm:text-xl md:text-2xl md:leading-relaxed"
+    >
+      Bridging four years of high-performance mobile architecture with autonomous machine learning.
+    </p>
+
+    <div
+      class="hero-reveal mt-10 flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-500"
+    >
+      <span class="rounded-md border border-slate-200 bg-white/70 px-3 py-1.5 backdrop-blur-sm">
+        Mobile Systems (Flutter / Kotlin)
+      </span>
+      <span class="text-slate-300">&rarr;</span>
+      <span class="rounded-md border border-slate-200 bg-white/70 px-3 py-1.5 backdrop-blur-sm">
+        MSc Data Science (Distinction)
+      </span>
+      <span class="text-slate-300">&rarr;</span>
+      <span
+        class="rounded-md border border-blue-200/80 bg-blue-50/70 px-3 py-1.5 text-blue-700 backdrop-blur-sm"
+      >
+        Agentic AI Engineering
+      </span>
+    </div>
+  </div>
+
+  <!-- Bouncing SVG Down-Arrow CTA Anchored to Bottom of Viewport -->
+  <a
+    href="#engineering-foundation"
+    aria-label="Scroll to The Engineering Foundation"
+    class="hero-reveal group absolute bottom-6 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400 transition-colors duration-300 hover:text-slate-900 focus:outline-none sm:bottom-8"
+  >
+    <span class="text-[11px] font-mono uppercase tracking-[0.25em] text-slate-400 group-hover:text-slate-700">
+      Scroll
+    </span>
+    <div
+      class="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200/90 bg-white/80 shadow-sm backdrop-blur-md transition-all duration-300 group-hover:border-slate-300 group-hover:shadow-md"
+    >
+      <svg
+        class="h-5 w-5 animate-bounce text-slate-700"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+        ></path>
+      </svg>
+    </div>
+  </a>
+</section>
+
+<script>
+  import gsap from 'gsap';
+
+  // 1. Entrance Fade-Up Animation on Load
+  const heroElements = document.querySelectorAll('.hero-reveal');
+  if (heroElements.length > 0) {
+    gsap.fromTo(
+      heroElements,
+      { opacity: 0, y: 28 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.05,
+        stagger: 0.14,
+        ease: 'power3.out',
+        delay: 0.1,
+      }
+    );
+  }
+
+  // 2. Interactive 2D Canvas Node-Graph Network (Auto-Paused Offscreen)
+  const canvas = document.getElementById('hero-node-canvas') as HTMLCanvasElement | null;
+  const heroSection = document.getElementById('hero');
+
+  if (canvas && heroSection) {
+    const ctx = canvas.getContext('2d');
+    if (ctx) {
+      interface NodeParticle {
+        x: number;
+        y: number;
+        vx: number;
+        vy: number;
+        radius: number;
+        pulsePhase: number;
+      }
+
+      let width = 0;
+      let height = 0;
+      let dpr = Math.min(window.devicePixelRatio || 1, 2);
+      let nodes: NodeParticle[] = [];
+      let animationFrameId: number | null = null;
+      let isHeroVisible = true;
+
+      const mouse = {
+        x: -9999,
+        y: -9999,
+        radius: 170,
+      };
+
+      const createNodes = () => {
+        const count = Math.min(Math.max(Math.floor((width * height) / 18000), 28), 72);
+        nodes = Array.from({ length: count }, () => ({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.45,
+          vy: (Math.random() - 0.5) * 0.45,
+          radius: Math.random() * 1.6 + 1.2,
+          pulsePhase: Math.random() * Math.PI * 2,
+        }));
+      };
+
+      const resizeCanvas = () => {
+        const rect = heroSection.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        createNodes();
+      };
+
+      const renderFrame = () => {
+        if (!isHeroVisible) {
+          animationFrameId = null;
+          return;
+        }
+
+        ctx.clearRect(0, 0, width, height);
+
+        const maxLinkDist = 145;
+
+        for (let i = 0; i < nodes.length; i++) {
+          const a = nodes[i];
+          a.x += a.vx;
+          a.y += a.vy;
+          a.pulsePhase += 0.02;
+
+          // Wrap softly around edges
+          if (a.x < 0) a.x = width;
+          if (a.x > width) a.x = 0;
+          if (a.y < 0) a.y = height;
+          if (a.y > height) a.y = 0;
+
+          // Subtle mouse interaction
+          const dxMouse = mouse.x - a.x;
+          const dyMouse = mouse.y - a.y;
+          const distMouse = Math.hypot(dxMouse, dyMouse);
+          if (distMouse < mouse.radius && distMouse > 0) {
+            const force = (mouse.radius - distMouse) / mouse.radius;
+            a.x -= (dxMouse / distMouse) * force * 0.55;
+            a.y -= (dyMouse / distMouse) * force * 0.55;
+
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = `rgba(37, 99, 235, ${force * 0.22})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+
+          // Connect neighboring nodes
+          for (let j = i + 1; j < nodes.length; j++) {
+            const b = nodes[j];
+            const dx = a.x - b.x;
+            const dy = a.y - b.y;
+            const dist = Math.hypot(dx, dy);
+
+            if (dist < maxLinkDist) {
+              const alpha = (1 - dist / maxLinkDist) * 0.16;
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(b.x, b.y);
+              ctx.strokeStyle = `rgba(15, 23, 42, ${alpha})`;
+              ctx.lineWidth = 0.8;
+              ctx.stroke();
+            }
+          }
+
+          // Draw node
+          const r = a.radius + Math.sin(a.pulsePhase) * 0.35;
+          ctx.beginPath();
+          ctx.arc(a.x, a.y, Math.max(0.8, r), 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(30, 41, 59, 0.32)';
+          ctx.fill();
+        }
+
+        animationFrameId = window.requestAnimationFrame(renderFrame);
+      };
+
+      resizeCanvas();
+      animationFrameId = window.requestAnimationFrame(renderFrame);
+
+      window.addEventListener('resize', resizeCanvas, { passive: true });
+
+      heroSection.addEventListener(
+        'mousemove',
+        (e: MouseEvent) => {
+          const rect = heroSection.getBoundingClientRect();
+          mouse.x = e.clientX - rect.left;
+          mouse.y = e.clientY - rect.top;
+        },
+        { passive: true }
+      );
+
+      heroSection.addEventListener(
+        'mouseleave',
+        () => {
+          mouse.x = -9999;
+          mouse.y = -9999;
+        },
+        { passive: true }
+      );
+
+      // Pause canvas loop when Hero is scrolled out of view for 60fps scroll performance
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            isHeroVisible = entry.isIntersecting;
+            if (isHeroVisible && animationFrameId === null) {
+              animationFrameId = window.requestAnimationFrame(renderFrame);
+            }
+          });
+        },
+        { threshold: 0.02 }
+      );
+
+      observer.observe(heroSection);
+    }
+  }
+</script>
