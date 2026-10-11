@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Star, GitFork, ExternalLink, Github, ArrowRight } from 'lucide-react';
 import { fetchGitHubRepos } from '../services/githubService';
 import { GITHUB_URL } from '../constants';
-import { Project } from '../types';
+import type { Project } from '../types';
 
 const formatRepoName = (name: string): string => {
   return name

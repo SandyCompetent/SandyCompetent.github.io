@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { PROJECTS } from '../constants';
-import { Project } from '../types';
+import type { Project } from '../types';
 import ProjectCard from './ProjectCard';
 
 interface FeaturedProjectsProps {

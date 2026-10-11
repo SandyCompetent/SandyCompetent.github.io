@@ -14,7 +14,7 @@ import ProjectCard from './components/ProjectCard';
 import Modal from './components/Modal';
 import AIChat from './components/AIChat';
 import { PROJECTS, GITHUB_URL, LINKEDIN_URL } from './constants';
-import { Project } from './types';
+import type { Project } from './types';
 
 const App: React.FC = () => {
   // Navigation State

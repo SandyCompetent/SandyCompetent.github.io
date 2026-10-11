@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { X, Github, ExternalLink, Activity, Layers, Code, GitBranch, Cpu, ArrowUpRight, Target } from 'lucide-react';
-import { Project } from '../types';
+import type { Project } from '../types';
 
 interface ModalProps {
   isOpen: boolean;

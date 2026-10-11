@@ -1,4 +1,4 @@
-import { Project, Experience, SkillCategory, SkillGroup, Testimonial, Certification, StatItem } from './types';
+import type { Project, Experience, SkillCategory, SkillGroup, Testimonial, Certification, StatItem } from './types';
 
 // ─── Contact & Social ───────────────────────────────────────────
 export const EMAIL = "sandy.competent@gmail.com";

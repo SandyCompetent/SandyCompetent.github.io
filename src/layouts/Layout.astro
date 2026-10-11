@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Sandeep Malviya | Data Scientist & AI Engineer — Flutter Developer Portfolio",
+  description = "Sandeep Malviya — Data Scientist, AI Engineer, Flutter Developer & Full-Stack Engineer. MSc Data Science (Distinction) from University of Exeter. Building AI-powered products and scalable mobile apps. View projects, case studies, and get in touch."
+} = Astro.props;
+
+const siteUrl = "https://sandeepmalviya.me/";
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Data Scientist Portfolio, Flutter Developer Portfolio, AI Engineer UK, Machine Learning Engineer, Mobile App Developer, Full Stack Developer, Data Science Projects, Python Developer, TensorFlow, Sandeep Malviya" />
+    <meta name="author" content="Sandeep Malviya" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={siteUrl} />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sandeep Malviya | Data Scientist & AI Engineer" />
+    <meta property="og:description" content="Data Scientist & Flutter Engineer building AI-powered products. MSc Data Science (Distinction) from University of Exeter. View projects and case studies." />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:site_name" content="Sandeep Malviya Portfolio" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sandeep Malviya | Data Scientist & AI Engineer" />
+    <meta name="twitter:description" content="Data Scientist & Flutter Engineer building AI-powered products. MSc Data Science (Distinction)." />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sandeep Malviya",
+      "url": "https://sandeepmalviya.me/",
+      "jobTitle": "Data Scientist & AI Engineer",
+      "description": "Data Scientist, AI Engineer, Flutter Developer & Full-Stack Engineer building AI-powered products and scalable mobile apps.",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Exeter"
+      },
+      "knowsAbout": ["Data Science", "Machine Learning", "Artificial Intelligence", "Flutter", "Python", "TensorFlow", "PyTorch", "Mobile Development", "Full Stack Development"],
+      "sameAs": [
+        "https://github.com/SandyCompetent",
+        "https://www.linkedin.com/in/sandy-competent/",
+        "https://www.kaggle.com/sandeepmalviya",
+        "https://www.instagram.com/sandeep.malviya.1999"
+      ]
+    }
+    </script>
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#020617" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[#020617] text-gray-200 font-sans antialiased overflow-x-hidden selection:bg-blue-500/30 selection:text-blue-200">
+    <slot />
+  </body>
+</html>

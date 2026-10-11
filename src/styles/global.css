@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ============================================
    SANDEEP MALVIYA PORTFOLIO — GLOBAL STYLES
    Premium dark theme inspired by Linear/Vercel

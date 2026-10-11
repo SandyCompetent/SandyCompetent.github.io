@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Brain, Smartphone, Cloud, Wrench } from 'lucide-react';
 import { SKILLS_DETAILED } from '../constants';
-import { SkillGroup } from '../types';
+import type { SkillGroup } from '../types';
 
 const CATEGORY_ICONS: Record<string, React.FC<{ className?: string }>> = {
   'AI & Data Science': Brain,

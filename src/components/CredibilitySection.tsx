@@ -1,7 +1,7 @@
 import React from 'react';
 import { Briefcase, Rocket, Target, GitBranch, Award, Github, Linkedin, ExternalLink } from 'lucide-react';
 import { CERTIFICATIONS, GITHUB_URL, LINKEDIN_URL, KAGGLE_URL } from '../constants';
-import { Certification } from '../types';
+import type { Certification } from '../types';
 
 // Custom Kaggle SVG icon
 const KaggleIcon: React.FC<{ className?: string }> = ({ className }) => (

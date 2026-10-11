@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { MessageSquare, Send, X, Bot, Loader2, Sparkles, User } from 'lucide-react';
-import { ChatMessage } from '../types';
+import type { ChatMessage } from '../types';
 import { SUGGESTED_QUESTIONS } from '../constants';
 import { sendMessageToSandeepAI } from '../services/geminiService';
 

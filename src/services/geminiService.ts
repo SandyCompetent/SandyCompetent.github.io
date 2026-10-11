@@ -4,12 +4,14 @@ import { SYSTEM_INSTRUCTION } from '../constants';
 let chatSession: Chat | null = null;
 
 const getAiClient = () => {
-  const apiKey = process.env.API_KEY;
+  const apiKey =
+    (typeof import.meta !== 'undefined' && import.meta.env && (import.meta.env.PUBLIC_GEMINI_API_KEY || import.meta.env.GEMINI_API_KEY)) ||
+    (typeof process !== 'undefined' && process.env && (process.env.PUBLIC_GEMINI_API_KEY || process.env.GEMINI_API_KEY || process.env.API_KEY));
+
   if (!apiKey) {
     console.warn("API Key is missing. The Chat feature might not work.");
-    // In a real app, handle this gracefully. For this demo, we assume valid env.
   }
-  return new GoogleGenAI({ apiKey: apiKey });
+  return new GoogleGenAI({ apiKey: apiKey || '' });
 };
 
 export const initializeChat = async (): Promise<Chat> => {
@@ -35,7 +37,7 @@ export const sendMessageToSandeepAI = async (message: string): Promise<AsyncGene
 
   try {
     const streamResult = await chatSession.sendMessageStream({ message });
-    
+
     // Create a generator to yield text chunks
     async function* streamGenerator() {
       for await (const chunk of streamResult) {
@@ -45,7 +47,7 @@ export const sendMessageToSandeepAI = async (message: string): Promise<AsyncGene
         }
       }
     }
-    
+
     return streamGenerator();
 
   } catch (error) {

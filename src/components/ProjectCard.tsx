@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Project } from '../types';
+import type { Project } from '../types';
 import { ArrowRight, Box, Star } from 'lucide-react';
 
 interface ProjectCardProps {
