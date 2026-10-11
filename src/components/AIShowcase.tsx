@@ -9,35 +9,17 @@ interface AIShowcaseProps {
 const MOCK_MESSAGES = [
   {
     role: 'user' as const,
-    text: 'What projects has Sandeep built?',
+    text: 'Compare the architectures of NovoCabs and BlockPay.',
   },
   {
     role: 'model' as const,
-    text: "I've shipped 5+ production apps — from NovoCabs (10K+ users ride-hailing) to a real-time Hand Sign Language Recognition system that hit 98% accuracy for my MSc dissertation. I also built an EEG/tDCS signal plotter for medical devices at Marbles Health.",
-  },
-  {
-    role: 'user' as const,
-    text: 'Is he available for hire?',
-  },
+    text: "While both use Flutter, their backends differ entirely. NovoCabs uses a centralized microservices architecture with Firebase and MQTT for low-latency dispatching to 10K+ concurrent users. BlockPay acts as a decentralized Web3 client connecting to Ethereum/Solana RPC nodes, focusing on local secure enclave storage for private keys.",
+  }
 ];
 
 const AIShowcase: React.FC<AIShowcaseProps> = ({ onOpenChat }) => {
   return (
-    <section id="ai-showcase" className="py-24 relative overflow-hidden">
-      {/* Gradient background overlay */}
-      <div
-        className="absolute inset-0 opacity-30 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse at 30% 50%, rgba(59,130,246,0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(139,92,246,0.12) 0%, transparent 60%)',
-        }}
-      />
-
-      {/* Decorative sparkle elements */}
-      <div className="absolute top-20 left-[15%] w-2 h-2 rounded-full bg-primary/40 animate-pulse-slow" />
-      <div className="absolute top-40 right-[20%] w-1.5 h-1.5 rounded-full bg-secondary/50 animate-pulse-slow" style={{ animationDelay: '1s' }} />
-      <div className="absolute bottom-32 left-[10%] w-1 h-1 rounded-full bg-accent/40 animate-pulse-slow" style={{ animationDelay: '2s' }} />
-
+    <section id="ai-showcase" className="py-24 relative overflow-hidden bg-slate-50 border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side: Text + chips */}
@@ -78,7 +60,7 @@ const AIShowcase: React.FC<AIShowcaseProps> = ({ onOpenChat }) => {
             >
               <button
                 onClick={() => onOpenChat()}
-                className="px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl hover:opacity-90 transition-all duration-300 inline-flex items-center gap-2 shadow-[0_0_30px_rgba(59,130,246,0.3)] cursor-pointer"
+                className="px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-all duration-300 inline-flex items-center gap-2 shadow-sm cursor-pointer"
               >
                 <Sparkles className="w-5 h-5" />
                 Start Conversation
@@ -91,13 +73,10 @@ const AIShowcase: React.FC<AIShowcaseProps> = ({ onOpenChat }) => {
             className="opacity-0 animate-fade-up"
             style={{ animationDelay: '200ms' }}
           >
-            <div className="glass-card-strong rounded-2xl p-1 relative">
-              {/* Outer glow */}
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-primary/10 via-secondary/5 to-transparent blur-sm pointer-events-none" />
-
+            <div className="bg-white border border-slate-200 shadow-xl rounded-2xl p-1 relative">
               <div className="relative rounded-xl overflow-hidden">
                 {/* Chat header */}
-                <div className="bg-slate-900/[0.03] border-b border-slate-200 px-5 py-4 flex items-center gap-3">
+                <div className="bg-slate-50 border-b border-slate-200 px-5 py-4 flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                     <Bot className="w-4 h-4 text-slate-900" />
                   </div>

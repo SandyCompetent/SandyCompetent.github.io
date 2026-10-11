@@ -37,11 +37,10 @@ export const TRUST_BADGES = [
 
 // ─── Suggested AI Questions ─────────────────────────────────────
 export const SUGGESTED_QUESTIONS = [
-  "What projects has Sandeep built?",
-  "What technologies does he specialize in?",
-  "Is he available for hire?",
-  "What was his MSc research about?",
-  "Can he work remotely?",
+  "Compare the architectures of NovoCabs and BlockPay.",
+  "Explain a major technical trade-off in the Hand Gesture project.",
+  "What is the system design of the BLE EEG signal plotter?",
+  "How did Sandeep handle offline-first syncing in ParcelApp?",
 ];
 
 // ─── Skills (Detailed) ─────────────────────────────────────────

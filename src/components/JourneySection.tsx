@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, MapPin } from 'lucide-react';
+import { Briefcase, MapPin, Lightbulb } from 'lucide-react';
 import { EXPERIENCE } from '../constants';
 
 const JourneySection: React.FC = () => {
@@ -19,7 +19,7 @@ const JourneySection: React.FC = () => {
         </div>
 
         {/* Timeline */}
-        <div className="relative border-l border-slate-200 ml-3 md:ml-6">
+        <div className="relative border-l border-slate-200 ml-3 md:ml-6 mb-20">
           {EXPERIENCE.map((exp, index) => (
             <div
               key={exp.id}
@@ -76,6 +76,26 @@ const JourneySection: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Hard Lessons */}
+        <div className="opacity-0 animate-fade-up bg-slate-50 p-8 rounded-[2rem] border border-slate-200" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
+          <div className="flex items-center gap-3 mb-8">
+            <span className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600">
+              <Lightbulb size={20} />
+            </span>
+            <h3 className="text-2xl font-bold text-slate-900 font-display">What I learned the hard way</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-sm">
+            <div>
+              <strong className="block text-slate-900 mb-3 text-base">1. Offline-first is an architecture, not a feature.</strong>
+              <p className="text-slate-600 leading-relaxed font-light">During ParcelApp's early beta, drivers lost data when entering cellular dead zones. I learned that you can't just slap a local database on top of a REST API. You have to design the entire system around an event-driven sync queue from day one.</p>
+            </div>
+            <div>
+              <strong className="block text-slate-900 mb-3 text-base">2. Accuracy ≠ Utility in ML.</strong>
+              <p className="text-slate-600 leading-relaxed font-light">My hand-gesture CNN hit 98% on the validation set but felt sluggish in reality. Users didn't care about a 2% accuracy bump if it meant a 200ms delay. I learned to aggressively quantize models and prioritize perceived latency over pure statistical metrics.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
