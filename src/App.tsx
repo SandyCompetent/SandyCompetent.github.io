@@ -95,7 +95,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#020617] text-gray-200 font-sans overflow-x-hidden relative">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans overflow-x-hidden relative">
       
       {/* Noise Overlay */}
       <div className="noise-overlay" />
@@ -111,7 +111,7 @@ const App: React.FC = () => {
       {/* ═══════════════════════════════════════════════════ */}
       {/* NAVBAR                                             */}
       {/* ═══════════════════════════════════════════════════ */}
-      <nav className="fixed top-0 w-full z-40 bg-[#020617]/70 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+      <nav className="fixed top-0 w-full z-40 bg-slate-50/70 backdrop-blur-xl border-b border-slate-200 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
@@ -119,7 +119,7 @@ const App: React.FC = () => {
               className="flex-shrink-0 flex items-center gap-2 cursor-pointer"
               onClick={() => handleNavClick('home', 'hero')}
             >
-              <span className="text-2xl font-display font-bold text-white tracking-tighter">
+              <span className="text-2xl font-display font-bold text-slate-900 tracking-tighter">
                 SM<span className="text-primary">.</span>dev
               </span>
             </div>
@@ -136,21 +136,21 @@ const App: React.FC = () => {
                 <button
                   key={item.label}
                   onClick={() => handleNavClick(item.view, item.section)}
-                  className="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                  className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors rounded-lg hover:bg-slate-900/10"
                 >
                   {item.label}
                 </button>
               ))}
               <button
                 onClick={() => handleNavClick('works')}
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-white/5 ${view === 'works' ? 'text-white' : 'text-gray-400 hover:text-white'}`}
+                className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-slate-900/10 ${view === 'works' ? 'text-slate-900' : 'text-slate-600 hover:text-slate-900'}`}
               >
                 All Works
               </button>
               <a
                 href="/resume.pdf"
                 target="_blank"
-                className="ml-4 px-5 py-2.5 bg-white/5 hover:bg-white/10 text-white text-sm font-semibold rounded-lg border border-white/10 transition-all hover:border-white/30 backdrop-blur-md flex items-center gap-2"
+                className="ml-4 px-5 py-2.5 bg-slate-900/10 hover:bg-slate-900/10 text-slate-900 text-sm font-semibold rounded-lg border border-slate-200 transition-all hover:border-slate-400 backdrop-blur-md flex items-center gap-2"
               >
                 <Download size={14} /> Resume
               </a>
@@ -160,7 +160,7 @@ const App: React.FC = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-gray-400 hover:text-white focus:outline-none"
+                className="p-2 text-slate-600 hover:text-slate-900 focus:outline-none"
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -170,7 +170,7 @@ const App: React.FC = () => {
         </div>
 
         {/* Mobile Nav */}
-        <div className={`md:hidden bg-[#020617]/95 backdrop-blur-xl border-b border-white/10 overflow-hidden transition-all duration-300 ${mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className={`md:hidden bg-slate-50/95 backdrop-blur-xl border-b border-slate-200 overflow-hidden transition-all duration-300 ${mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
           <div className="px-4 pt-4 pb-6 space-y-1">
             {[
               { label: 'About', section: 'hero' },
@@ -182,14 +182,14 @@ const App: React.FC = () => {
               <button
                 key={item.label}
                 onClick={() => handleNavClick('home', item.section)}
-                className="block w-full text-left px-3 py-3 rounded-lg text-base font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all"
+                className="block w-full text-left px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-900/10 transition-all"
               >
                 {item.label}
               </button>
             ))}
             <button
               onClick={() => handleNavClick('works')}
-              className="block w-full text-left px-3 py-3 rounded-lg text-base font-medium text-gray-400 hover:text-white hover:bg-white/5"
+              className="block w-full text-left px-3 py-3 rounded-lg text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-900/10"
             >
               All Works
             </button>
@@ -285,11 +285,11 @@ const App: React.FC = () => {
               <div>
                 <button
                   onClick={() => setView('home')}
-                  className="flex items-center gap-2 text-gray-400 hover:text-white mb-6 transition-colors"
+                  className="flex items-center gap-2 text-slate-600 hover:text-slate-900 mb-6 transition-colors"
                 >
                   <ArrowLeft size={20} /> Back to Home
                 </button>
-                <h1 className="text-5xl md:text-6xl font-display font-bold text-white tracking-tight">
+                <h1 className="text-4xl md:text-3xl font-display font-bold text-slate-900 tracking-tight">
                   All Works
                 </h1>
               </div>
@@ -297,11 +297,11 @@ const App: React.FC = () => {
               {/* Search Bar */}
               <div className="relative w-full md:w-96 mt-6 md:mt-0">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Search className="h-5 w-5 text-gray-500" />
+                  <Search className="h-5 w-5 text-slate-500" />
                 </div>
                 <input
                   type="text"
-                  className="block w-full pl-10 pr-3 py-3 border border-white/10 rounded-xl leading-5 bg-white/5 text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm transition-all"
+                  className="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-xl leading-5 bg-slate-900/10 text-slate-600 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm transition-all"
                   placeholder="Search technology, title..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -317,8 +317,8 @@ const App: React.FC = () => {
                   onClick={() => setActiveFilter(cat)}
                   className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 border ${
                     activeFilter === cat
-                      ? 'bg-white text-black border-white'
-                      : 'bg-transparent text-gray-500 border-white/10 hover:border-white/30 hover:text-white'
+                      ? 'bg-slate-900 text-white border-slate-900'
+                      : 'bg-transparent text-slate-500 border-slate-200 hover:border-slate-400 hover:text-slate-900'
                   }`}
                 >
                   {cat}
@@ -343,7 +343,7 @@ const App: React.FC = () => {
                 ))
               ) : (
                 <div className="col-span-full py-20 text-center">
-                  <p className="text-gray-500 text-xl">No projects found matching your criteria.</p>
+                  <p className="text-slate-500 text-xl">No projects found matching your criteria.</p>
                   <button
                     onClick={() => { setSearchQuery(''); setActiveFilter('All'); }}
                     className="mt-4 text-primary hover:underline"
@@ -355,14 +355,14 @@ const App: React.FC = () => {
             </div>
 
             {/* Works Footer */}
-            <div className="mt-32 pt-12 border-t border-white/5 text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">Want to see more?</h3>
-              <p className="text-gray-400 mb-8">Check out my code contributions directly on GitHub.</p>
+            <div className="mt-32 pt-12 border-t border-slate-200 text-center">
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Want to see more?</h3>
+              <p className="text-slate-600 mb-8">Check out my code contributions directly on GitHub.</p>
               <a
                 href={GITHUB_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 rounded-lg text-white hover:bg-white/10 transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900/10 border border-slate-200 rounded-lg text-slate-900 hover:bg-slate-900/10 transition-all"
               >
                 <Github size={20} /> Visit GitHub Profile
               </a>

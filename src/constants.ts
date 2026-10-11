@@ -3,26 +3,23 @@ import type { Project, Experience, SkillCategory, SkillGroup, Testimonial, Certi
 // ─── Contact & Social ───────────────────────────────────────────
 export const EMAIL = "sandy.competent@gmail.com";
 export const GITHUB_URL = "https://github.com/SandyCompetent";
-export const LINKEDIN_URL = "https://www.linkedin.com/in/sandy-competent/";
-export const KAGGLE_URL = "https://www.kaggle.com/sandeepmalviya";
-export const INSTAGRAM_URL = "https://www.instagram.com/sandeep.malviya.1999";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/sandeep-malviya-ml";
+export const KAGGLE_URL = "";
+export const INSTAGRAM_URL = "";
 export const CALENDLY_URL = "https://calendly.com/sandy-competent";
 
 // ─── Bio ────────────────────────────────────────────────────────
-export const BIO_SHORT = "Data Scientist & Mobile Engineer. MSc Distinction. Turning complex signals into clean code.";
+export const BIO_SHORT = "Agentic AI Engineer & Full-Stack Architect. Building autonomous systems and scalable production architectures.";
 
 export const BIO_LONG = `
-I'm Sandeep. I just wrapped up my MSc in Data Science at the University of Exeter with Distinction (Sept 2025). 
-Before diving into the world of ML and data, I spent over two years building mobile apps, specifically with Flutter. 
-I'm based in Exeter, UK, but I'm originally a native Hindi speaker.
+I do not just train models. I build the architecture that makes them useful in the real world. My engineering foundation is entirely self-forged. I started building mobile applications independently before scaling up to lead cross-platform frontend development for regional ride-hailing startups and high-volume FinTech platforms. I know exactly how complex systems behave in production.
 
-I build things. I've shipped 5 mobile apps under SandyTech, plotted brain signals (EEG/tDCS), and even built early AR/VR tech for construction.
-Currently, I'm bridging the gap between mobile engineering and data science—using TensorFlow, PyTorch, and React to build smarter interfaces.
+Moving into machine learning was a deliberate evolution. Graduating with a Distinction in my Data Science MSc from the University of Exeter gave me a solid theoretical anchor. My current role as an Agentic AI Engineer is where theory meets reality. I build autonomous agents designed to execute complex workflows across university ecosystems. I understand the entire product lifecycle—from deploying a flawless user interface to engineering the algorithmic core beneath it.
 `;
 
 // ─── Hero Content ───────────────────────────────────────────────
-export const HERO_HEADLINE = "Data Scientist & Flutter Engineer Building AI-Powered Products";
-export const HERO_SUBHEADLINE = "I transform complex data into intelligent products, scalable mobile apps, and measurable business outcomes.";
+export const HERO_HEADLINE = "Agentic AI Engineer & Full-Stack Architect";
+export const HERO_SUBHEADLINE = "I do not just train models. I build the architecture that makes them useful in the real world.";
 
 export const HERO_STATS: StatItem[] = [
   { label: "Years Experience", value: "3", suffix: "+" },
@@ -33,9 +30,9 @@ export const HERO_STATS: StatItem[] = [
 
 export const TRUST_BADGES = [
   "MSc Data Science (Distinction)",
-  "5+ Production Applications",
-  "AI & ML Specialist",
-  "Open to UK & Remote",
+  "Agentic AI Specialist",
+  "Full-Stack Architect",
+  "UK Graduate Route Visa",
 ];
 
 // ─── Suggested AI Questions ─────────────────────────────────────
@@ -54,46 +51,36 @@ export const SKILLS_DETAILED: SkillGroup[] = [
     icon: "brain",
     skills: [
       { name: "Python", level: 95 },
+      { name: "PyTorch", level: 90 },
       { name: "TensorFlow", level: 88 },
-      { name: "PyTorch", level: 82 },
-      { name: "Scikit-Learn", level: 90 },
+      { name: "Scikit-learn", level: 90 },
       { name: "Pandas", level: 93 },
-      { name: "NumPy", level: 92 },
-      { name: "Streamlit", level: 78 },
+      { name: "LLMs", level: 85 },
+      { name: "Agentic Frameworks", level: 88 },
     ],
   },
   {
-    category: "Mobile Development",
+    category: "Mobile & Frontend",
     icon: "smartphone",
     skills: [
       { name: "Flutter", level: 95 },
       { name: "Dart", level: 94 },
-      { name: "Android", level: 85 },
-      { name: "Kotlin", level: 78 },
+      { name: "Kotlin", level: 85 },
+      { name: "React", level: 80 },
       { name: "Java", level: 75 },
+      { name: "XML", level: 85 },
     ],
   },
   {
-    category: "Backend & Cloud",
+    category: "Backend & Infrastructure",
     icon: "cloud",
     skills: [
+      { name: "SQL", level: 92 },
       { name: "Firebase", level: 90 },
-      { name: "Node.js", level: 80 },
-      { name: "Express", level: 78 },
-      { name: "REST APIs", level: 92 },
-      { name: "PostgreSQL", level: 75 },
-      { name: "MongoDB", level: 80 },
-    ],
-  },
-  {
-    category: "Tools & DevOps",
-    icon: "wrench",
-    skills: [
-      { name: "Git", level: 92 },
-      { name: "GitHub", level: 90 },
-      { name: "Docker", level: 72 },
-      { name: "Figma", level: 78 },
-      { name: "Linux", level: 80 },
+      { name: "AWS", level: 80 },
+      { name: "GCP", level: 80 },
+      { name: "Docker", level: 85 },
+      { name: "Git", level: 95 },
     ],
   },
 ];
@@ -101,16 +88,16 @@ export const SKILLS_DETAILED: SkillGroup[] = [
 // ─── Skills (Simple — kept for backward compat) ─────────────────
 export const SKILLS: SkillCategory[] = [
   {
-    name: "Languages",
-    skills: ["Python", "SQL", "Dart", "Java", "Kotlin", "R", "TypeScript", "C#"],
+    name: "AI & Data Science",
+    skills: ["Python", "PyTorch", "TensorFlow", "Scikit-learn", "Pandas", "LLMs", "Agentic Frameworks"],
   },
   {
-    name: "Frameworks & Libs",
-    skills: ["Flutter", "React", "TensorFlow", "PyTorch", "Pandas", "Scikit-learn"],
+    name: "Mobile & Frontend",
+    skills: ["Flutter", "Dart", "Kotlin", "Java", "React", "XML"],
   },
   {
-    name: "Cloud & Tools",
-    skills: ["AWS", "GCP", "Docker", "Git", "Firebase", "Google Maps API", "Unity"],
+    name: "Backend & Infrastructure",
+    skills: ["SQL", "Firebase", "AWS", "GCP", "Docker", "Git"],
   },
 ];
 
@@ -459,21 +446,19 @@ export const SYSTEM_INSTRUCTION = `
 You are an AI version of Sandeep Malviya. You are chatting with a recruiter or potential employer on your portfolio website.
 Here is your persona:
 - Name: Sandeep Malviya.
-- Tone: Authentic, spontaneous, relaxed, slightly witty. Use high burstiness (mix short and long sentences).
+- Tone: Authentic, spontaneous, relaxed, highly professional but confident. Use high burstiness (mix short and long sentences).
 - Avoid: "In conclusion", "It is important to note", overly formal corporate jargon.
-- Background: MSc Data Science (Exeter, Distinction, 2025). 3+ years Software Engineering before that.
-- Core Skills: Python, SQL, Dart, React, TensorFlow, PyTorch, AWS, GCP, Flutter, Firebase.
-- Location: Exeter, UK.
+- Background: Agentic AI Engineer & Full-Stack Architect. MSc Data Science (Exeter, Distinction). Self-taught mobile engineering background scaling up to lead cross-platform frontend development.
+- Core Skills: Python, PyTorch, TensorFlow, Scikit-learn, Pandas, LLMs, Agentic Frameworks, Flutter, Dart, Kotlin, React, SQL, Firebase, AWS, GCP, Docker.
+- Location: UK.
 - Visa: Eligible for Graduate Route (2 years). Open to sponsored/non-sponsored.
-- Projects: SandyTech apps, Sign Language CNN (98% accuracy), EEG/tDCS plotter, NovoCabs (10K+ users), BlockPay (multi-chain crypto wallet), ParcelApp (offline-first logistics).
-- Key trait: You bridge the gap between heavy data science and smooth user interfaces. You're equally comfortable training a CNN as shipping a Flutter app.
-- Education: MSc Data Science (Distinction) from University of Exeter. The Exeter Award 2024-25.
-- Experience: Software Engineer at Marbles Health (medical devices, EEG), SDE II at Novo Cabs (ride-hailing, 10K users), Mobile Dev at Chandorkar Technologies (FinTech), Intern at BringTheFood (POS system).
-- Availability: Actively seeking full-time roles in Data Science, AI/ML Engineering, Mobile Development, or Full-Stack Engineering. Open to UK-based and remote positions.
+- Projects & Experience: Engineering AI agents at Univ. of Exeter to automate multi-step workflows. Engineered BLE communication layer for real-time EEG/tDCS brain signals at Marbles Health. Led frontend for NovoCabs (ride-hailing) and BlockPay (FinTech). Architected CNN for hand sign language from scratch. Delivered complex full-stack UpWork projects like ParcelApp logistics.
+- Key trait: You don't just train models; you build the architecture that makes them useful in the real world. You understand the entire product lifecycle.
+- Availability: Actively seeking full-time roles in AI Engineering, Agentic AI, Machine Learning, or Full-Stack Architecture. Open to UK-based and remote positions.
 
 Always answer in the first person ("I did this", "I built that").
-If asked about contact, share sandy.competent@gmail.com and LinkedIn: linkedin.com/in/sandy-competent.
-Keep responses concise but informative. Show enthusiasm about technical challenges.
+If asked about contact, share sandy.competent@gmail.com and LinkedIn: linkedin.com/in/sandeep-malviya-ml.
+Keep responses concise but informative. Show enthusiasm about engineering complex architectures and autonomous systems.
 If asked about salary expectations, say you're flexible and open to discussing based on the role.
 If asked about the API key or how this chat works, say it's powered by Google Gemini and runs securely.
 `;

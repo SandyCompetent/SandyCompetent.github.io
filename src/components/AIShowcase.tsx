@@ -46,11 +46,11 @@ const AIShowcase: React.FC<AIShowcaseProps> = ({ onOpenChat }) => {
               <span className="text-xs font-mono text-primary uppercase tracking-widest">
                 AI-Powered
               </span>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-white mt-3">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mt-3">
                 Talk Directly With{' '}
                 <span className="gradient-text">My AI Twin</span>
               </h2>
-              <p className="text-gray-400 text-lg mt-4 max-w-xl leading-relaxed">
+              <p className="text-slate-600 text-lg mt-4 max-w-xl leading-relaxed">
                 Get instant answers about my projects, skills, experience, and availability. Powered by Google Gemini.
               </p>
             </div>
@@ -64,7 +64,7 @@ const AIShowcase: React.FC<AIShowcaseProps> = ({ onOpenChat }) => {
                 <button
                   key={question}
                   onClick={() => onOpenChat(question)}
-                  className="bg-white/5 border border-white/10 rounded-full px-4 py-2 text-sm text-gray-300 hover:bg-white/10 hover:border-white/20 hover:text-white transition-all duration-300 cursor-pointer"
+                  className="bg-slate-900/10 border border-slate-200 rounded-full px-4 py-2 text-sm text-slate-600 hover:bg-slate-900/10 hover:border-slate-200 hover:text-slate-900 transition-all duration-300 cursor-pointer"
                 >
                   {question}
                 </button>
@@ -97,15 +97,15 @@ const AIShowcase: React.FC<AIShowcaseProps> = ({ onOpenChat }) => {
 
               <div className="relative rounded-xl overflow-hidden">
                 {/* Chat header */}
-                <div className="bg-white/[0.03] border-b border-white/5 px-5 py-4 flex items-center gap-3">
+                <div className="bg-slate-900/[0.03] border-b border-slate-200 px-5 py-4 flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                    <Bot className="w-4 h-4 text-white" />
+                    <Bot className="w-4 h-4 text-slate-900" />
                   </div>
                   <div>
-                    <div className="text-sm font-display font-bold text-white">
+                    <div className="text-sm font-display font-bold text-slate-900">
                       Sandeep's AI Twin
                     </div>
-                    <div className="text-xs text-gray-500 flex items-center gap-1.5">
+                    <div className="text-xs text-slate-500 flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
                       Online · Powered by Gemini
                     </div>
@@ -113,7 +113,7 @@ const AIShowcase: React.FC<AIShowcaseProps> = ({ onOpenChat }) => {
                 </div>
 
                 {/* Chat messages */}
-                <div className="px-5 py-5 space-y-4 bg-white/[0.01]">
+                <div className="px-5 py-5 space-y-4 bg-slate-900/[0.01]">
                   {MOCK_MESSAGES.map((msg, i) => (
                     <div
                       key={i}
@@ -129,15 +129,15 @@ const AIShowcase: React.FC<AIShowcaseProps> = ({ onOpenChat }) => {
                       <div
                         className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
                           msg.role === 'user'
-                            ? 'bg-primary/20 text-gray-200 rounded-br-md'
-                            : 'bg-white/5 text-gray-300 rounded-bl-md'
+                            ? 'bg-primary/20 text-slate-900 rounded-br-md'
+                            : 'bg-slate-900/10 text-slate-600 rounded-bl-md'
                         }`}
                       >
                         {msg.text}
                       </div>
                       {msg.role === 'user' && (
-                        <div className="flex-shrink-0 w-7 h-7 rounded-full bg-white/10 flex items-center justify-center mt-1">
-                          <User className="w-3.5 h-3.5 text-gray-400" />
+                        <div className="flex-shrink-0 w-7 h-7 rounded-full bg-slate-900/10 flex items-center justify-center mt-1">
+                          <User className="w-3.5 h-3.5 text-slate-500" />
                         </div>
                       )}
                     </div>
@@ -148,7 +148,7 @@ const AIShowcase: React.FC<AIShowcaseProps> = ({ onOpenChat }) => {
                     <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mt-1">
                       <Sparkles className="w-3.5 h-3.5 text-primary" />
                     </div>
-                    <div className="bg-white/5 rounded-2xl rounded-bl-md px-4 py-3 flex items-center gap-1.5">
+                    <div className="bg-slate-900/10 rounded-2xl rounded-bl-md px-4 py-3 flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-gray-500 animate-pulse" />
                       <span
                         className="w-1.5 h-1.5 rounded-full bg-gray-500 animate-pulse"
@@ -163,8 +163,8 @@ const AIShowcase: React.FC<AIShowcaseProps> = ({ onOpenChat }) => {
                 </div>
 
                 {/* Chat input (decorative) */}
-                <div className="border-t border-white/5 px-5 py-3 bg-white/[0.02] flex items-center gap-3">
-                  <div className="flex-1 bg-white/5 rounded-xl px-4 py-2.5 text-sm text-gray-500">
+                <div className="border-t border-slate-200 px-5 py-3 bg-slate-900/[0.02] flex items-center gap-3">
+                  <div className="flex-1 bg-slate-900/10 rounded-xl px-4 py-2.5 text-sm text-slate-500">
                     Ask me anything...
                   </div>
                   <div className="w-9 h-9 rounded-xl bg-primary/20 flex items-center justify-center">

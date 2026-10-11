@@ -22,17 +22,17 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProject, on
             <span className="text-xs font-mono text-primary uppercase tracking-widest">
               Portfolio
             </span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mt-3">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mt-3">
               Selected Case Studies
             </h2>
-            <p className="text-gray-400 text-lg mt-4 max-w-2xl">
+            <p className="text-slate-600 text-lg mt-4 max-w-2xl">
               Highlights from my engineering journey — each project tells a story of problem-solving and impact.
             </p>
           </div>
 
           <button
             onClick={onViewAll}
-            className="mt-6 sm:mt-0 group flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-primary transition-colors duration-300 shrink-0"
+            className="mt-6 sm:mt-0 group flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-primary transition-colors duration-300 shrink-0"
           >
             View All Projects
             <ArrowRight
@@ -76,7 +76,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProject, on
           >
             <button
               onClick={onViewAll}
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-white bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-full backdrop-blur-md transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-slate-900 bg-slate-900/10 hover:bg-slate-900/10 border border-slate-200 hover:border-slate-200 rounded-full backdrop-blur-md transition-all duration-300"
             >
               See all {PROJECTS.length} projects
               <ArrowRight size={16} />

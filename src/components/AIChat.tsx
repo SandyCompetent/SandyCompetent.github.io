@@ -133,12 +133,12 @@ const AIChat: React.FC<AIChatProps> = ({ initialQuestion, externalOpen, onToggle
         }`}
         aria-label="Toggle AI Chat"
       >
-        {isOpen ? <X className="text-white" /> : <MessageSquare className="text-white" />}
+        {isOpen ? <X className="text-slate-900" /> : <MessageSquare className="text-slate-900" />}
       </button>
 
       {/* Chat Window */}
       <div
-        className={`fixed bottom-24 right-6 w-[90vw] sm:w-[400px] max-w-[400px] bg-card border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 transform origin-bottom-right z-40 ${
+        className={`fixed bottom-24 right-6 w-[90vw] sm:w-[400px] max-w-[400px] bg-card border border-slate-200 rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 transform origin-bottom-right z-40 ${
           isOpen ? 'scale-100 opacity-100 translate-y-0' : 'scale-90 opacity-0 translate-y-10 pointer-events-none'
         }`}
         style={{ height: '500px', maxHeight: '80vh' }}
@@ -147,13 +147,13 @@ const AIChat: React.FC<AIChatProps> = ({ initialQuestion, externalOpen, onToggle
         <div className="h-[2px] w-full bg-gradient-to-r from-primary via-secondary to-accent animate-pulse-slow" />
 
         {/* Header */}
-        <div className="p-4 bg-gradient-to-r from-slate-900 to-slate-800 border-b border-white/10 flex items-center gap-3">
+        <div className="p-4 bg-gradient-to-r from-slate-900 to-slate-800 border-b border-slate-200 flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
             <Sparkles className="text-primary w-5 h-5" />
           </div>
           <div>
-            <h3 className="font-bold text-white text-sm">Ask AI Sandeep</h3>
-            <p className="text-xs text-gray-400">Powered by Gemini 3 Flash</p>
+            <h3 className="font-bold text-slate-900 text-sm">Ask AI Sandeep</h3>
+            <p className="text-xs text-slate-500">Powered by Gemini 3 Flash</p>
           </div>
         </div>
 
@@ -171,8 +171,8 @@ const AIChat: React.FC<AIChatProps> = ({ initialQuestion, externalOpen, onToggle
                 </div>
                 <div className={`p-3 rounded-2xl max-w-[80%] text-sm leading-relaxed ${
                   msg.role === 'user'
-                    ? 'bg-secondary text-white rounded-tr-none'
-                    : 'bg-slate-800 text-gray-200 rounded-tl-none border border-white/5'
+                    ? 'bg-secondary text-slate-900 rounded-tr-none'
+                    : 'bg-slate-800 text-slate-900 rounded-tl-none border border-slate-200'
                 }`}>
                   {msg.text || (isLoading && msg.id === messages[messages.length-1].id ? <Loader2 className="animate-spin w-4 h-4" /> : '')}
                 </div>
@@ -185,7 +185,7 @@ const AIChat: React.FC<AIChatProps> = ({ initialQuestion, externalOpen, onToggle
                     <button
                       key={question}
                       onClick={() => handleSuggestedClick(question)}
-                      className="bg-white/5 border border-white/10 rounded-full px-3 py-1.5 text-xs text-gray-400 hover:bg-white/10 hover:text-white cursor-pointer transition-all"
+                      className="bg-slate-900/10 border border-slate-200 rounded-full px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-900/10 hover:text-slate-900 cursor-pointer transition-all"
                     >
                       {question}
                     </button>
@@ -198,8 +198,8 @@ const AIChat: React.FC<AIChatProps> = ({ initialQuestion, externalOpen, onToggle
         </div>
 
         {/* Input Area */}
-        <div className="p-4 bg-card border-t border-white/10">
-          <div className="flex items-center gap-2 bg-darker rounded-full px-4 py-2 border border-white/10 focus-within:border-primary/50 transition-colors">
+        <div className="p-4 bg-card border-t border-slate-200">
+          <div className="flex items-center gap-2 bg-darker rounded-full px-4 py-2 border border-slate-200 focus-within:border-primary/50 transition-colors">
             <input
               ref={inputRef}
               type="text"
@@ -207,7 +207,7 @@ const AIChat: React.FC<AIChatProps> = ({ initialQuestion, externalOpen, onToggle
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Ask about my projects..."
-              className="flex-grow bg-transparent text-sm text-white placeholder-gray-500 focus:outline-none"
+              className="flex-grow bg-transparent text-sm text-slate-900 placeholder-gray-500 focus:outline-none"
               disabled={isLoading}
             />
             <button

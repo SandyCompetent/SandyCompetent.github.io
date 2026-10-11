@@ -66,10 +66,10 @@ const CredibilitySection: React.FC = () => {
           <span className="text-xs font-mono text-primary uppercase tracking-widest">
             Credentials
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mt-3">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mt-3">
             Trust & Credibility
           </h2>
-          <p className="text-gray-400 text-lg mt-4 max-w-2xl">
+          <p className="text-slate-600 text-lg mt-4 max-w-2xl">
             Numbers, certifications, and recognition that back up the work.
           </p>
         </div>
@@ -89,10 +89,10 @@ const CredibilitySection: React.FC = () => {
                 >
                   <Icon className={`w-7 h-7 ${ICON_COLORS[i]}`} />
                 </div>
-                <div className="text-3xl md:text-4xl font-display font-bold text-white">
+                <div className="text-3xl md:text-3xl font-display font-bold text-slate-900">
                   {stat.value}
                 </div>
-                <div className="text-sm text-gray-500 mt-1 font-mono uppercase tracking-wider">
+                <div className="text-sm text-slate-500 mt-1 font-mono uppercase tracking-wider">
                   {stat.label}
                 </div>
               </div>
@@ -112,18 +112,18 @@ const CredibilitySection: React.FC = () => {
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center">
                   <Award className="w-5 h-5 text-amber-400" />
                 </div>
-                <span className="text-xs font-mono text-gray-500 bg-white/5 px-2.5 py-1 rounded-full">
+                <span className="text-xs font-mono text-slate-500 bg-slate-900/10 px-2.5 py-1 rounded-full">
                   {cert.year}
                 </span>
               </div>
-              <h3 className="text-base font-display font-bold text-white mb-1 leading-snug">
+              <h3 className="text-base font-display font-bold text-slate-900 mb-1 leading-snug">
                 {cert.title}
               </h3>
               <p className="text-sm text-primary/80 font-medium mb-3">
                 {cert.issuer}
               </p>
               {cert.description && (
-                <p className="text-sm text-gray-500 leading-relaxed mt-auto">
+                <p className="text-sm text-slate-500 leading-relaxed mt-auto">
                   {cert.description}
                 </p>
               )}
@@ -136,38 +136,38 @@ const CredibilitySection: React.FC = () => {
           className="opacity-0 animate-fade-up mt-16 flex flex-col sm:flex-row items-center justify-center gap-4"
           style={{ animationDelay: '900ms' }}
         >
-          <span className="text-sm text-gray-500 font-mono uppercase tracking-wider mr-2">
+          <span className="text-sm text-slate-500 font-mono uppercase tracking-wider mr-2">
             Verify on
           </span>
           <a
             href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm text-gray-300 hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900/10 border border-slate-200 text-sm text-slate-600 hover:bg-slate-900/10 hover:text-slate-900 hover:border-slate-200 transition-all duration-300"
           >
             <Github className="w-4 h-4" />
             GitHub Profile
-            <ExternalLink className="w-3 h-3 text-gray-500" />
+            <ExternalLink className="w-3 h-3 text-slate-500" />
           </a>
           <a
             href={KAGGLE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm text-gray-300 hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900/10 border border-slate-200 text-sm text-slate-600 hover:bg-slate-900/10 hover:text-slate-900 hover:border-slate-200 transition-all duration-300"
           >
             <KaggleIcon className="w-4 h-4" />
             Kaggle Profile
-            <ExternalLink className="w-3 h-3 text-gray-500" />
+            <ExternalLink className="w-3 h-3 text-slate-500" />
           </a>
           <a
             href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-sm text-gray-300 hover:bg-white/10 hover:text-white hover:border-white/20 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900/10 border border-slate-200 text-sm text-slate-600 hover:bg-slate-900/10 hover:text-slate-900 hover:border-slate-200 transition-all duration-300"
           >
             <Linkedin className="w-4 h-4" />
             LinkedIn
-            <ExternalLink className="w-3 h-3 text-gray-500" />
+            <ExternalLink className="w-3 h-3 text-slate-500" />
           </a>
         </div>
       </div>

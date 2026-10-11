@@ -53,21 +53,21 @@ const ContactSection: React.FC = () => {
       label: 'GitHub',
       value: 'SandyCompetent',
       href: GITHUB_URL,
-      color: 'text-gray-300',
+      color: 'text-slate-600',
       bg: 'bg-gray-300/10',
     },
   ];
 
   return (
-    <section id="contact" className="py-32 relative bg-gradient-to-b from-[#020617] to-black">
+    <section id="contact" className="py-32 relative bg-gradient-to-b from-slate-50 to-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16 opacity-0 animate-fade-up" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
           <span className="text-xs font-mono text-primary uppercase tracking-widest">Get In Touch</span>
-          <h2 className="text-5xl md:text-7xl font-display font-bold text-white tracking-tighter mt-3">
+          <h2 className="text-4xl md:text-7xl font-display font-bold text-slate-900 tracking-tighter mt-3">
             Let's Build Something<br />Exceptional
           </h2>
-          <p className="text-gray-400 text-lg mt-6 max-w-2xl">
+          <p className="text-slate-600 text-lg mt-6 max-w-2xl">
             Open for full-stack, mobile, and data science roles. Let's discuss how I can add value to your team.
           </p>
         </div>
@@ -84,8 +84,8 @@ const ContactSection: React.FC = () => {
                 <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mb-6">
                   <Send className="text-green-400 w-7 h-7" />
                 </div>
-                <h3 className="text-2xl font-display font-bold text-white mb-2">Message Sent!</h3>
-                <p className="text-gray-400 text-sm">Thanks for reaching out. I'll get back to you within 24 hours.</p>
+                <h3 className="text-2xl font-display font-bold text-slate-900 mb-2">Message Sent!</h3>
+                <p className="text-slate-600 text-sm">Thanks for reaching out. I'll get back to you within 24 hours.</p>
               </div>
             ) : (
               <form
@@ -95,7 +95,7 @@ const ContactSection: React.FC = () => {
                 className="glass-card p-8 rounded-2xl space-y-5"
               >
                 <div>
-                  <label htmlFor="name" className="block text-xs font-mono text-gray-500 uppercase tracking-wider mb-2">
+                  <label htmlFor="name" className="block text-xs font-mono text-slate-500 uppercase tracking-wider mb-2">
                     Name
                   </label>
                   <input
@@ -108,7 +108,7 @@ const ContactSection: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-xs font-mono text-gray-500 uppercase tracking-wider mb-2">
+                  <label htmlFor="email" className="block text-xs font-mono text-slate-500 uppercase tracking-wider mb-2">
                     Email
                   </label>
                   <input
@@ -121,7 +121,7 @@ const ContactSection: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-xs font-mono text-gray-500 uppercase tracking-wider mb-2">
+                  <label htmlFor="subject" className="block text-xs font-mono text-slate-500 uppercase tracking-wider mb-2">
                     Subject
                   </label>
                   <input
@@ -134,7 +134,7 @@ const ContactSection: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-xs font-mono text-gray-500 uppercase tracking-wider mb-2">
+                  <label htmlFor="message" className="block text-xs font-mono text-slate-500 uppercase tracking-wider mb-2">
                     Message
                   </label>
                   <textarea
@@ -185,12 +185,12 @@ const ContactSection: React.FC = () => {
                   <link.icon size={20} className={link.color} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs text-gray-500 font-mono uppercase tracking-wider">{link.label}</p>
-                  <p className="text-white text-sm font-semibold truncate">{link.value}</p>
+                  <p className="text-xs text-slate-500 font-mono uppercase tracking-wider">{link.label}</p>
+                  <p className="text-slate-900 text-sm font-semibold truncate">{link.value}</p>
                 </div>
                 <ArrowUpRight
                   size={16}
-                  className="text-gray-600 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                  className="text-slate-600 group-hover:text-slate-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
                 />
               </a>
             ))}
@@ -207,12 +207,12 @@ const ContactSection: React.FC = () => {
                   <Calendar size={20} className="text-green-400" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-xs text-gray-500 font-mono uppercase tracking-wider">Schedule</p>
-                  <p className="text-white text-sm font-semibold">Book a Discovery Call</p>
+                  <p className="text-xs text-slate-500 font-mono uppercase tracking-wider">Schedule</p>
+                  <p className="text-slate-900 text-sm font-semibold">Book a Discovery Call</p>
                 </div>
                 <ArrowUpRight
                   size={16}
-                  className="text-gray-600 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                  className="text-slate-600 group-hover:text-slate-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
                 />
               </div>
             </a>
@@ -225,8 +225,8 @@ const ContactSection: React.FC = () => {
               <div className="flex items-center gap-3">
                 <span className="available-dot" />
                 <div>
-                  <p className="text-white text-sm font-semibold">Available for hire</p>
-                  <p className="text-gray-500 text-xs">Open to UK & Remote</p>
+                  <p className="text-slate-900 text-sm font-semibold">Available for hire</p>
+                  <p className="text-slate-500 text-xs">UK Graduate Route Visa (Sponsored/Non-sponsored)</p>
                 </div>
               </div>
             </div>

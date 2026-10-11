@@ -39,9 +39,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
 
       return (
         <div key={i} className="table-row">
-          <span className="table-cell text-right pr-4 text-gray-600 select-none text-xs">{i + 1}</span>
+          <span className="table-cell text-right pr-4 text-slate-600 select-none text-xs">{i + 1}</span>
           <span
-            className="table-cell text-gray-300 whitespace-pre"
+            className="table-cell text-slate-600 whitespace-pre"
             dangerouslySetInnerHTML={{ __html: highlightedLine }}
           />
         </div>
@@ -50,7 +50,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-[#020617] overflow-y-auto animate-fade-up">
+    <div className="fixed inset-0 z-50 flex flex-col bg-slate-50 overflow-y-auto animate-fade-up">
       {/* Dynamic Background Gradient */}
       <div className="fixed inset-0 pointer-events-none opacity-20">
         <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/30 rounded-full blur-[120px]" />
@@ -58,11 +58,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
       </div>
 
       {/* Navigation Bar */}
-      <div className="sticky top-0 z-[60] flex justify-between items-center px-6 py-4 bg-[#020617]/80 backdrop-blur-md border-b border-white/5">
-        <h2 className="text-sm font-mono text-gray-400 uppercase tracking-widest">Case Study / {project.id.padStart(3, '0')}</h2>
+      <div className="sticky top-0 z-[60] flex justify-between items-center px-6 py-4 bg-slate-50/80 backdrop-blur-md border-b border-slate-200">
+        <h2 className="text-sm font-mono text-slate-600 uppercase tracking-widest">Case Study / {project.id.padStart(3, '0')}</h2>
         <button
           onClick={onClose}
-          className="p-2 bg-white/5 hover:bg-white/10 rounded-full text-white transition-all border border-white/10 hover:border-white/30"
+          className="p-2 bg-slate-900/10 hover:bg-slate-900/10 rounded-full text-slate-900 transition-all border border-slate-200 hover:border-slate-400"
           aria-label="Close modal"
         >
           <X size={20} />
@@ -77,19 +77,19 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
             {/* Tech pills */}
             <div className="flex flex-wrap gap-2 mb-6">
               {project.techStack.map(tech => (
-                <span key={tech} className="px-3 py-1 bg-white/5 text-gray-300 text-xs font-mono border border-white/10 rounded-md">
+                <span key={tech} className="px-3 py-1 bg-slate-900/10 text-slate-600 text-xs font-mono border border-slate-200 rounded-md">
                   {tech}
                 </span>
               ))}
             </div>
 
             {/* Title */}
-            <h2 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 tracking-tight leading-[0.9]">
+            <h2 className="text-4xl md:text-7xl font-display font-bold text-slate-900 mb-6 tracking-tight leading-[0.9]">
               {project.title}
             </h2>
 
             {/* Value Proposition */}
-            <p className="text-xl md:text-2xl text-gray-400 font-light leading-relaxed max-w-2xl mb-8">
+            <p className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed max-w-2xl mb-8">
               {project.valueProposition}
             </p>
 
@@ -100,8 +100,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
                   <div key={i} className="glass-card rounded-xl px-5 py-3 flex items-center gap-3">
                     <Target size={16} className="text-primary" />
                     <div>
-                      <p className="text-xl font-bold text-white">{metric.value}</p>
-                      <p className="text-[10px] font-mono text-gray-500 uppercase tracking-wider">{metric.label}</p>
+                      <p className="text-xl font-bold text-slate-900">{metric.value}</p>
+                      <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">{metric.label}</p>
                     </div>
                   </div>
                 ))}
@@ -111,12 +111,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-4">
               {project.demoUrl && (
-                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="group px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-gray-200 transition-all flex items-center gap-2">
+                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="group px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-all flex items-center gap-2">
                   <ExternalLink size={18} /> Live Demo <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               )}
               {project.repoUrl && (
-                <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white/5 text-white font-bold rounded-xl border border-white/10 hover:bg-white/10 transition-all flex items-center gap-2">
+                <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-slate-900/10 text-slate-900 font-bold rounded-xl border border-slate-200 hover:bg-slate-900/10 transition-all flex items-center gap-2">
                   <Github size={18} /> Source Code
                 </a>
               )}
@@ -125,7 +125,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
 
           {/* Project Image */}
           <div className="lg:col-span-5 relative h-[350px] lg:h-auto animate-fade-up" style={{ animationDelay: '0.1s' }}>
-            <div className="absolute inset-0 rounded-3xl overflow-hidden border border-white/10 shadow-2xl lg:rotate-2 hover:rotate-0 transition-all duration-500">
+            <div className="absolute inset-0 rounded-3xl overflow-hidden border border-slate-200 shadow-2xl lg:rotate-2 hover:rotate-0 transition-all duration-500">
               <img src={project.imageUrl} alt={`${project.title} preview`} className="w-full h-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-tr from-black/60 to-transparent" />
               {/* Featured badge */}
@@ -144,16 +144,16 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
           {/* Tech Specs Sidebar */}
           <div className="lg:col-span-3 hidden lg:block">
             <div className="sticky top-32 space-y-8 p-6 glass-card rounded-2xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              <h3 className="text-xs font-mono text-gray-500 uppercase tracking-widest border-b border-white/10 pb-2 mb-4">Engineering Specs</h3>
+              <h3 className="text-xs font-mono text-slate-500 uppercase tracking-widest border-b border-slate-200 pb-2 mb-4">Engineering Specs</h3>
               
               <div className="space-y-6">
                 {/* Complexity */}
                 <div>
-                  <div className="flex items-center gap-2 text-white mb-1">
+                  <div className="flex items-center gap-2 text-slate-900 mb-1">
                     <Activity size={16} className="text-primary" />
                     <span className="font-semibold text-sm">Complexity</span>
                   </div>
-                  <div className="w-full bg-white/10 h-1.5 rounded-full mt-2">
+                  <div className="w-full bg-slate-900/10 h-1.5 rounded-full mt-2">
                     <div
                       className={`h-full rounded-full ${
                         project.complexity === 'Research Grade' ? 'bg-purple-500 w-full' :
@@ -163,25 +163,25 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
                       }`}
                     />
                   </div>
-                  <span className="text-xs text-gray-400 mt-1 block">{project.complexity || 'Standard'}</span>
+                  <span className="text-xs text-slate-600 mt-1 block">{project.complexity || 'Standard'}</span>
                 </div>
 
                 {/* Scale */}
                 <div>
-                  <div className="flex items-center gap-2 text-white mb-1">
+                  <div className="flex items-center gap-2 text-slate-900 mb-1">
                     <Code size={16} className="text-green-400" />
                     <span className="font-semibold text-sm">Scale</span>
                   </div>
-                  <p className="text-2xl font-mono text-gray-300">{project.linesOfCode || 'N/A'}</p>
+                  <p className="text-2xl font-mono text-slate-600">{project.linesOfCode || 'N/A'}</p>
                 </div>
 
                 {/* Architecture */}
                 <div>
-                  <div className="flex items-center gap-2 text-white mb-1">
+                  <div className="flex items-center gap-2 text-slate-900 mb-1">
                     <Layers size={16} className="text-orange-400" />
                     <span className="font-semibold text-sm">Architecture</span>
                   </div>
-                  <ul className="text-sm text-gray-400 space-y-1 mt-2">
+                  <ul className="text-sm text-slate-600 space-y-1 mt-2">
                     {project.architecture?.map(item => (
                       <li key={item} className="flex items-center gap-2">
                         <span className="w-1 h-1 bg-gray-500 rounded-full" /> {item}
@@ -199,12 +199,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
             {/* Problem / Challenges Grid */}
             <div className="grid md:grid-cols-2 gap-8">
               <div className="animate-fade-up" style={{ animationDelay: '0.3s' }}>
-                <h3 className="text-2xl font-display font-bold text-white mb-4">The Challenge</h3>
-                <p className="text-gray-400 leading-relaxed text-lg">{project.problem || project.description}</p>
+                <h3 className="text-2xl font-display font-bold text-slate-900 mb-4">The Challenge</h3>
+                <p className="text-slate-600 leading-relaxed text-lg">{project.problem || project.description}</p>
               </div>
               <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
-                <h3 className="text-2xl font-display font-bold text-white mb-4">The Engineering</h3>
-                <p className="text-gray-400 leading-relaxed text-lg">{project.challenges || project.details}</p>
+                <h3 className="text-2xl font-display font-bold text-slate-900 mb-4">The Engineering</h3>
+                <p className="text-slate-600 leading-relaxed text-lg">{project.challenges || project.details}</p>
               </div>
             </div>
 
@@ -212,16 +212,16 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
             {project.codeSnippet && (
               <div className="w-full animate-fade-up" style={{ animationDelay: '0.5s' }}>
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-display font-bold text-white flex items-center gap-3">
+                  <h3 className="text-2xl font-display font-bold text-slate-900 flex items-center gap-3">
                     <GitBranch className="text-purple-400" />
                     Core Algorithm
                   </h3>
-                  <span className="text-xs font-mono text-gray-500 bg-white/5 px-2 py-1 rounded">
+                  <span className="text-xs font-mono text-slate-500 bg-slate-900/10 px-2 py-1 rounded">
                     {project.codeSnippet.language}
                   </span>
                 </div>
 
-                <div className="rounded-xl overflow-hidden bg-[#1e222a] border border-white/10 shadow-2xl relative group">
+                <div className="rounded-xl overflow-hidden bg-[#1e222a] border border-slate-200 shadow-2xl relative group">
                   {/* Mac Window Controls */}
                   <div className="flex items-center gap-2 px-4 py-3 bg-[#282c34] border-b border-black/20">
                     <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
@@ -240,11 +240,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, project }) => {
 
             {/* System Architecture */}
             <div className="animate-fade-up" style={{ animationDelay: '0.6s' }}>
-              <h3 className="text-2xl font-display font-bold text-white mb-4 flex items-center gap-3">
+              <h3 className="text-2xl font-display font-bold text-slate-900 mb-4 flex items-center gap-3">
                 <Cpu className="text-cyan-400" />
                 System Architecture
               </h3>
-              <p className="text-gray-400 text-lg leading-relaxed">{project.details}</p>
+              <p className="text-slate-600 text-lg leading-relaxed">{project.details}</p>
             </div>
           </div>
         </div>

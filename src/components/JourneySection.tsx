@@ -12,14 +12,14 @@ const JourneySection: React.FC = () => {
             <Briefcase size={14} className="text-primary" />
             <span className="text-xs font-mono text-primary uppercase tracking-widest">Career</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white">The Journey</h2>
-          <p className="text-gray-400 text-lg mt-4 max-w-2xl">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900">The Journey</h2>
+          <p className="text-slate-600 text-lg mt-4 max-w-2xl">
             From early Android development to MSc-level data science — a progression of increasing impact.
           </p>
         </div>
 
         {/* Timeline */}
-        <div className="relative border-l border-white/10 ml-3 md:ml-6">
+        <div className="relative border-l border-slate-200 ml-3 md:ml-6">
           {EXPERIENCE.map((exp, index) => (
             <div
               key={exp.id}
@@ -33,17 +33,17 @@ const JourneySection: React.FC = () => {
               <div className="glass-card-hover p-6 md:p-8 rounded-2xl">
                 {/* Header Row */}
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
-                  <h3 className="text-xl font-bold text-white font-display">{exp.role}</h3>
-                  <span className="text-xs font-mono text-gray-500 bg-black/30 px-3 py-1 rounded-full border border-white/5 whitespace-nowrap self-start">
+                  <h3 className="text-xl font-bold text-slate-900 font-display">{exp.role}</h3>
+                  <span className="text-xs font-mono text-slate-500 bg-slate-50/30 px-3 py-1 rounded-full border border-slate-200 whitespace-nowrap self-start">
                     {exp.period}
                   </span>
                 </div>
 
                 {/* Company + Location Row */}
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-4">
-                  <span className="text-lg text-gray-400">{exp.company}</span>
+                  <span className="text-lg text-slate-500">{exp.company}</span>
                   {exp.location && (
-                    <span className="flex items-center gap-1 text-xs text-gray-500">
+                    <span className="flex items-center gap-1 text-xs text-slate-500">
                       <MapPin size={12} />
                       {exp.location}
                     </span>
@@ -53,7 +53,7 @@ const JourneySection: React.FC = () => {
                 {/* Achievement Bullets */}
                 <ul className="space-y-2 mb-5">
                   {exp.description.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-sm text-gray-400 leading-relaxed">
+                    <li key={i} className="flex items-start gap-2.5 text-sm text-slate-600 leading-relaxed">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary/60 mt-2 flex-shrink-0" />
                       <span>{item}</span>
                     </li>

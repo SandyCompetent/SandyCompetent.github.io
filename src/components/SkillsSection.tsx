@@ -40,10 +40,10 @@ const SkillsSection: React.FC = () => {
           <span className="text-xs font-mono text-primary uppercase tracking-widest">
             Expertise
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mt-3">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-slate-900 mt-3">
             Skills & Technologies
           </h2>
-          <p className="text-gray-400 text-lg mt-4 max-w-2xl">
+          <p className="text-slate-600 text-lg mt-4 max-w-2xl">
             A snapshot of my core competencies across AI, mobile, backend, and tooling — each honed through real-world production work.
           </p>
         </div>
@@ -63,7 +63,7 @@ const SkillsSection: React.FC = () => {
                   <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                     <Icon className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="text-lg font-display font-bold text-white">
+                  <h3 className="text-lg font-display font-bold text-slate-900">
                     {group.category}
                   </h3>
                 </div>
@@ -73,8 +73,8 @@ const SkillsSection: React.FC = () => {
                   {group.skills.map((skill) => (
                     <div key={skill.name}>
                       <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-sm text-gray-300">{skill.name}</span>
-                        <span className="text-xs text-gray-500 font-mono">
+                        <span className="text-sm text-slate-600">{skill.name}</span>
+                        <span className="text-xs text-slate-500 font-mono">
                           {skill.level}%
                         </span>
                       </div>

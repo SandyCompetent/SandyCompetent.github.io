@@ -55,13 +55,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, className =
       }}
     >
       {/* Glassmorphism Card Background */}
-      <div className="absolute inset-0 bg-white/5 rounded-3xl backdrop-blur-xl border border-white/10 shadow-2xl transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/20"></div>
+      <div className="absolute inset-0 bg-slate-900/10 rounded-3xl backdrop-blur-xl border border-slate-200 shadow-2xl transition-all duration-300 group-hover:bg-slate-900/10 group-hover:border-slate-200"></div>
 
       <div className="relative h-full flex flex-col p-6 z-10" style={{ transform: 'translateZ(20px)' }}>
         {/* Header: Icon + Badges */}
         <div className="flex justify-between items-start mb-4">
-          <div className="bg-darker/50 p-3 rounded-2xl border border-white/5">
-            <Box size={20} className="text-white" />
+          <div className="bg-darker/50 p-3 rounded-2xl border border-slate-200">
+            <Box size={20} className="text-slate-900" />
           </div>
 
           <div className="flex items-center gap-2">
@@ -75,7 +75,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, className =
 
             {/* Complexity Badge */}
             {project.complexity && (
-              <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-gray-400 border border-white/10 rounded-full backdrop-blur-md">
+              <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-600 border border-slate-200 rounded-full backdrop-blur-md">
                 {project.complexity}
               </span>
             )}
@@ -83,17 +83,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, className =
         </div>
 
         {/* Title */}
-        <h3 className="text-2xl font-display font-bold text-white mb-2 leading-tight group-hover:text-primary transition-colors">
+        <h3 className="text-2xl font-display font-bold text-slate-900 mb-2 leading-tight group-hover:text-primary transition-colors">
           {project.title}
         </h3>
 
         {/* Description */}
-        <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+        <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3">
           {project.valueProposition}
         </p>
 
         {/* Image Section with Gradient Overlay */}
-        <div className="flex-grow relative rounded-xl overflow-hidden mb-6 h-40 bg-darker border border-white/5">
+        <div className="flex-grow relative rounded-xl overflow-hidden mb-6 h-40 bg-darker border border-slate-200">
           <img
             src={project.imageUrl}
             alt={project.title}
@@ -103,11 +103,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, className =
 
           {/* Metric Badge on Image */}
           {firstMetric && (
-            <div className="absolute top-3 left-3 flex flex-col items-start bg-black/60 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/10">
-              <span className="text-2xl font-bold text-white leading-none">
+            <div className="absolute top-3 left-3 flex flex-col items-start bg-slate-50/60 backdrop-blur-sm rounded-lg px-3 py-2 border border-slate-200">
+              <span className="text-2xl font-bold text-slate-900 leading-none">
                 {firstMetric.value}
               </span>
-              <span className="text-[10px] font-mono text-gray-400 uppercase tracking-wider mt-0.5">
+              <span className="text-[10px] font-mono text-slate-600 uppercase tracking-wider mt-0.5">
                 {firstMetric.label}
               </span>
             </div>
@@ -126,7 +126,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, className =
           {project.techStack.slice(0, 3).map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1.5 text-xs font-medium rounded-lg bg-[#0f172a] text-gray-300 shadow-[0_2px_0_rgba(255,255,255,0.1)] active:shadow-none active:translate-y-[2px] transition-all border border-white/5 hover:text-white hover:border-white/20 select-none"
+              className="px-3 py-1.5 text-xs font-medium rounded-lg bg-[#0f172a] text-slate-600 shadow-[0_2px_0_rgba(255,255,255,0.1)] active:shadow-none active:translate-y-[2px] transition-all border border-slate-200 hover:text-slate-900 hover:border-slate-200 select-none"
             >
               {tech}
             </span>
