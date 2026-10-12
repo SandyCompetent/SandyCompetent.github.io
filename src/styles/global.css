@@ -7,7 +7,6 @@
   --text-primary: #0f172a;
   --text-muted: #475569;
   --border-color: rgba(15, 23, 42, 0.08);
-  --pivot-glow-opacity: 0;
 }
 
 html.lenis,
@@ -60,16 +59,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3f3f46;
+  background: #cbd5e1;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #52525b;
+  background: #94a3b8;
 }
 
 /* Hide scrollbar for horizontal carousels while keeping functionality */
@@ -80,4 +79,32 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Offset anchored sections so the fixed nav doesn't cover their headings */
+section[id],
+footer[id] {
+  scroll-margin-top: 90px;
+}
+
+/* Accessibility: honour the user's reduced-motion preference.
+   JS also guards GSAP/Lenis; this is the CSS backstop. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-reveal,
+  .mobile-reveal,
+  .ai-reveal,
+  .footer-reveal,
+  .skill-badge {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

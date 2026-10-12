@@ -1,0 +1,37 @@
+# Global site configuration
+title: "Sandeep | Software & Agentic AI Engineer"
+description: "Bridging four years of high-performance mobile architecture with autonomous machine learning. Data Science MSc (Distinction) | University of Exeter."
+url: "https://sandeepmalviya.me"
+author: "Sandeep Malviya"
+
+# Floating navigation (left → right)
+nav:
+  - label: "Engineering"
+    href: "#engineering-foundation"
+  - label: "AI Frontier"
+    href: "#ai-frontier"
+  - label: "Projects"
+    href: "#projects"
+  - label: "Contact"
+    href: "#contact"
+
+# SEO / social-share
+seo:
+  keywords:
+    - "Sandeep Malviya"
+    - "Agentic AI Engineer"
+    - "Machine Learning Engineer"
+    - "Data Scientist"
+    - "LLM"
+    - "Multi-Agent Systems"
+    - "Flutter"
+    - "PyTorch"
+    - "University of Exeter"
+  og_image: "/og-image.png"   # lives in /public
+  locale: "en_GB"
+
+# Social / contact links (used in nav, footer, structured data)
+social:
+  github: "https://github.com/SandyCompetent"
+  linkedin: "https://www.linkedin.com/in/sandeep-malviya-ml"
+  email: "sandy.competent@gmail.com"

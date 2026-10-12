@@ -1,0 +1,13 @@
+# Footer contact block
+label: "Initiate Connection"
+heading: "Let's build something autonomous."
+
+buttons:
+  - label: "Email Me"
+    href: "mailto:sandy.competent@gmail.com"
+  - label: "GitHub"
+    href: "https://github.com/SandyCompetent"
+  - label: "LinkedIn"
+    href: "https://www.linkedin.com/in/sandeep-malviya-ml"
+
+colophon: "Engineered with Astro, Tailwind, GSAP & Lenis."
