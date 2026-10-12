@@ -1,0 +1,281 @@
+---
+// Section: Featured open-source work — flagship agent + data science repos (light theme).
+// Metadata is fetched from the GitHub API at BUILD TIME (refreshes on every deploy),
+// with real values baked in as fallback so a GitHub outage never breaks the build.
+
+interface RepoMeta {
+  pushed_at?: string;
+  stargazers_count?: number;
+  language?: string;
+  license?: string | null;
+}
+
+async function fetchRepo(name: string): Promise<RepoMeta | null> {
+  try {
+    const res = await fetch(`https://api.github.com/repos/SandyCompetent/${name}`, {
+      headers: {
+        Accept: 'application/vnd.github+json',
+        'User-Agent': 'sandeepmalviya.me-build',
+      },
+    });
+    if (!res.ok) return null;
+    const d = await res.json();
+    return {
+      pushed_at: d.pushed_at,
+      stargazers_count: d.stargazers_count,
+      language: d.language,
+      license: d.license?.spdx_id ?? null,
+    };
+  } catch {
+    return null;
+  }
+}
+
+function monthYear(iso?: string): string | null {
+  if (!iso) return null;
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return null;
+  return d.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+}
+
+type Project = {
+  name: string;
+  repo: string;
+  slug: string;
+  demo?: string;
+  blurb: string;
+  stack: string[];
+  accent: 'blue' | 'indigo' | 'emerald';
+  featured?: boolean;
+  fallback: Required<RepoMeta>;
+};
+
+const projects: Project[] = [
+  {
+    name: 'Exeter Academic Agent',
+    repo: 'https://github.com/SandyCompetent/exeter_academic_agent',
+    slug: 'exeter_academic_agent',
+    demo: 'https://sandycompetent.github.io/exeter_academic_agent/',
+    blurb:
+      'An agentic AI assistant built on Google Gemini 2.5 — streaming LLM responses, multi-tool data routing, and a cross-platform Flutter deployment.',
+    stack: ['Dart', 'Flutter', 'Gemini 2.5', 'LLM Agents'],
+    accent: 'blue',
+    featured: true,
+    fallback: { pushed_at: '2026-03-19T10:44:33Z', stargazers_count: 0, language: 'Dart', license: 'MIT' },
+  },
+  {
+    name: 'Kaggle Analysis Showcase',
+    repo: 'https://github.com/SandyCompetent/kaggle_analysis_showcase',
+    slug: 'kaggle_analysis_showcase',
+    blurb:
+      'End-to-end data science projects: real Kaggle datasets turned into interactive Streamlit apps across the full workflow — exploration, modelling, and deployment.',
+    stack: ['Python', 'Pandas', 'Scikit-learn', 'Streamlit'],
+    accent: 'indigo',
+    fallback: { pushed_at: '2025-08-25T22:12:40Z', stargazers_count: 0, language: 'Jupyter Notebook', license: 'MIT' },
+  },
+  {
+    name: 'Stock Market Analysis',
+    repo: 'https://github.com/SandyCompetent/stock_market_analysis',
+    slug: 'stock_market_analysis',
+    blurb:
+      'Exploratory analysis and modelling of equity time-series — ingesting market data, engineering features, and surfacing trends through reproducible notebooks.',
+    stack: ['Python', 'NumPy', 'Pandas', 'Matplotlib'],
+    accent: 'emerald',
+    fallback: { pushed_at: '2025-08-09T17:05:34Z', stargazers_count: 0, language: 'Jupyter Notebook', license: null },
+  },
+];
+
+const resolved = await Promise.all(
+  projects.map(async (p) => {
+    const live = await fetchRepo(p.slug);
+    const meta = live ?? p.fallback;
+    return {
+      ...p,
+      meta: {
+        updated: monthYear(meta.pushed_at ?? p.fallback.pushed_at),
+        stars: meta.stargazers_count ?? 0,
+        language: meta.language ?? p.fallback.language,
+        license: meta.license ?? p.fallback.license,
+      },
+    };
+  })
+);
+
+const flagship = resolved.find((p) => p.featured)!;
+const rest = resolved.filter((p) => !p.featured);
+
+const accentMap = {
+  blue: { text: 'text-blue-600', border: 'hover:border-blue-300', bar: 'via-blue-400/60' },
+  indigo: { text: 'text-indigo-600', border: 'hover:border-indigo-300', bar: 'via-indigo-400/60' },
+  emerald: { text: 'text-emerald-600', border: 'hover:border-emerald-300', bar: 'via-emerald-400/60' },
+};
+const cardShadow = 'shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgb(15,23,42,0.07)]';
+---
+
+<section
+  id="projects"
+  class="relative w-full overflow-hidden bg-slate-50 py-28 text-slate-900 sm:py-36"
+  aria-labelledby="projects-heading"
+>
+  <div
+    class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-6xl px-6">
+    <!-- Section Header -->
+    <div class="ds-reveal mb-16 max-w-3xl">
+      <div class="mb-4 inline-flex items-center gap-2.5 font-mono text-xs uppercase tracking-[0.22em] text-blue-600">
+        <span class="h-2 w-2 rounded-full bg-blue-600"></span>
+        <span>03 // Featured Work</span>
+      </div>
+      <h2 id="projects-heading" class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+        Open-Source Projects
+      </h2>
+      <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+        Shipping agents and reproducible analytics in the open &mdash; from Gemini-powered assistants to deployed data apps.
+      </p>
+    </div>
+
+    <!-- Flagship card (full width) -->
+    <a
+      href={flagship.demo ?? flagship.repo}
+      target="_blank"
+      rel="noopener noreferrer"
+      class={`ds-reveal group relative mb-6 flex flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-8 ${cardShadow} transition-all duration-300 sm:p-10 ${accentMap[flagship.accent].border}`}
+    >
+      <div class={`pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent ${accentMap[flagship.accent].bar} to-transparent`} aria-hidden="true"></div>
+
+      <div class="grid gap-8 lg:grid-cols-12 lg:items-center">
+        <div class="lg:col-span-8">
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 font-mono text-xs font-medium text-blue-700">
+              <span class="h-1.5 w-1.5 rounded-full bg-blue-600"></span>
+              Flagship
+            </span>
+            <span class="rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1 font-mono text-xs text-slate-700">
+              Live Demo
+            </span>
+          </div>
+
+          <h3 class="mt-5 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+            {flagship.name}
+          </h3>
+          <p class="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
+            {flagship.blurb}
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-2 font-mono text-[11px]">
+            {flagship.stack.map((s) => (
+              <span class="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 text-slate-700">{s}</span>
+            ))}
+          </div>
+
+          <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] text-slate-500">
+            {flagship.meta.language && (
+              <span class="inline-flex items-center gap-1.5"><span class="h-2 w-2 rounded-full bg-blue-500"></span>{flagship.meta.language}</span>
+            )}
+            {flagship.meta.updated && <span>Updated {flagship.meta.updated}</span>}
+            {flagship.meta.license && <span>{flagship.meta.license}</span>}
+            {flagship.meta.stars > 0 && <span class="inline-flex items-center gap-1">&#9733; {flagship.meta.stars}</span>}
+          </div>
+        </div>
+
+        <!-- CTA cluster -->
+        <div class="flex flex-col gap-3 lg:col-span-4">
+          <span class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-white transition-all group-hover:bg-slate-800">
+            Open Live Demo
+            <span class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">&nearr;</span>
+          </span>
+          <span class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 font-mono text-xs font-medium uppercase tracking-[0.14em] text-slate-700 transition-colors group-hover:border-slate-900 group-hover:text-slate-900">
+            View Repository
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Secondary project grid -->
+    <div class="grid gap-6 md:grid-cols-2">
+      {
+        rest.map((p) => {
+          const a = accentMap[p.accent];
+          return (
+            <a
+              href={p.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`ds-reveal group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-8 ${cardShadow} transition-all duration-300 ${a.border}`}
+            >
+              <div class={`pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent ${a.bar} to-transparent`} aria-hidden="true" />
+              <div class="flex items-center justify-between">
+                <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 font-mono text-[11px] text-slate-700">
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                  {p.meta.language}
+                </span>
+                <span class={`font-mono text-lg transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 ${a.text}`} aria-hidden="true">
+                  &nearr;
+                </span>
+              </div>
+
+              <h3 class="mt-6 text-2xl font-bold tracking-tight text-slate-900">{p.name}</h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 sm:text-base">{p.blurb}</p>
+
+              <div class="mt-6 flex flex-wrap gap-2 font-mono text-[11px]">
+                {p.stack.map((s) => (
+                  <span class="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 text-slate-700">{s}</span>
+                ))}
+              </div>
+
+              <div class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-slate-200 pt-4 font-mono text-[11px] text-slate-500">
+                {p.meta.updated && <span>Updated {p.meta.updated}</span>}
+                {p.meta.license && <span>{p.meta.license}</span>}
+                {p.meta.stars > 0 && <span class="inline-flex items-center gap-1">&#9733; {p.meta.stars}</span>}
+              </div>
+            </a>
+          );
+        })
+      }
+    </div>
+
+    <div class="ds-reveal mt-10 text-center">
+      <a
+        href="https://github.com/SandyCompetent?tab=repositories"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-slate-500 transition-colors hover:text-blue-600"
+      >
+        View all repositories on GitHub
+        <span class="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const dsItems = document.querySelectorAll('.ds-reveal');
+  dsItems.forEach((item) => {
+    if (prefersReducedMotion) return;
+    gsap.fromTo(
+      item,
+      { opacity: 0, y: 44 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 88%',
+          toggleActions: 'play none none reverse',
+        },
+      }
+    );
+  });
+</script>

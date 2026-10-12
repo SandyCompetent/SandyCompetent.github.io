@@ -64,11 +64,13 @@
               India. Built the app from the ground up, managed deployments, and tracked live reporting.
             </p>
 
-            <!-- Action: Play Store and App Store Buttons -->
+            <!-- Action: Live store + website links -->
             <div class="mt-8 flex flex-wrap items-center gap-4">
               <a
-                href="#engineering-foundation"
-                aria-label="Get NovoCabs on Google Play Store"
+                href="https://play.google.com/store/apps/details?id=com.novocabs.user"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get Novo Cabs on Google Play"
                 class="inline-flex items-center gap-3.5 rounded-xl bg-slate-900 px-5 py-3 text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md"
               >
                 <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -85,20 +87,21 @@
               </a>
 
               <a
-                href="#engineering-foundation"
-                aria-label="Download NovoCabs on the Apple App Store"
+                href="https://novocabs.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit the Novo Cabs website"
                 class="inline-flex items-center gap-3.5 rounded-xl border border-slate-300 bg-white px-5 py-3 text-slate-900 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-900 hover:bg-slate-50 hover:shadow-md"
               >
-                <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path
-                    d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.33c.64-.78 1.08-1.86.96-2.94-.93.04-2.06.62-2.72 1.4-.58.68-1.1 1.79-.96 2.84 1.04.08 2.08-.52 2.72-1.3"
-                  ></path>
+                <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path stroke-linecap="round" d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3Z"></path>
                 </svg>
                 <div class="text-left leading-tight">
                   <span class="block text-[10px] font-mono uppercase tracking-wider text-slate-500">
-                    Download on the
+                    Visit the
                   </span>
-                  <span class="text-sm font-semibold tracking-tight">App Store</span>
+                  <span class="text-sm font-semibold tracking-tight">Website</span>
                 </div>
               </a>
             </div>
@@ -168,19 +171,19 @@
           </p>
         </div>
 
-        <!-- Action: Placeholder <div> for an image carousel for app screenshots -->
+        <!-- Interactive UI concept walkthrough for the BlockPay app -->
         <div
           id="blockpay-screenshot-carousel"
           data-carousel="blockpay-screenshots"
-          class="mt-10 rounded-2xl border border-dashed border-slate-300 bg-slate-50/80 p-6 sm:p-8"
+          class="mt-10 rounded-2xl border border-slate-200 bg-slate-50/80 p-6 sm:p-8"
         >
           <div class="mb-5 flex flex-wrap items-center justify-between gap-4">
             <div>
-              <span class="font-mono text-xs font-semibold uppercase tracking-wider text-slate-700">
-                App Screenshots Carousel Placeholder
+              <span class="font-mono text-xs font-semibold uppercase tracking-wider text-blue-600">
+                Product UI &middot; Concept Walkthrough
               </span>
-              <p class="text-xs text-slate-500">
-                Drop screenshot assets into <code class="font-mono text-slate-700">/public/screenshots/blockpay-*.png</code>
+              <p class="mt-1 text-xs text-slate-500">
+                Core screens from the BlockPay build &mdash; wallet, BBPS rails, commission engine &amp; settlement bridge.
               </p>
             </div>
             <div class="flex items-center gap-2">
@@ -466,8 +469,10 @@
   gsap.registerPlugin(ScrollTrigger);
 
   // Scroll-triggered fade-up reveal for MobileEra blocks
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const mobileItems = document.querySelectorAll('.mobile-reveal');
   mobileItems.forEach((item) => {
+    if (prefersReducedMotion) return;
     gsap.fromTo(
       item,
       { opacity: 0, y: 44 },

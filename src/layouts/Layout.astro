@@ -10,6 +10,10 @@ const {
   title = 'Sandeep | Software & Agentic AI Engineer',
   description = 'Bridging four years of high-performance mobile architecture with autonomous machine learning. Data Science MSc (Distinction) | University of Exeter.',
 } = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://sandeepmalviya.me');
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const ogImage = new URL('/og-image.png', siteUrl);
 ---
 
 <!doctype html>
@@ -20,13 +24,43 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Sandeep Malviya" />
+    <meta name="keywords" content="Sandeep Malviya, Agentic AI Engineer, Machine Learning Engineer, Data Scientist, LLM, Multi-Agent Systems, Flutter, PyTorch, University of Exeter" />
+    <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#f8fafc" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sandeep Malviya" />
+    <meta property="og:locale" content="en_GB" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://sandeepmalviya.me/" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sandeep Malviya — Software & Agentic AI Engineer" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: 'Sandeep Malviya',
+      url: siteUrl.href,
+      image: ogImage.href,
+      jobTitle: 'Agentic AI Engineer',
+      description: description,
+      alumniOf: { '@type': 'CollegeOrUniversity', name: 'University of Exeter' },
+      knowsAbout: ['Agentic AI', 'Large Language Models', 'Multi-Agent Systems', 'Machine Learning', 'Deep Learning', 'Flutter', 'PyTorch', 'Python'],
+      sameAs: ['https://github.com/SandyCompetent', 'https://www.linkedin.com/in/sandeep-malviya-ml'],
+    })} />
 
     <!-- Google Fonts: Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,7 +83,6 @@ const {
         --text-primary: #0f172a;
         --text-muted: #475569;
         --border-color: rgba(15, 23, 42, 0.08);
-        --pivot-glow-opacity: 0;
       }
 
       #smooth-wrapper {
@@ -65,6 +98,9 @@ const {
 
       gsap.registerPlugin(ScrollTrigger);
 
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const NAV_OFFSET = -84; // leave room for the fixed nav when jumping to anchors
+
       const lenisOptions = {
         duration: 1.2,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -76,29 +112,34 @@ const {
         touchMultiplier: 1.8,
       };
 
-      const lenis = new Lenis(lenisOptions as ConstructorParameters<typeof Lenis>[0]);
+      // Only enable Lenis smooth-scroll when the user has not requested reduced motion.
+      const lenis = prefersReducedMotion
+        ? null
+        : new Lenis(lenisOptions as ConstructorParameters<typeof Lenis>[0]);
 
-      // Synchronize Lenis scroll events with GSAP ScrollTrigger
-      lenis.on('scroll', ScrollTrigger.update);
+      if (lenis) {
+        // Synchronize Lenis scroll events with GSAP ScrollTrigger
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+          lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+        // Expose lenis globally for anchor navigation
+        (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
+      }
 
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-      });
-
-      gsap.ticker.lagSmoothing(0);
-
-      // Expose lenis globally for anchor navigation
-      (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
-
-      // Smooth anchor scrolling via Lenis
+      // Anchor navigation — smooth via Lenis, or a reduced-motion-safe native jump.
       document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', (e) => {
           const targetId = anchor.getAttribute('href');
           if (!targetId || targetId === '#') return;
           const targetEl = document.querySelector<HTMLElement>(targetId);
-          if (targetEl) {
-            e.preventDefault();
-            lenis.scrollTo(targetEl, { offset: 0, duration: 1.4 });
+          if (!targetEl) return;
+          e.preventDefault();
+          if (lenis) {
+            lenis.scrollTo(targetEl, { offset: NAV_OFFSET, duration: 1.4 });
+          } else {
+            targetEl.scrollIntoView({ behavior: 'auto', block: 'start' });
           }
         });
       });
