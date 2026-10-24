@@ -4,6 +4,7 @@ const links = [
   { label: 'Engineering', href: '#engineering-foundation' },
   { label: 'AI Frontier', href: '#ai-frontier' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Credentials', href: '#credentials' },
   { label: 'Contact', href: '#contact' },
 ];
 ---
@@ -11,7 +12,7 @@ const links = [
 <header class="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4 sm:pt-5">
   <nav
     aria-label="Primary"
-    class="pointer-events-auto flex w-full max-w-3xl items-center justify-between gap-2 rounded-2xl border border-slate-200/80 bg-white/80 px-3 py-2 shadow-[0_8px_30px_rgb(15,23,42,0.08)] backdrop-blur-xl sm:rounded-full sm:px-4"
+    class="pointer-events-auto flex w-full max-w-3xl items-center justify-between gap-2 rounded-2xl border border-slate-200/80 bg-white/85 px-3 py-2 shadow-[0_8px_30px_rgb(15,23,42,0.08)] backdrop-blur-xl sm:rounded-full sm:px-4"
   >
     <!-- Monogram / Home -->
     <a
@@ -28,12 +29,12 @@ const links = [
     </a>
 
     <!-- Desktop links -->
-    <div class="hidden items-center gap-1 md:flex">
+    <div class="hidden items-center gap-0.5 md:flex">
       {
         links.map((link) => (
           <a
             href={link.href}
-            class="rounded-full px-3.5 py-1.5 font-mono text-xs uppercase tracking-[0.14em] text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+            class="rounded-full px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
           >
             {link.label}
           </a>
@@ -61,7 +62,7 @@ const links = [
         Email
       </a>
 
-      <!-- Mobile menu toggle -->
+      <!-- Mobile menu toggle button -->
       <button
         type="button"
         id="nav-toggle"
@@ -70,8 +71,13 @@ const links = [
         aria-controls="nav-mobile-panel"
         class="flex h-9 w-9 items-center justify-center rounded-full text-slate-700 transition-colors hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 md:hidden"
       >
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <!-- Hamburger icon -->
+        <svg id="icon-menu" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+        <!-- Close (X) icon -->
+        <svg id="icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
     </div>
@@ -83,10 +89,11 @@ const links = [
   id="nav-mobile-panel"
   class="pointer-events-none fixed inset-x-0 top-[72px] z-40 mx-auto hidden max-w-3xl px-4 md:hidden"
 >
-  <div class="pointer-events-auto overflow-hidden rounded-2xl border border-slate-200/80 bg-white/95 p-2 shadow-[0_8px_30px_rgb(15,23,42,0.12)] backdrop-blur-xl">
+  <div class="pointer-events-auto overflow-hidden rounded-2xl border border-slate-200/90 bg-white/95 p-2 shadow-[0_12px_36px_rgb(15,23,42,0.14)] backdrop-blur-2xl">
     <a href="#engineering-foundation" class="nav-mobile-link block rounded-xl px-4 py-3 font-mono text-sm uppercase tracking-[0.14em] text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900">Engineering</a>
     <a href="#ai-frontier" class="nav-mobile-link block rounded-xl px-4 py-3 font-mono text-sm uppercase tracking-[0.14em] text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900">AI Frontier</a>
     <a href="#projects" class="nav-mobile-link block rounded-xl px-4 py-3 font-mono text-sm uppercase tracking-[0.14em] text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900">Projects</a>
+    <a href="#credentials" class="nav-mobile-link block rounded-xl px-4 py-3 font-mono text-sm uppercase tracking-[0.14em] text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900">Credentials</a>
     <a href="#contact" class="nav-mobile-link block rounded-xl px-4 py-3 font-mono text-sm uppercase tracking-[0.14em] text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900">Contact</a>
     <a href="mailto:sandy.competent@gmail.com" class="mt-1 block rounded-xl bg-slate-900 px-4 py-3 text-center font-mono text-sm font-semibold uppercase tracking-[0.14em] text-white transition-colors hover:bg-slate-800">Email Me</a>
   </div>
@@ -95,19 +102,34 @@ const links = [
 <script>
   const toggle = document.getElementById('nav-toggle');
   const panel = document.getElementById('nav-mobile-panel');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
 
-  if (toggle && panel) {
-    const close = () => {
-      panel.classList.add('hidden');
-      toggle.setAttribute('aria-expanded', 'false');
+  if (toggle && panel && iconMenu && iconClose) {
+    const updateState = (isOpen: boolean) => {
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      if (isOpen) {
+        panel.classList.remove('hidden');
+        iconMenu.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+      } else {
+        panel.classList.add('hidden');
+        iconMenu.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      }
     };
+
     toggle.addEventListener('click', () => {
-      const isHidden = panel.classList.toggle('hidden');
-      toggle.setAttribute('aria-expanded', String(!isHidden));
+      const isCurrentlyOpen = toggle.getAttribute('aria-expanded') === 'true';
+      updateState(!isCurrentlyOpen);
     });
-    panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
+
+    panel.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => updateState(false));
+    });
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') close();
+      if (e.key === 'Escape') updateState(false);
     });
   }
 </script>

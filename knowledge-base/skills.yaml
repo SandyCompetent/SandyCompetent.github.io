@@ -1,15 +1,15 @@
 # Footer "Core Stack Matrix" — floating skill badges
-label: "04 // Core Stack Matrix"
+label: "05 // Core Stack Matrix"
 heading: "Production Arsenal"
 
 skills:
   - name: "Python"
     tag: "AI / Deep Learning"
-  - name: "SQL"
+  - name: "Flutter & Dart"
+    tag: "Production Mobile"
+  - name: "Agentic AI"
+    tag: "MCP & Multi-Agent"
+  - name: "SQL & Postgres"
     tag: "Data Engineering"
-  - name: "Flutter"
-    tag: "Cross-Platform UI"
-  - name: "AWS"
-    tag: "Cloud Infrastructure"
-  - name: "Docker"
-    tag: "Container Runtime"
+  - name: "Cloud & Docker"
+    tag: "GCP / DevOps / CI"

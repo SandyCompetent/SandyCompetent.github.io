@@ -1,6 +1,6 @@
 ---
-order: 1
-featured: true
+order: 4
+featured: false
 name: "Exeter Academic Agent"
 repo: "https://github.com/SandyCompetent/exeter_academic_agent"
 demo: "https://sandycompetent.github.io/exeter_academic_agent/"

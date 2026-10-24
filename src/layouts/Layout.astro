@@ -57,9 +57,30 @@ const ogImage = new URL('/og-image.png', siteUrl);
       image: ogImage.href,
       jobTitle: 'Agentic AI Engineer',
       description: description,
-      alumniOf: { '@type': 'CollegeOrUniversity', name: 'University of Exeter' },
-      knowsAbout: ['Agentic AI', 'Large Language Models', 'Multi-Agent Systems', 'Machine Learning', 'Deep Learning', 'Flutter', 'PyTorch', 'Python'],
-      sameAs: ['https://github.com/SandyCompetent', 'https://www.linkedin.com/in/sandeep-malviya-ml'],
+      alumniOf: [
+        { '@type': 'CollegeOrUniversity', name: 'University of Exeter' },
+        { '@type': 'CollegeOrUniversity', name: 'G.H. Raisoni College of Engineering and Management, Pune' }
+      ],
+      knowsAbout: [
+        'Agentic AI',
+        'Model Context Protocol (MCP)',
+        'Large Language Models',
+        'Multi-Agent Systems',
+        'Grounded RAG',
+        'Machine Learning',
+        'Deep Learning',
+        'FinBERT',
+        'Flutter',
+        'Dart',
+        'FastAPI',
+        'Python',
+        'PostgreSQL'
+      ],
+      sameAs: [
+        'https://github.com/SandyCompetent',
+        'https://www.linkedin.com/in/sandeep-malviya-ml',
+        'https://chatbud-official.web.app'
+      ],
     })} />
 
     <!-- Google Fonts: Inter & JetBrains Mono -->
@@ -102,14 +123,13 @@ const ogImage = new URL('/og-image.png', siteUrl);
       const NAV_OFFSET = -84; // leave room for the fixed nav when jumping to anchors
 
       const lenisOptions = {
-        duration: 1.2,
+        duration: 1.1,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         orientation: 'vertical' as const,
         gestureOrientation: 'vertical' as const,
         smoothWheel: true,
-        smoothTouch: true,
-        syncTouch: true,
-        touchMultiplier: 1.8,
+        smoothTouch: false,
+        syncTouch: false,
       };
 
       // Only enable Lenis smooth-scroll when the user has not requested reduced motion.

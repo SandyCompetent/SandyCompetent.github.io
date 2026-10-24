@@ -52,15 +52,46 @@ type Project = {
 
 const projects: Project[] = [
   {
+    name: 'ChatBud — Multi-Agent Workspace & Grounded RAG Platform',
+    repo: 'https://github.com/Sandip-Zanzrukia/chatbud',
+    slug: 'chatbud',
+    demo: 'https://chatbud-official.web.app',
+    blurb:
+      'A stateful multi-agent messaging platform built with Flutter 3.33+ and Firebase AI (Gemini 2.5 / 2.0). Features an on-device Grounded RAG engine with live verified citations, 16 curated agent personas, Campus Live Hub, and an encrypted local vector memory vault.',
+    stack: ['Flutter 3.33+', 'Firebase AI', 'Gemini 2.5', 'Grounded RAG', 'Vector Memory Vault'],
+    accent: 'blue',
+    featured: true,
+    fallback: { pushed_at: '2026-10-24T00:37:00Z', stargazers_count: 1, language: 'Dart', license: 'MIT' },
+  },
+  {
+    name: 'FinPal — Shared Finance & Debt Simplification',
+    repo: 'https://github.com/SandyCompetent/finpal',
+    slug: 'finpal',
+    blurb:
+      'Cross-platform shared expense and bill-splitting platform with a Flutter client (iOS/Android/Web) and FastAPI backend. Features graph-based debt simplification, multi-party group settlements, and real-time activity feeds.',
+    stack: ['Flutter', 'FastAPI', 'Python', 'PostgreSQL', 'Redis'],
+    accent: 'emerald',
+    fallback: { pushed_at: '2026-10-14T16:00:00Z', stargazers_count: 0, language: 'Dart', license: null },
+  },
+  {
+    name: 'Secure e-Voting System',
+    repo: 'https://github.com/SandyCompetent/evoting-system',
+    slug: 'evoting-system',
+    blurb:
+      'Audited digital ballot web platform engineered with layered Domain/Service/Repository architecture. Features database-enforced double-voting prevention, Bcrypt hashing, CSRF security, and a CLI test runner with 53 unit tests.',
+    stack: ['PHP 8+', 'MySQL', 'Bootstrap 5', 'Unit Tests', 'Security'],
+    accent: 'indigo',
+    fallback: { pushed_at: '2026-10-23T12:45:00Z', stargazers_count: 0, language: 'PHP', license: null },
+  },
+  {
     name: 'Exeter Academic Agent',
     repo: 'https://github.com/SandyCompetent/exeter_academic_agent',
     slug: 'exeter_academic_agent',
     demo: 'https://sandycompetent.github.io/exeter_academic_agent/',
     blurb:
-      'An agentic AI assistant built on Google Gemini 2.5 — streaming LLM responses, multi-tool data routing, and a cross-platform Flutter deployment.',
+      'An agentic AI assistant built on Google Gemini 2.5 — streaming LLM token responses, multi-tool data routing, and cross-platform Flutter deployment.',
     stack: ['Dart', 'Flutter', 'Gemini 2.5', 'LLM Agents'],
     accent: 'blue',
-    featured: true,
     fallback: { pushed_at: '2026-03-19T10:44:33Z', stargazers_count: 0, language: 'Dart', license: 'MIT' },
   },
   {
@@ -74,12 +105,12 @@ const projects: Project[] = [
     fallback: { pushed_at: '2025-08-25T22:12:40Z', stargazers_count: 0, language: 'Jupyter Notebook', license: 'MIT' },
   },
   {
-    name: 'Stock Market Analysis',
+    name: 'Stock Market Analysis & Forecasting',
     repo: 'https://github.com/SandyCompetent/stock_market_analysis',
     slug: 'stock_market_analysis',
     blurb:
-      'Exploratory analysis and modelling of equity time-series — ingesting market data, engineering features, and surfacing trends through reproducible notebooks.',
-    stack: ['Python', 'NumPy', 'Pandas', 'Matplotlib'],
+      'Exploratory analysis and predictive modelling of equity time-series — ingesting market feeds, engineering features, and analyzing volatility through reproducible notebooks.',
+    stack: ['Python', 'NumPy', 'Pandas', 'FinBERT', 'Matplotlib'],
     accent: 'emerald',
     fallback: { pushed_at: '2025-08-09T17:05:34Z', stargazers_count: 0, language: 'Jupyter Notebook', license: null },
   },
@@ -202,7 +233,7 @@ const cardShadow = 'shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50p
           const a = accentMap[p.accent];
           return (
             <a
-              href={p.repo}
+              href={p.demo ?? p.repo}
               target="_blank"
               rel="noopener noreferrer"
               class={`ds-reveal group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-8 ${cardShadow} transition-all duration-300 ${a.border}`}
