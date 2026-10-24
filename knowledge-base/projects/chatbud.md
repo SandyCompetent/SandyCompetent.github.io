@@ -2,7 +2,7 @@
 order: 1
 featured: true
 name: "ChatBud — Multi-Agent Workspace & Grounded RAG Platform"
-repo: "https://github.com/Sandip-Zanzrukia/chatbud"
+repo: "https://github.com/SandyCompetent/chatbud"
 demo: "https://chatbud-official.web.app"
 stack: ["Flutter 3.33+", "Firebase AI", "Gemini 2.5", "Grounded RAG", "Vector Memory Vault"]
 accent: "blue"
