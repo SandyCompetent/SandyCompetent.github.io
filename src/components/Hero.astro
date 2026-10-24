@@ -23,32 +23,32 @@
   <!-- Core Hero Typography -->
   <div class="relative z-10 mx-auto max-w-4xl text-center">
     <h1
-      class="hero-reveal text-balance text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl lg:leading-[1.08]"
+      class="hero-reveal text-balance text-3xl font-extrabold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl lg:leading-[1.08]"
     >
       Sandeep | Software &amp; Agentic AI Engineer
     </h1>
 
     <p
-      class="hero-reveal mx-auto mt-6 max-w-2xl text-pretty text-lg font-normal leading-relaxed text-slate-600 sm:text-xl md:text-2xl md:leading-relaxed"
+      class="hero-reveal mx-auto mt-5 max-w-2xl text-pretty text-base font-normal leading-relaxed text-slate-600 sm:mt-6 sm:text-xl md:text-2xl md:leading-relaxed"
     >
-      Bridging four years of high-performance mobile architecture with autonomous machine learning.
+      Bridging 4+ years of commercial mobile architecture with autonomous multi-agent systems and applied machine learning.
     </p>
 
     <div
-      class="hero-reveal mt-10 flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-500"
+      class="hero-reveal mt-8 flex flex-wrap items-center justify-center gap-2 text-[11px] font-mono text-slate-500 sm:mt-10 sm:gap-3 sm:text-xs"
     >
-      <span class="rounded-md border border-slate-200 bg-white/70 px-3 py-1.5 backdrop-blur-sm">
+      <span class="rounded-md border border-slate-200 bg-white/80 px-2.5 py-1.5 shadow-sm backdrop-blur-sm sm:px-3">
         Mobile Systems (Flutter / Kotlin)
       </span>
       <span class="text-slate-300">&rarr;</span>
-      <span class="rounded-md border border-slate-200 bg-white/70 px-3 py-1.5 backdrop-blur-sm">
+      <span class="rounded-md border border-slate-200 bg-white/80 px-2.5 py-1.5 shadow-sm backdrop-blur-sm sm:px-3">
         MSc Data Science (Distinction)
       </span>
       <span class="text-slate-300">&rarr;</span>
       <span
-        class="rounded-md border border-blue-200/80 bg-blue-50/70 px-3 py-1.5 text-blue-700 backdrop-blur-sm"
+        class="rounded-md border border-blue-200/90 bg-blue-50/80 px-2.5 py-1.5 font-medium text-blue-700 shadow-sm backdrop-blur-sm sm:px-3"
       >
-        Agentic AI Engineering
+        Agentic AI Systems (Exeter)
       </span>
     </div>
 
@@ -149,7 +149,10 @@
       };
 
       const createNodes = () => {
-        const count = Math.min(Math.max(Math.floor((width * height) / 18000), 28), 72);
+        const isMobile = width < 640;
+        const count = isMobile
+          ? Math.min(Math.floor((width * height) / 32000), 20)
+          : Math.min(Math.max(Math.floor((width * height) / 18000), 28), 64);
         nodes = Array.from({ length: count }, () => ({
           x: Math.random() * width,
           y: Math.random() * height,
