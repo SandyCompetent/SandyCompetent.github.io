@@ -1,11 +1,12 @@
 ---
 // Section 5 - Skills Grid & Footer (light theme)
 const skills = [
-  { name: 'Python', tag: 'AI / Deep Learning', dot: 'bg-blue-500', delay: '0s' },
-  { name: 'Flutter & Dart', tag: 'Production Mobile', dot: 'bg-cyan-500', delay: '0.5s' },
-  { name: 'Agentic AI', tag: 'MCP & Multi-Agent', dot: 'bg-indigo-500', delay: '1.0s' },
-  { name: 'SQL & Postgres', tag: 'Data Engineering', dot: 'bg-sky-500', delay: '1.5s' },
-  { name: 'Cloud & Docker', tag: 'GCP / DevOps / CI', dot: 'bg-amber-500', delay: '2.0s' },
+  { name: 'Agentic AI', tag: 'MCP & Multi-Agent', dot: 'bg-indigo-500', delay: '0s' },
+  { name: 'Python & ML', tag: 'PyTorch / FinBERT', dot: 'bg-blue-500', delay: '0.4s' },
+  { name: 'Flutter & Dart', tag: 'Production Mobile & Web', dot: 'bg-cyan-500', delay: '0.8s' },
+  { name: 'IoT & Telemetry', tag: 'BLE, MQTT & Sensors', dot: 'bg-purple-500', delay: '1.2s' },
+  { name: 'SQL & Data', tag: 'Postgres & Vector Search', dot: 'bg-sky-500', delay: '1.6s' },
+  { name: 'Cloud & DevOps', tag: 'GCP / Docker / Fastlane', dot: 'bg-amber-500', delay: '2.0s' },
 ];
 ---
 
@@ -31,9 +32,9 @@ const skills = [
         Production Arsenal
       </h2>
 
-      <!-- 5 Floating Badges: Python, Flutter & Dart, Agentic AI, SQL, Cloud -->
+      <!-- 6 Floating Badges: Agentic AI, Python/ML, Flutter, IoT, SQL, Cloud -->
       <div
-        class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-6"
+        class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 lg:gap-4"
         role="list"
         aria-label="Core Technologies"
       >
@@ -42,15 +43,15 @@ const skills = [
             <div
               role="listitem"
               style={`animation-delay: ${skill.delay};`}
-              class="skill-badge md:animate-float-badge group relative flex flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white px-5 py-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 last:col-span-2 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_20px_50px_rgb(15,23,42,0.07)] sm:last:col-span-1"
+              class="skill-badge md:animate-float-badge group relative flex flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white px-4 py-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_20px_50px_rgb(15,23,42,0.07)]"
             >
-              <div class="mb-3 flex items-center gap-2">
+              <div class="mb-3 flex items-center gap-1.5">
                 <span class={`h-2 w-2 rounded-full ${skill.dot}`} />
-                <span class="font-mono text-[10px] uppercase tracking-widest text-slate-400">
+                <span class="font-mono text-[9px] uppercase tracking-wider text-slate-400">
                   {skill.tag}
                 </span>
               </div>
-              <span class="text-lg font-extrabold tracking-tight text-slate-900 sm:text-xl">
+              <span class="text-base font-extrabold tracking-tight text-slate-900 sm:text-lg text-center">
                 {skill.name}
               </span>
             </div>
@@ -63,7 +64,7 @@ const skills = [
     <div class="my-20 h-px w-full bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
 
     <!-- Footer Contact (No Forms) -->
-    <div class="footer-reveal mx-auto max-w-4xl text-center">
+    <div class="footer-reveal mx-auto max-w-5xl text-center">
       <p class="font-mono text-xs uppercase tracking-[0.25em] text-slate-500">
         Initiate Connection
       </p>
@@ -74,30 +75,15 @@ const skills = [
         Let's build something autonomous.
       </h2>
 
-      <!-- 3 Large Minimalist Buttons -->
-      <div class="mt-12 grid gap-4 sm:grid-cols-3 sm:gap-6">
+      <!-- 4 Minimalist Buttons: Email, LinkedIn, GitHub, CV -->
+      <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <a
           href="mailto:sandy.competent@gmail.com"
-          class="group flex items-center justify-between rounded-2xl bg-slate-900 px-7 py-6 text-lg font-bold tracking-tight text-white transition-all duration-300 hover:-translate-y-1 hover:bg-slate-800 hover:shadow-[0_20px_50px_rgb(15,23,42,0.12)]"
+          class="group flex items-center justify-between rounded-2xl bg-slate-900 px-6 py-5 text-base font-bold tracking-tight text-white transition-all duration-300 hover:-translate-y-1 hover:bg-slate-800 hover:shadow-[0_20px_50px_rgb(15,23,42,0.12)]"
         >
           <span>Email Me</span>
           <span
-            class="font-mono text-xl transition-transform duration-300 group-hover:translate-x-1"
-            aria-hidden="true"
-          >
-            &nearr;
-          </span>
-        </a>
-
-        <a
-          href="https://github.com/SandyCompetent"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group flex items-center justify-between rounded-2xl border border-slate-300 bg-white px-7 py-6 text-lg font-bold tracking-tight text-slate-900 transition-all duration-300 hover:-translate-y-1 hover:border-slate-900 hover:shadow-[0_20px_50px_rgb(15,23,42,0.08)]"
-        >
-          <span>GitHub</span>
-          <span
-            class="font-mono text-xl text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-slate-900"
+            class="font-mono text-lg transition-transform duration-300 group-hover:translate-x-1"
             aria-hidden="true"
           >
             &nearr;
@@ -108,11 +94,41 @@ const skills = [
           href="https://www.linkedin.com/in/sandeep-malviya-ml"
           target="_blank"
           rel="noopener noreferrer"
-          class="group flex items-center justify-between rounded-2xl border border-slate-300 bg-white px-7 py-6 text-lg font-bold tracking-tight text-slate-900 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-[0_20px_50px_rgb(15,23,42,0.08)]"
+          class="group flex items-center justify-between rounded-2xl border border-slate-300 bg-white px-6 py-5 text-base font-bold tracking-tight text-slate-900 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-[0_20px_50px_rgb(15,23,42,0.08)]"
         >
           <span>LinkedIn</span>
           <span
-            class="font-mono text-xl text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-blue-600"
+            class="font-mono text-lg text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-blue-600"
+            aria-hidden="true"
+          >
+            &nearr;
+          </span>
+        </a>
+
+        <a
+          href="https://github.com/SandyCompetent"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center justify-between rounded-2xl border border-slate-300 bg-white px-6 py-5 text-base font-bold tracking-tight text-slate-900 transition-all duration-300 hover:-translate-y-1 hover:border-slate-900 hover:shadow-[0_20px_50px_rgb(15,23,42,0.08)]"
+        >
+          <span>GitHub</span>
+          <span
+            class="font-mono text-lg text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-slate-900"
+            aria-hidden="true"
+          >
+            &nearr;
+          </span>
+        </a>
+
+        <a
+          href="/cv.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center justify-between rounded-2xl border border-slate-300 bg-slate-100/80 px-6 py-5 text-base font-bold tracking-tight text-slate-900 transition-all duration-300 hover:-translate-y-1 hover:border-slate-900 hover:bg-white hover:shadow-[0_20px_50px_rgb(15,23,42,0.08)]"
+        >
+          <span>View CV</span>
+          <span
+            class="font-mono text-lg text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-slate-900"
             aria-hidden="true"
           >
             &nearr;

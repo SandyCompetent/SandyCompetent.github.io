@@ -1,14 +1,17 @@
 ---
-order: 2
+order: 3
 company: "BlockPay FinTech"
-period: "2023 - 2024"
-role: "Core Frontend Developer"
-tag: "Web3 & BBPS FinTech"
+period: "2021 - 2022"
+role: "Mobile Application Developer // FinTech"
+tag: "Chandorkar Tech · BBPS FinTech"
 screenshots_dir: "screenshots/blockpay"
 ---
 
-Integrated proprietary BlockCoin cryptocurrency directly into the app. Implemented
-BBPS services for 35+ utility bill payments and built an MLM commission system.
+Architected a commercial mobile bill payments platform integrating the Bharat Bill Payment
+System (BBPS) across 20+ utility categories (Electricity, Water, Gas, Broadband, DTH, Municipal
+Taxes, Insurance, FasTag). Orchestrated consumer bill fetch, validation, payment gateway
+transitions, and receipt generation across 25+ integrated backend APIs, with Firebase Realtime
+Database powering instantaneous transaction updates.
 
 ## Screens to showcase
 The site currently renders stylised mock screens for these. Add real screenshots

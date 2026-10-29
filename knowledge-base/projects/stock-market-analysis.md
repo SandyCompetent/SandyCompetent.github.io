@@ -1,13 +1,16 @@
 ---
-order: 3
+order: 2
 featured: false
-name: "Stock Market Analysis"
+name: "Stock Market AI — Multimodal Forecasting Platform"
 repo: "https://github.com/SandyCompetent/stock-market-analysis"
-stack: ["Python", "NumPy", "Pandas", "Matplotlib"]
+demo: "https://stock-market-analysis-sandy.streamlit.app/"
+stack: ["Python", "PyTorch", "FinBERT", "LSTM / GRU", "Streamlit"]
 accent: "emerald"
-language: "Jupyter Notebook"
-license: null
+language: "Python"
+license: "MIT"
 ---
 
-Exploratory analysis and modelling of equity time-series — ingesting market data,
-engineering features, and surfacing trends through reproducible notebooks.
+End-to-end multimodal predictive platform fusing quantitative technical indicators (RSI, MACD,
+Bollinger Bands, Moving Averages, OBV) with daily aggregated financial news sentiment extracted
+via FinBERT. Achieved 69.2% directional market prediction accuracy (+4.3% over baselines) across
+LSTM, GRU, SVR, and ARIMA models with an interactive Streamlit simulation dashboard.

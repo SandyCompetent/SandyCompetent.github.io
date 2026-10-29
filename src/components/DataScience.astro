@@ -57,19 +57,41 @@ const projects: Project[] = [
     slug: 'chatbud',
     demo: 'https://chatbud-official.web.app',
     blurb:
-      'A stateful multi-agent messaging platform built with Flutter 3.33+ and Firebase AI (Gemini 2.5 / 2.0). Features an on-device Grounded RAG engine with live verified citations, 16 curated agent personas, Campus Live Hub, and an encrypted local vector memory vault.',
+      'A stateful multi-agent messaging workspace built with Flutter 3.33+ and Firebase AI (Gemini 2.5 / 2.0). Features an on-device Grounded RAG engine with live verified citations to eliminate hallucinations, 16 curated agent personas, encrypted local vector memory vault (pure Dart cosine similarity), and a 100-query automated LLM evaluation suite (100% pass rate).',
     stack: ['Flutter 3.33+', 'Firebase AI', 'Gemini 2.5', 'Grounded RAG', 'Vector Memory Vault'],
     accent: 'blue',
     featured: true,
     fallback: { pushed_at: '2026-10-24T00:37:00Z', stargazers_count: 1, language: 'Dart', license: 'MIT' },
   },
   {
+    name: 'Stock Market AI — Multimodal Forecasting Platform',
+    repo: 'https://github.com/SandyCompetent/stock-market-analysis',
+    slug: 'stock-market-analysis',
+    demo: 'https://stock-market-analysis-sandy.streamlit.app/',
+    blurb:
+      'End-to-end multimodal predictive platform fusing quantitative technical indicators (RSI, MACD, Bollinger Bands, Moving Averages, OBV) with daily aggregated financial news sentiment extracted via FinBERT. Achieved 69.2% directional market prediction accuracy (+4.3% over baselines) across LSTM, GRU, SVR, and ARIMA models with an interactive Streamlit simulation dashboard.',
+    stack: ['Python', 'PyTorch', 'FinBERT', 'LSTM / GRU', 'Streamlit'],
+    accent: 'emerald',
+    fallback: { pushed_at: '2026-10-24T17:17:58Z', stargazers_count: 1, language: 'Python', license: 'MIT' },
+  },
+  {
+    name: 'Exeter Academic Agent — Conversational Assistant',
+    repo: 'https://github.com/SandyCompetent/exeter_academic_agent',
+    slug: 'exeter_academic_agent',
+    demo: 'https://sandycompetent.github.io/exeter_academic_agent/',
+    blurb:
+      'Intelligent conversational assistant powered by Google Gemini 2.5 API with sub-second time-to-first-token streaming, dynamic multi-tool routing for live campus library seat availability, Stagecoach bus schedules, and staff contact directories.',
+    stack: ['Dart', 'Flutter', 'Gemini 2.5', 'Tool Routing', 'MCP'],
+    accent: 'blue',
+    fallback: { pushed_at: '2026-03-19T10:44:33Z', stargazers_count: 0, language: 'Dart', license: 'MIT' },
+  },
+  {
     name: 'FinPal — Shared Finance & Debt Simplification',
     repo: 'https://github.com/SandyCompetent/finpal',
     slug: 'finpal',
     blurb:
-      'Cross-platform shared expense and bill-splitting platform with a Flutter client (iOS/Android/Web) and FastAPI backend. Features graph-based debt simplification, multi-party group settlements, and real-time activity feeds.',
-    stack: ['Flutter', 'FastAPI', 'Python', 'PostgreSQL', 'Redis'],
+      'Cross-platform shared expense and bill-splitting platform featuring a graph-based debt simplification algorithm to minimize transaction volume across multi-party settlements. Built with a responsive Flutter client (iOS/Android/Web) and high-throughput FastAPI backend with PostgreSQL and Redis.',
+    stack: ['Flutter', 'FastAPI', 'Python', 'PostgreSQL', 'Redis', 'Docker'],
     accent: 'emerald',
     fallback: { pushed_at: '2026-10-14T16:00:00Z', stargazers_count: 0, language: 'Dart', license: null },
   },
@@ -77,42 +99,22 @@ const projects: Project[] = [
     name: 'Secure e-Voting System',
     repo: 'https://github.com/SandyCompetent/evoting-system',
     slug: 'evoting-system',
+    demo: 'https://evoting-system.freehosting.dev',
     blurb:
-      'Audited digital ballot web platform engineered with layered Domain/Service/Repository architecture. Features database-enforced double-voting prevention, Bcrypt hashing, CSRF security, and a CLI test runner with 53 unit tests.',
-    stack: ['PHP 8+', 'MySQL', 'Bootstrap 5', 'Unit Tests', 'Security'],
+      'Production-hardened digital ballot web application engineered with layered Domain/Service/Repository architecture. Features database-enforced UNIQUE(voter_id, category_id) double-voting prevention, Argon2id password hashing, CSRF security, and a CLI test runner with 56 unit tests & 142 assertions.',
+    stack: ['PHP 8+', 'MySQL', 'Bootstrap 5', 'Argon2id', 'Unit Testing'],
     accent: 'indigo',
     fallback: { pushed_at: '2026-10-23T12:45:00Z', stargazers_count: 0, language: 'PHP', license: null },
-  },
-  {
-    name: 'Exeter Academic Agent',
-    repo: 'https://github.com/SandyCompetent/exeter_academic_agent',
-    slug: 'exeter_academic_agent',
-    demo: 'https://sandycompetent.github.io/exeter_academic_agent/',
-    blurb:
-      'An agentic AI assistant built on Google Gemini 2.5 — streaming LLM token responses, multi-tool data routing, and cross-platform Flutter deployment.',
-    stack: ['Dart', 'Flutter', 'Gemini 2.5', 'LLM Agents'],
-    accent: 'blue',
-    fallback: { pushed_at: '2026-03-19T10:44:33Z', stargazers_count: 0, language: 'Dart', license: 'MIT' },
   },
   {
     name: 'Kaggle Analysis Showcase',
     repo: 'https://github.com/SandyCompetent/kaggle_analysis_showcase',
     slug: 'kaggle_analysis_showcase',
     blurb:
-      'End-to-end data science projects: real Kaggle datasets turned into interactive Streamlit apps across the full workflow — exploration, modelling, and deployment.',
-    stack: ['Python', 'Pandas', 'Scikit-learn', 'Streamlit'],
+      'End-to-end data science projects turning real Kaggle datasets into interactive Streamlit web apps across the full workflow — exploratory data analysis (EDA), automated feature engineering, model tuning, and deployment.',
+    stack: ['Python', 'Pandas', 'Scikit-learn', 'Streamlit', 'Matplotlib'],
     accent: 'indigo',
     fallback: { pushed_at: '2025-08-25T22:12:40Z', stargazers_count: 0, language: 'Jupyter Notebook', license: 'MIT' },
-  },
-  {
-    name: 'Stock Market Analysis & Forecasting',
-    repo: 'https://github.com/SandyCompetent/stock-market-analysis',
-    slug: 'stock-market-analysis',
-    blurb:
-      'Exploratory analysis and predictive modelling of equity time-series — ingesting market feeds, engineering features, and analyzing volatility through reproducible notebooks.',
-    stack: ['Python', 'NumPy', 'Pandas', 'FinBERT', 'Matplotlib'],
-    accent: 'emerald',
-    fallback: { pushed_at: '2026-10-24T17:17:58Z', stargazers_count: 1, language: 'Python', license: 'MIT' },
   },
 ];
 
@@ -170,10 +172,7 @@ const cardShadow = 'shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50p
     </div>
 
     <!-- Flagship card (full width) -->
-    <a
-      href={flagship.demo ?? flagship.repo}
-      target="_blank"
-      rel="noopener noreferrer"
+    <article
       class={`ds-reveal group relative mb-6 flex flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-8 ${cardShadow} transition-all duration-300 sm:p-10 ${accentMap[flagship.accent].border}`}
     >
       <div class={`pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent ${accentMap[flagship.accent].bar} to-transparent`} aria-hidden="true"></div>
@@ -183,10 +182,10 @@ const cardShadow = 'shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50p
           <div class="flex flex-wrap items-center gap-3">
             <span class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 font-mono text-xs font-medium text-blue-700">
               <span class="h-1.5 w-1.5 rounded-full bg-blue-600"></span>
-              Flagship
+              Flagship Platform
             </span>
             <span class="rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1 font-mono text-xs text-slate-700">
-              Live Demo
+              Live Demo &amp; Code
             </span>
           </div>
 
@@ -215,16 +214,27 @@ const cardShadow = 'shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50p
 
         <!-- CTA cluster -->
         <div class="flex flex-col gap-3 lg:col-span-4">
-          <span class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-white transition-all group-hover:bg-slate-800">
+          <a
+            href={flagship.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md"
+          >
             Open Live Demo
-            <span class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">&nearr;</span>
-          </span>
-          <span class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 font-mono text-xs font-medium uppercase tracking-[0.14em] text-slate-700 transition-colors group-hover:border-slate-900 group-hover:text-slate-900">
+            <span aria-hidden="true">&nearr;</span>
+          </a>
+          <a
+            href={flagship.repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.14em] text-slate-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-slate-900 hover:text-slate-900 hover:shadow-sm"
+          >
             View Repository
-          </span>
+            <span aria-hidden="true">&nearr;</span>
+          </a>
         </div>
       </div>
-    </a>
+    </article>
 
     <!-- Secondary project grid -->
     <div class="grid gap-6 md:grid-cols-2">
@@ -232,38 +242,76 @@ const cardShadow = 'shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50p
         rest.map((p) => {
           const a = accentMap[p.accent];
           return (
-            <a
-              href={p.demo ?? p.repo}
-              target="_blank"
-              rel="noopener noreferrer"
-              class={`ds-reveal group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-8 ${cardShadow} transition-all duration-300 ${a.border}`}
+            <article
+              class={`ds-reveal group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200/90 bg-white p-8 ${cardShadow} transition-all duration-300 ${a.border}`}
             >
               <div class={`pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent ${a.bar} to-transparent`} aria-hidden="true" />
-              <div class="flex items-center justify-between">
-                <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 font-mono text-[11px] text-slate-700">
-                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                  {p.meta.language}
-                </span>
-                <span class={`font-mono text-lg transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 ${a.text}`} aria-hidden="true">
-                  &nearr;
-                </span>
+              <div>
+                <div class="flex items-center justify-between">
+                  <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 font-mono text-[11px] text-slate-700">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                    {p.meta.language}
+                  </span>
+                  <div class="flex items-center gap-3">
+                    {p.demo && (
+                      <a
+                        href={p.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class={`inline-flex items-center gap-1 font-mono text-xs font-semibold ${a.text} hover:underline`}
+                      >
+                        Demo <span aria-hidden="true">&nearr;</span>
+                      </a>
+                    )}
+                    <a
+                      href={p.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1 font-mono text-xs font-medium text-slate-500 hover:text-slate-900 hover:underline"
+                    >
+                      Repo <span aria-hidden="true">&nearr;</span>
+                    </a>
+                  </div>
+                </div>
+
+                <h3 class="mt-5 text-2xl font-bold tracking-tight text-slate-900">{p.name}</h3>
+                <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">{p.blurb}</p>
+
+                <div class="mt-6 flex flex-wrap gap-2 font-mono text-[11px]">
+                  {p.stack.map((s) => (
+                    <span class="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 text-slate-700">{s}</span>
+                  ))}
+                </div>
               </div>
 
-              <h3 class="mt-6 text-2xl font-bold tracking-tight text-slate-900">{p.name}</h3>
-              <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 sm:text-base">{p.blurb}</p>
-
-              <div class="mt-6 flex flex-wrap gap-2 font-mono text-[11px]">
-                {p.stack.map((s) => (
-                  <span class="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 text-slate-700">{s}</span>
-                ))}
+              <div class="mt-6 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-slate-200 pt-4 font-mono text-[11px] text-slate-500">
+                <div class="flex items-center gap-3">
+                  {p.meta.updated && <span>Updated {p.meta.updated}</span>}
+                  {p.meta.license && <span>{p.meta.license}</span>}
+                  {p.meta.stars > 0 && <span class="inline-flex items-center gap-1">&#9733; {p.meta.stars}</span>}
+                </div>
+                <div class="flex items-center gap-2">
+                  {p.demo && (
+                    <a
+                      href={p.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="rounded-lg bg-slate-900 px-3 py-1.5 font-mono text-[11px] font-semibold text-white transition-all hover:bg-slate-800"
+                    >
+                      Live Demo &nearr;
+                    </a>
+                  )}
+                  <a
+                    href={p.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 font-mono text-[11px] font-medium text-slate-700 transition-colors hover:border-slate-400 hover:text-slate-900"
+                  >
+                    GitHub &nearr;
+                  </a>
+                </div>
               </div>
-
-              <div class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-slate-200 pt-4 font-mono text-[11px] text-slate-500">
-                {p.meta.updated && <span>Updated {p.meta.updated}</span>}
-                {p.meta.license && <span>{p.meta.license}</span>}
-                {p.meta.stars > 0 && <span class="inline-flex items-center gap-1">&#9733; {p.meta.stars}</span>}
-              </div>
-            </a>
+            </article>
           );
         })
       }

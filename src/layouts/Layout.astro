@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'Sandeep | Software & Agentic AI Engineer',
-  description = 'Bridging four years of high-performance mobile architecture with autonomous machine learning. Data Science MSc (Distinction) | University of Exeter.',
+  title = 'Sandeep Malviya | Agentic AI & Machine Learning Engineer',
+  description = 'Agentic AI Engineer and Data Scientist (MSc Distinction, University of Exeter) with 5+ years shipping production systems across enterprise AI, healthcare IoT, FinTech, and ride-hailing.',
 } = Astro.props;
 
 const siteUrl = Astro.site ?? new URL('https://sandeepmalviya.me');
@@ -24,7 +24,7 @@ const ogImage = new URL('/og-image.png', siteUrl);
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Sandeep Malviya" />
-    <meta name="keywords" content="Sandeep Malviya, Agentic AI Engineer, Machine Learning Engineer, Data Scientist, LLM, Multi-Agent Systems, Flutter, PyTorch, University of Exeter" />
+    <meta name="keywords" content="Sandeep Malviya, Agentic AI Engineer, Machine Learning Engineer, Data Scientist, LLM, Multi-Agent Systems, Model Context Protocol, MCP, Grounded RAG, LLM-as-a-Judge, Flutter, Dart, PyTorch, FinBERT, FastAPI, University of Exeter" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#f8fafc" />
     <link rel="canonical" href={canonicalURL} />
@@ -64,22 +64,28 @@ const ogImage = new URL('/og-image.png', siteUrl);
       knowsAbout: [
         'Agentic AI',
         'Model Context Protocol (MCP)',
-        'Large Language Models',
         'Multi-Agent Systems',
+        'Large Language Models (LLMs)',
         'Grounded RAG',
+        'LLM-as-a-Judge Evaluation',
         'Machine Learning',
         'Deep Learning',
         'FinBERT',
+        'Time-Series Forecasting',
         'Flutter',
         'Dart',
         'FastAPI',
         'Python',
-        'PostgreSQL'
+        'BLE & MQTT Telemetry',
+        'PostgreSQL',
+        'Docker & CI/CD'
       ],
       sameAs: [
         'https://github.com/SandyCompetent',
         'https://www.linkedin.com/in/sandeep-malviya-ml',
-        'https://chatbud-official.web.app'
+        'https://chatbud-official.web.app',
+        'https://stock-market-analysis-sandy.streamlit.app/',
+        'https://upwork.com/freelancers/~01654271500de88294'
       ],
     })} />
 

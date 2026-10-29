@@ -1,6 +1,6 @@
 # Global site configuration
-title: "Sandeep Malviya | Agentic AI Engineer & Data Scientist"
-description: "Agentic AI Engineer and Data Scientist (MSc Distinction, University of Exeter) with 4+ years shipping production Flutter systems, autonomous multi-agent architectures, and applied machine learning."
+title: "Sandeep Malviya | Agentic AI & Machine Learning Engineer"
+description: "Agentic AI Engineer and Data Scientist (MSc Distinction, University of Exeter) with 5+ years shipping production systems across enterprise AI, healthcare IoT, FinTech, and ride-hailing."
 url: "https://sandeepmalviya.me"
 author: "Sandeep Malviya"
 
@@ -22,12 +22,16 @@ seo:
   keywords:
     - "Sandeep Malviya"
     - "Agentic AI Engineer"
+    - "Machine Learning Engineer"
     - "Model Context Protocol"
     - "MCP"
+    - "LLM-as-a-Judge"
+    - "CARE Benchmark"
     - "Data Scientist"
     - "University of Exeter"
     - "LLM"
     - "Multi-Agent Systems"
+    - "Grounded RAG"
     - "Flutter"
     - "FastAPI"
     - "Python"
@@ -41,4 +45,7 @@ social:
   github: "https://github.com/SandyCompetent"
   linkedin: "https://www.linkedin.com/in/sandeep-malviya-ml"
   email: "sandy.competent@gmail.com"
+  upwork: "https://www.upwork.com/freelancers/~01654271500de88294"
   chatbud: "https://chatbud-official.web.app"
+  stock_market_ai: "https://stock-market-analysis-sandy.streamlit.app/"
+  cv: "/cv.pdf"

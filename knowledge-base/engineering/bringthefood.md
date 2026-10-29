@@ -2,16 +2,18 @@
 order: 2
 company: "BringTheFood"
 period: "2022 - 2026"
-role: "Lead Software Engineer // 5+ Year Partner"
+role: "Lead Software Engineer // 5-Year Partner"
 location: "Remote // Enterprise POS"
 telemetry:
-  Commercial Clients: "20+ Restaurants"
-  Client Engagement: "5+ Years Continuous"
-  Sync Architecture: "Dual Admin & Kiosk"
-  Order Latency: "Real-Time Webhooks"
+  Commercial Fleet: "20+ Restaurants"
+  CI/CD Pipeline: "80 Apps / 5-Day Cycle"
+  Automation: "~95% Overhead Cut"
+  Reliability: "0 Critical Outages (5y)"
 ---
 
-Took full ownership of client-side development for a restaurant POS platform. Architected and
-delivered a complete Flutter POS system for a WooCommerce-integrated restaurant platform used by 20+
-active clients. Built dual admin and customer interfaces with full API integration for ordering,
-payments, and real-time sync across a 5+ year sustained client engagement.
+Architected and maintained client architecture for a commercial restaurant POS platform deployed
+across 20+ active restaurants over a sustained 5-year partnership. Reduced manual deployment overhead
+by ~95% across 20+ client restaurants by engineering a production CI/CD pipeline with GitHub Actions
+and Fastlane to build, code-sign, and deploy 80 Flutter applications within a 5-day release cycle.
+Sustained zero critical production failures while integrating dual admin and kiosk ordering interfaces,
+real-time WooCommerce API synchronization, and thermal receipt printer hardware.
