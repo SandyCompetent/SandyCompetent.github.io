@@ -1,13 +1,14 @@
 ---
-order: 2
+order: 6
 featured: false
 name: "Kaggle Analysis Showcase"
 repo: "https://github.com/SandyCompetent/kaggle_analysis_showcase"
-stack: ["Python", "Pandas", "Scikit-learn", "Streamlit"]
+stack: ["Python", "Pandas", "Scikit-learn", "Streamlit", "Matplotlib"]
 accent: "indigo"
-language: "Jupyter Notebook"
+language: "Python"
 license: "MIT"
 ---
 
-End-to-end data science projects: real Kaggle datasets turned into interactive
-Streamlit apps across the full workflow — exploration, modelling, and deployment.
+End-to-end data science projects turning real Kaggle datasets into interactive Streamlit
+web applications across the full workflow — exploratory data analysis (EDA), automated
+feature engineering, model tuning, and deployment.

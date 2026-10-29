@@ -10,6 +10,7 @@ language: "Dart"
 license: "MIT"
 ---
 
-A stateful multi-agent messaging platform built with Flutter 3.33+ and Firebase AI (Gemini 2.5 /
-2.0). Features an on-device Grounded RAG engine with live verified citations, 16 curated agent
-personas, Campus Live Hub, and an encrypted local vector memory vault.
+A stateful multi-agent messaging workspace built with Flutter 3.33+ and Firebase AI (Gemini 2.5 /
+2.0). Features an on-device Grounded RAG engine with live verified citations to eliminate
+hallucinations, 16 curated agent personas, Campus Live Hub, encrypted local vector memory vault
+(pure Dart cosine similarity), and a 100-query automated LLM evaluation suite (100% pass rate).

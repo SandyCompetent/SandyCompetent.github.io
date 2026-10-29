@@ -5,9 +5,11 @@ heading: "Let's build something autonomous."
 buttons:
   - label: "Email Me"
     href: "mailto:sandy.competent@gmail.com"
-  - label: "GitHub"
-    href: "https://github.com/SandyCompetent"
   - label: "LinkedIn"
     href: "https://www.linkedin.com/in/sandeep-malviya-ml"
+  - label: "GitHub"
+    href: "https://github.com/SandyCompetent"
+  - label: "View CV"
+    href: "/cv.pdf"
 
 colophon: "Engineered with Astro, Tailwind, GSAP & Lenis."
