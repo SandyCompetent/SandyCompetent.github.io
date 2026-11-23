@@ -1,0 +1,78 @@
+---
+import CaseStudy from '../../layouts/CaseStudy.astro';
+---
+<CaseStudy
+  title="Evaluating a Grounded-RAG App with a Golden Dataset"
+  eyebrow="Case study: ChatBud"
+  description="A 100-query golden evaluation harness for ChatBud, a grounded-RAG app, and a comparison of two LLMs on faithfulness. The smaller model invents content when the context is thin."
+>
+  <p class="lede">
+    How I built an evaluation harness for <a href="https://chatbud-official.web.app" target="_blank" rel="noopener noreferrer">ChatBud</a>,
+    a multi-agent app with grounded RAG, and what it showed when I compared two language models.
+  </p>
+
+  <h2>The question</h2>
+  <p>
+    When a model is given retrieved context and told to answer from it, does it stay inside that context?
+    That is faithfulness, and it is what separates a grounded assistant from one that sounds confident while making things up.
+  </p>
+
+  <h2>The setup</h2>
+  <ul>
+    <li><strong>Golden dataset:</strong> 100 queries, 25 each for live public APIs, University of Exeter campus questions, the app's memory vault and specialist personas. Each has a question, grounding context and a reference answer.</li>
+    <li><strong>Models compared:</strong> Gemini 3.5 Flash-Lite (hosted API) and Qwen3 14B (4-bit, running locally through Ollama).</li>
+    <li><strong>Method:</strong> each model receives the same prompt and the golden context at temperature 0. Its answer is scored for faithfulness: the share of claims supported by the context, where a claim also fails if it contains a number that is not in the context.</li>
+  </ul>
+
+  <h2>Results</h2>
+  <div class="table-wrap">
+    <table>
+      <caption>Single run per model, 23 Nov 2026</caption>
+      <thead><tr><th scope="col">Model</th><th scope="col">Faithfulness</th><th scope="col">Hallucination rate</th></tr></thead>
+      <tbody>
+        <tr><td>Gemini 3.5 Flash-Lite</td><td><strong>0.972</strong></td><td>0.028</td></tr>
+        <tr><td>Qwen3 14B (local)</td><td><strong>0.925</strong></td><td>0.075</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <caption>Faithfulness by domain</caption>
+      <thead><tr><th scope="col">Domain</th><th scope="col">Gemini 3.5 Flash-Lite</th><th scope="col">Qwen3 14B</th></tr></thead>
+      <tbody>
+        <tr><td>Live public APIs</td><td>1.00</td><td>1.00</td></tr>
+        <tr><td>Exeter academic and campus</td><td>1.00</td><td>0.96</td></tr>
+        <tr><td>Memory vault</td><td>0.96</td><td>0.96</td></tr>
+        <tr><td>Specialist personas</td><td>0.93</td><td><strong>0.78</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>What stands out</h2>
+  <p>
+    Both models stay close to the context when it contains concrete facts (rates, dates, hours). The gap opens on the persona prompts,
+    where the context is a one-line rule. There, the local model often invents extra material, for example a made-up interview story
+    for a STAR-method question. I read those answers; this is a real grounding failure, not an artefact of the metric.
+  </p>
+
+  <h2>Making the harness hard to fool</h2>
+  <ul>
+    <li><strong>Two modes, labelled in every report.</strong> A dataset check validates the data and says nothing about any model. Model metrics appear only when real model answers are scored.</li>
+    <li><strong>Unmeasured means "n/a", never a number.</strong> The harness stops if any query has no model response, and refuses to mix two models in one results file.</li>
+    <li><strong>A numeric rule.</strong> Early on, answers with every figure changed still scored 0.99 on word overlap. Requiring numbers to appear in the context dropped that test case to 0.64.</li>
+    <li><strong>Reproducible.</strong> Same prompt, temperature 0, seed fixed for the local model, and each run records the model, time and prompt hash.</li>
+  </ul>
+
+  <h2>Limits</h2>
+  <ul class="limits">
+    <li>One run per model. The metric rules were adjusted after the first run (numbers repeated from the question are allowed, and self-introductions are not scored as claims), so these scores are post-hoc.</li>
+    <li>The metric is a word-overlap heuristic, not an LLM-judged score. It catches off-topic answers and wrong numbers, but not subtle factual errors, and a few list lead-ins are scored as unsupported even though the model is right.</li>
+    <li>The golden context is handed to the model, so retrieval from the live APIs is <strong>not</strong> evaluated.</li>
+    <li>I leave out answer relevance: my word-overlap version rewards copying the reference wording, so it is a weak proxy. An LLM-judged relevance score is the next step.</li>
+  </ul>
+
+  <p>
+    The harness lives in the <a href="https://github.com/SandyCompetent/chatbud" target="_blank" rel="noopener noreferrer">ChatBud repository</a>{' '}
+    under <code>eval/</code>, with instructions to rerun it against any model, hosted or local.
+  </p>
+</CaseStudy>

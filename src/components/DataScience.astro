@@ -31,6 +31,7 @@ async function fetchRepo(name: string): Promise<RepoMeta | null> {
   }
 }
 
+const isExternal = (url?: string) => !!url && /^https?:/.test(url);
 function monthYear(iso?: string): string | null {
   if (!iso) return null;
   const d = new Date(iso);
@@ -58,6 +59,7 @@ const projects: Project[] = [
     repo: 'https://github.com/SandyCompetent/chatbud',
     slug: 'chatbud',
     demo: 'https://chatbud-official.web.app',
+    caseStudy: '/case-studies/chatbud-evaluation',
     blurb:
       'A stateful multi-agent messaging workspace built with Flutter 3.33+ and Firebase AI (Gemini 2.5 / 2.0). Features an on-device Grounded RAG engine with live verified citations to eliminate hallucinations, 16 curated agent personas, encrypted local vector memory vault (pure Dart cosine similarity), and a 100-query automated LLM evaluation suite (100% pass rate).',
     stack: ['Flutter 3.33+', 'Firebase AI', 'Gemini 2.5', 'Grounded RAG', 'Vector Memory Vault'],
@@ -80,8 +82,7 @@ const projects: Project[] = [
     name: 'Validation-First Trading Research Platforms',
     slug: 'trading-research-platforms',
     private: true,
-    caseStudy:
-      'https://github.com/SandyCompetent/SandyCompetent/blob/main/case-studies/trading-research.md',
+    caseStudy: '/case-studies/trading-research',
     blurb:
       'Two Python research platforms (US/UK equities and crypto) built to test trading strategies honestly: sealed-holdout and walk-forward validation, Monte Carlo risk, trial accounting and fail-closed execution, with 2,700+ automated tests. Built with AI coding agents from written specifications. Both platforms rejected every strategy tested, so neither goes live.',
     stack: ['Python', 'pytest', 'Walk-forward validation', 'Monte Carlo', 'Risk controls'],
@@ -235,6 +236,15 @@ const cardShadow = 'shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50p
             View Repository
             <span aria-hidden="true">&nearr;</span>
           </a>
+          {flagship.caseStudy && (
+            <a
+              href={flagship.caseStudy}
+              class="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-200 bg-blue-50 px-5 py-3.5 font-mono text-xs font-medium uppercase tracking-[0.14em] text-blue-800 transition-colors hover:border-blue-300 hover:bg-blue-100"
+            >
+              Read the evaluation write-up
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          )}
         </div>
       </div>
     </article>
@@ -268,8 +278,8 @@ const cardShadow = 'shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50p
                     )}
                     <a
                       href={p.repo ?? p.caseStudy}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      target={isExternal(p.repo ?? p.caseStudy) ? '_blank' : undefined}
+                      rel={isExternal(p.repo ?? p.caseStudy) ? 'noopener noreferrer' : undefined}
                       class="inline-flex items-center gap-1 font-mono text-xs font-medium text-slate-500 hover:text-slate-900 hover:underline"
                     >
                       {p.repo ? 'Repo' : 'Case study'} <span aria-hidden="true">&nearr;</span>
@@ -306,8 +316,8 @@ const cardShadow = 'shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50p
                   )}
                   <a
                     href={p.repo ?? p.caseStudy}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={isExternal(p.repo ?? p.caseStudy) ? '_blank' : undefined}
+                    rel={isExternal(p.repo ?? p.caseStudy) ? 'noopener noreferrer' : undefined}
                     class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 font-mono text-[11px] font-medium text-slate-700 transition-colors hover:border-slate-400 hover:text-slate-900"
                   >
                     {p.repo ? 'GitHub' : 'Case study'} &nearr;

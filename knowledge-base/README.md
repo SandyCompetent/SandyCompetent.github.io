@@ -1,7 +1,7 @@
 # Knowledge Base — sandeepmalviya.dev
 
-This folder is the single place to manage the **content** shown on the website.
-Edit the files here, then rebuild the site with `./run.sh` (or `npm run build`).
+> **Reference notes only. The site build does NOT read this folder.** The page content lives in `src/components/*.astro` and `src/pages/`. Edit those to change the site.
+> These notes can drift from the real site, so treat them as a convenient copy of the wording, not as the source of truth.
 
 ## Structure
 
@@ -18,9 +18,9 @@ knowledge-base/
 │   ├── marbles-health.md
 │   └── academic-research.md
 ├── projects/              ← "Open-Source Projects" section (dark)
-│   ├── exeter-academic-agent.md   (featured / flagship)
-│   ├── kaggle-analysis-showcase.md
-│   └── stock-market-analysis.md
+│   ├── chatbud.md, stock-market-analysis.md, trading-research-platforms.md
+│   ├── ml-hand-sign-language.md, kaggle-analysis-showcase.md, evoting-system.md
+│   └── exeter-academic-agent.md (archived), finpal.md (private repo, not shown)
 ├── skills.yaml            ← footer "Core Stack Matrix" badges
 ├── contact.yaml           ← footer contact heading + buttons
 └── screenshots/           ← drop app screenshots here (see its README)
@@ -40,8 +40,8 @@ knowledge-base/
 
 ## Status
 
-- [x] All current website copy extracted and organised here for easy editing.
-- [ ] Site components wired to read directly from this folder.
+- [x] Website copy extracted here as reference notes.
+- [ ] Site components wired to read from this folder (not done; the notes may be out of date).
 
 > Right now these files are the **editable source of record / reference**. The
 > site components still hold their own copy of this text. To make edits here

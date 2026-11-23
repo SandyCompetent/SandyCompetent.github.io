@@ -1,0 +1,123 @@
+---
+// Mirror of the public GitHub copy: SandyCompetent/SandyCompetent -> case-studies/trading-research.md.
+// If you change the numbers here, change them there too.
+import CaseStudy from '../../layouts/CaseStudy.astro';
+---
+<CaseStudy
+  title="Validation-First Trading Research Platforms"
+  description="Two private Python platforms (equities and crypto) built to test trading strategies honestly and to refuse to go live when they fail. Both rejected every strategy tested."
+>
+  <p class="lede">
+    Two private Python platforms built to test strategies honestly, and to refuse to go live when they fail.
+  </p>
+  <p>
+    These are <strong>not profitable trading bots</strong>. They are research platforms built to answer one question properly:
+    {' '}<em>does a strategy have a real edge after costs, risk and overfitting, and if not, when should it be kept away from real money?</em>{' '}
+    Both platforms answered "no" for every strategy tested, and both are built to act on that answer.
+  </p>
+  <ul>
+    <li><strong>Equities system:</strong> daily swing trading across the full US and UK stock market (about 6,700 common stocks), paper-trading first.</li>
+    <li><strong>Crypto system:</strong> Bitcoin spot research with a buy-and-hold monthly DCA fallback.</li>
+    <li><strong>Repositories:</strong> private. Code walkthrough available on request.</li>
+    <li><strong>Period:</strong> built Oct to Nov 2026 (182 and 83 commits).</li>
+  </ul>
+
+  <h2>At a glance (verified 23 Nov 2026)</h2>
+  <div class="table-wrap">
+    <table>
+      <caption class="sr-only">Comparison of the two systems</caption>
+      <thead><tr><th scope="col"></th><th scope="col">Equities system</th><th scope="col">Crypto system</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Size</th><td>about 46,000 lines of Python in 124 modules</td><td>about 41,000 lines in 140 modules</td></tr>
+        <tr><th scope="row">Automated tests</th><td>1,683</td><td>1,092</td></tr>
+        <tr><th scope="row">Test run</th><td><strong>1,682 passed, 1 failed</strong> (a stale hard-coded trade count in one fixture test, not a code defect; to be updated)</td><td><strong>1,088 passed, 4 skipped</strong> (tests that need real keys or a network, off by default)</td></tr>
+        <tr><th scope="row">Outcome</th><td>Backtest lost money after costs and <strong>failed 5 of 6 go-live gates</strong></td><td><strong>Every strategy rejected</strong>, no champion, fallback stays buy-and-hold DCA, sealed holdout never used</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>How it was built</h2>
+  <p>
+    Built with <strong>AI coding agents working from written specifications</strong>, a rules file, and automated tests. I wrote the specifications,
+    the governance rules and the decision log, set the acceptance criteria, and reviewed the results. The agents wrote most of the code. Because of that,
+    the design leans heavily on tests, pre-registered protocols and rules that agents are forbidden to change.
+  </p>
+
+  <h2>What the platforms do</h2>
+  <p>Both systems share the same philosophy. Where a feature belongs to one system only, it is marked.</p>
+  <ol>
+    <li><strong>Data layer.</strong>
+      <ul>
+        <li><em>Equities:</em> a full-market universe built from the official Nasdaq Trader and London Stock Exchange instrument lists, with a cached daily price store and a nightly screening funnel.</li>
+        <li><em>Crypto:</em> point-in-time-safe data where every feature declares when it became available, archive checksums, timestamp normalisation and lagged alternative data, so nothing from the future leaks into a signal.</li>
+      </ul>
+    </li>
+    <li><strong>Research and validation.</strong>
+      <ul>
+        <li><em>Both:</em> a <strong>sealed holdout ("lockbox")</strong> that research may not touch, a research ledger that counts every trial, rule ablations and Monte Carlo resampling for drawdown and risk of ruin.</li>
+        <li><em>Equities:</em> binding go-live gates (profit factor, expectancy, drawdown, years tested, trade count, and Sharpe against the S&amp;P 500 over the same dates).</li>
+        <li><em>Crypto:</em> rolling walk-forward testing with purged and embargoed splits, a lockbox that can be opened at most three times, and overfitting statistics: probability of backtest overfitting (PBO via CSCV), deflated Sharpe ratio and Hansen's SPA test.</li>
+      </ul>
+    </li>
+    <li><strong>Decision and sizing.</strong> Risk-based position sizing, circuit breakers on drawdown and losing streaks, and an LLM judgement step that may only veto or halve a trade, never add one.</li>
+    <li><strong>Execution safety.</strong>
+      <ul>
+        <li><em>Both:</em> dry-run by default (equities against the Trading 212 demo environment, crypto against the exchange testnet), a kill switch, and protective stops required after every fill.</li>
+        <li><em>Crypto:</em> exchange-side protective stops, deterministic client order IDs with query-before-retry after timeouts, and several independent conditions that must all hold before any live order.</li>
+      </ul>
+    </li>
+    <li><strong>Governance.</strong> Hypotheses are written down before they are tested. Agents may not edit gate thresholds, safety limits or gate code to make a strategy pass. A failed gate is an expected, reportable result.</li>
+  </ol>
+
+  <h2>Results, stated plainly</h2>
+  <h3>Equities backtest</h3>
+  <p>2 Jan 2024 to 13 Nov 2026, 2.86 years, 244 closed trades, costs included.</p>
+  <div class="table-wrap">
+    <table>
+      <caption class="sr-only">Equities backtest results</caption>
+      <thead><tr><th scope="col">Measure</th><th scope="col">Result</th></tr></thead>
+      <tbody>
+        <tr><td>Net result on money deposited</td><td><strong>-2.9%</strong> (time-weighted return -11.5%)</td></tr>
+        <tr><td>Expectancy</td><td><strong>-0.12R</strong> per trade</td></tr>
+        <tr><td>Profit factor</td><td><strong>0.89</strong></td></tr>
+        <tr><td>Maximum drawdown</td><td>17.4%</td></tr>
+        <tr><td>S&amp;P 500 buy-and-hold, same dates</td><td><strong>+59%</strong></td></tr>
+        <tr><td>Trading costs vs gross gains</td><td>Costs were larger than the gross gains</td></tr>
+        <tr><td>Go-live gates</td><td><strong>Failed 5 of 6</strong> (only "enough trades" passed)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    A diagnostic flagged that the setup score was <strong>anti-predictive</strong> on this window: higher-scored setups did worse than lower-scored ones.
+    The system reported this itself instead of hiding it.
+  </p>
+
+  <h3>Crypto research</h3>
+  <p>Walk-forward, pre-registered protocols, sealed holdout untouched.</p>
+  <ul>
+    <li>The trend strategy (S1) cut maximum drawdown by more than half compared with buy-and-hold, but earned less after UK tax and <strong>failed the overfitting checks</strong> (PBO about 0.53, SPA p-value 1.0).</li>
+    <li>The swing strategies (S3 to S5) failed on costs (unprofitable at double costs), sample size and the overfitting tests.</li>
+    <li>Conclusion recorded in the decision log: <strong>no champion; the fallback stays buy-and-hold DCA.</strong></li>
+  </ul>
+  <p>
+    During the crypto research I also found and fixed a <strong>double-counted fee</strong> in the evaluation engine.
+    The fix removed an error and changed no threshold, and it was logged as such.
+  </p>
+
+  <h2>What this demonstrates</h2>
+  <ul>
+    <li>Designing an evaluation that can say "no": pre-registration, trial accounting, sealed holdouts, honest baselines (buy-and-hold with identical cash flows) and, in the crypto system, formal multiple-testing control.</li>
+    <li>Treating negative results as results. Neither platform was tuned until it passed.</li>
+    <li>Production-minded engineering around ML and quantitative code: leakage prevention, fail-closed execution, idempotent order handling, extensive tests.</li>
+    <li>Working with AI coding agents safely: written specs, rules agents cannot override, tests as the arbiter, and human review of decisions.</li>
+  </ul>
+
+  <h2>Limits</h2>
+  <ul>
+    <li>Backtests and research only. Both systems are configured for dry-run, and no live trading has been enabled because the go-live gates fail.</li>
+    <li>A single developer reviewing largely AI-written code: the large test suites are the main safeguard, not a substitute for independent review.</li>
+    <li>The equities backtest window (2.86 years) is shorter than the five-year gate the project set itself.</li>
+    <li>The strategies and parameters are deliberately not published.</li>
+  </ul>
+  <p><strong>Skills:</strong> Python, pytest, time-series validation, backtesting, Monte Carlo simulation, statistical testing for overfitting (PBO, deflated Sharpe, SPA), risk and position sizing, defensive system design, AI-assisted development.</p>
+</CaseStudy>

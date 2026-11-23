@@ -2,7 +2,7 @@
 order: 2
 featured: false
 name: "Validation-First Trading Research Platforms"
-caseStudy: "https://github.com/SandyCompetent/SandyCompetent/blob/main/case-studies/trading-research.md"
+caseStudy: "/case-studies/trading-research"
 private: true
 stack: ["Python", "pytest", "Walk-forward validation", "Monte Carlo", "Risk controls"]
 accent: "indigo"

@@ -31,8 +31,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Astro site
-        run: npm run build
+      - name: Build Astro site and verify it
+        # `verify` builds, then fails the job on a stale domain, retired claims, dead internal links,
+        # missing canonical/OG tags, a bad sitemap or a missing CV. See scripts/verify-build.mjs.
+        run: npm run verify
 
       # --- 1. Deploy to Firebase Hosting ---
       - name: Deploy to Firebase Hosting

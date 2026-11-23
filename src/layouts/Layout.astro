@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'Sandeep Malviya | Agentic AI & Machine Learning Engineer',
-  description = 'Agentic AI Engineer and Data Scientist (MSc Distinction, University of Exeter) with 5+ years shipping production systems across enterprise AI, healthcare IoT, FinTech, and ride-hailing.',
+  title = 'Sandeep Malviya | Machine Learning Engineer & Data Scientist',
+  description = 'Machine Learning Engineer and Data Scientist (MSc Distinction, University of Exeter) with 5+ years of software engineering. I build and evaluate ML and LLM systems and ship them to production.',
 } = Astro.props;
 
 const siteUrl = Astro.site ?? new URL('https://sandeepmalviya.dev');
@@ -24,7 +24,7 @@ const ogImage = new URL('/og-image.png', siteUrl);
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Sandeep Malviya" />
-    <meta name="keywords" content="Sandeep Malviya, Agentic AI Engineer, Machine Learning Engineer, Data Scientist, LLM, Multi-Agent Systems, Model Context Protocol, MCP, Grounded RAG, LLM-as-a-Judge, Flutter, Dart, PyTorch, FinBERT, FastAPI, University of Exeter" />
+    <meta name="keywords" content="Sandeep Malviya, Machine Learning Engineer, Data Scientist, Agentic AI Engineer, LLM, Multi-Agent Systems, Model Context Protocol, MCP, Grounded RAG, LLM-as-a-Judge, Flutter, Dart, PyTorch, FinBERT, FastAPI, University of Exeter" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#f8fafc" />
     <link rel="canonical" href={canonicalURL} />
@@ -40,7 +40,7 @@ const ogImage = new URL('/og-image.png', siteUrl);
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Sandeep Malviya — Software & Agentic AI Engineer" />
+    <meta property="og:image:alt" content="Sandeep Malviya — Machine Learning Engineer & Data Scientist" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -55,20 +55,21 @@ const ogImage = new URL('/og-image.png', siteUrl);
       name: 'Sandeep Malviya',
       url: siteUrl.href,
       image: ogImage.href,
-      jobTitle: 'Agentic AI Engineer',
+      jobTitle: 'Machine Learning Engineer and Data Scientist',
+      worksFor: { '@type': 'CollegeOrUniversity', name: 'University of Exeter' },
       description: description,
       alumniOf: [
         { '@type': 'CollegeOrUniversity', name: 'University of Exeter' },
         { '@type': 'CollegeOrUniversity', name: 'G.H. Raisoni College of Engineering and Management, Pune' }
       ],
       knowsAbout: [
+        'Machine Learning',
         'Agentic AI',
         'Model Context Protocol (MCP)',
         'Multi-Agent Systems',
         'Large Language Models (LLMs)',
         'Grounded RAG',
         'LLM-as-a-Judge Evaluation',
-        'Machine Learning',
         'Deep Learning',
         'FinBERT',
         'Time-Series Forecasting',
