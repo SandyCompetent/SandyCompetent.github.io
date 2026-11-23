@@ -1,4 +1,4 @@
-# Knowledge Base — sandeepmalviya.me
+# Knowledge Base — sandeepmalviya.dev
 
 This folder is the single place to manage the **content** shown on the website.
 Edit the files here, then rebuild the site with `./run.sh` (or `npm run build`).

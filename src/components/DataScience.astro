@@ -40,7 +40,9 @@ function monthYear(iso?: string): string | null {
 
 type Project = {
   name: string;
-  repo: string;
+  repo?: string; // omitted for private repositories
+  caseStudy?: string; // case-study page for private work
+  private?: boolean;
   slug: string;
   demo?: string;
   blurb: string;
@@ -69,31 +71,32 @@ const projects: Project[] = [
     slug: 'stock-market-analysis',
     demo: 'https://stock-market-analysis-sandy.streamlit.app/',
     blurb:
-      'End-to-end multimodal predictive platform fusing quantitative technical indicators (RSI, MACD, Bollinger Bands, Moving Averages, OBV) with daily aggregated financial news sentiment extracted via FinBERT. Achieved 69.2% directional market prediction accuracy (+4.3% over baselines) across LSTM, GRU, SVR, and ARIMA models with an interactive Streamlit simulation dashboard.',
+      'End-to-end multimodal predictive platform fusing quantitative technical indicators (RSI, MACD, Bollinger Bands, Moving Averages, OBV) with daily aggregated financial news sentiment extracted via FinBERT. Benchmarks LSTM, GRU, SVR, and ARIMA models against naive baselines, with an interactive Streamlit simulation dashboard.',
     stack: ['Python', 'PyTorch', 'FinBERT', 'LSTM / GRU', 'Streamlit'],
     accent: 'emerald',
     fallback: { pushed_at: '2026-10-24T17:17:58Z', stargazers_count: 1, language: 'Python', license: 'MIT' },
   },
   {
-    name: 'Exeter Academic Agent — Conversational Assistant',
-    repo: 'https://github.com/SandyCompetent/exeter_academic_agent',
-    slug: 'exeter_academic_agent',
-    demo: 'https://sandycompetent.github.io/exeter_academic_agent/',
+    name: 'Validation-First Trading Research Platforms',
+    slug: 'trading-research-platforms',
+    private: true,
+    caseStudy:
+      'https://github.com/SandyCompetent/SandyCompetent/blob/main/case-studies/trading-research.md',
     blurb:
-      'Intelligent conversational assistant powered by Google Gemini 2.5 API with sub-second time-to-first-token streaming, dynamic multi-tool routing for live campus library seat availability, Stagecoach bus schedules, and staff contact directories.',
-    stack: ['Dart', 'Flutter', 'Gemini 2.5', 'Tool Routing', 'MCP'],
-    accent: 'blue',
-    fallback: { pushed_at: '2026-03-19T10:44:33Z', stargazers_count: 0, language: 'Dart', license: 'MIT' },
+      'Two Python research platforms (US/UK equities and crypto) built to test trading strategies honestly: sealed-holdout and walk-forward validation, Monte Carlo risk, trial accounting and fail-closed execution, with 2,700+ automated tests. Built with AI coding agents from written specifications. Both platforms rejected every strategy tested, so neither goes live.',
+    stack: ['Python', 'pytest', 'Walk-forward validation', 'Monte Carlo', 'Risk controls'],
+    accent: 'indigo',
+    fallback: { pushed_at: '2026-11-21T00:00:00Z', stargazers_count: 0, language: 'Python', license: null },
   },
   {
-    name: 'FinPal — Shared Finance & Debt Simplification',
-    repo: 'https://github.com/SandyCompetent/finpal',
-    slug: 'finpal',
+    name: 'Sign Language Translator (ASL to Text & Speech)',
+    repo: 'https://github.com/SandyCompetent/ml-hand-sign-language',
+    slug: 'ml-hand-sign-language',
     blurb:
-      'Cross-platform shared expense and bill-splitting platform featuring a graph-based debt simplification algorithm to minimize transaction volume across multi-party settlements. Built with a responsive Flutter client (iOS/Android/Web) and high-throughput FastAPI backend with PostgreSQL and Redis.',
-    stack: ['Flutter', 'FastAPI', 'Python', 'PostgreSQL', 'Redis', 'Docker'],
+      'Real-time American Sign Language fingerspelling to text and speech: MediaPipe 21-point hand landmarks, scale-invariant normalisation, a rule-based gesture classifier, predictive autocomplete and offline text-to-speech. Re-architected from a 2022 CNN capstone, with automated tests.',
+    stack: ['Python', 'MediaPipe', 'OpenCV', 'Computer Vision', 'pytest'],
     accent: 'emerald',
-    fallback: { pushed_at: '2026-10-14T16:00:00Z', stargazers_count: 0, language: 'Dart', license: null },
+    fallback: { pushed_at: '2026-10-28T00:00:00Z', stargazers_count: 0, language: 'Python', license: 'MIT' },
   },
   {
     name: 'Secure e-Voting System',
@@ -120,7 +123,7 @@ const projects: Project[] = [
 
 const resolved = await Promise.all(
   projects.map(async (p) => {
-    const live = await fetchRepo(p.slug);
+    const live = p.private ? null : await fetchRepo(p.slug);
     const meta = live ?? p.fallback;
     return {
       ...p,
@@ -164,10 +167,10 @@ const cardShadow = 'shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50p
         <span>03 // Featured Work</span>
       </div>
       <h2 id="projects-heading" class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-        Open-Source Projects
+        Featured Projects
       </h2>
       <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
-        Shipping agents and reproducible analytics in the open &mdash; from Gemini-powered assistants to deployed data apps.
+        Agents, grounded RAG and honest evaluation &mdash; from a deployed multi-agent app to research platforms built to reject their own strategies.
       </p>
     </div>
 
@@ -264,12 +267,12 @@ const cardShadow = 'shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50p
                       </a>
                     )}
                     <a
-                      href={p.repo}
+                      href={p.repo ?? p.caseStudy}
                       target="_blank"
                       rel="noopener noreferrer"
                       class="inline-flex items-center gap-1 font-mono text-xs font-medium text-slate-500 hover:text-slate-900 hover:underline"
                     >
-                      Repo <span aria-hidden="true">&nearr;</span>
+                      {p.repo ? 'Repo' : 'Case study'} <span aria-hidden="true">&nearr;</span>
                     </a>
                   </div>
                 </div>
@@ -302,12 +305,12 @@ const cardShadow = 'shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50p
                     </a>
                   )}
                   <a
-                    href={p.repo}
+                    href={p.repo ?? p.caseStudy}
                     target="_blank"
                     rel="noopener noreferrer"
                     class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 font-mono text-[11px] font-medium text-slate-700 transition-colors hover:border-slate-400 hover:text-slate-900"
                   >
-                    GitHub &nearr;
+                    {p.repo ? 'GitHub' : 'Case study'} &nearr;
                   </a>
                 </div>
               </div>

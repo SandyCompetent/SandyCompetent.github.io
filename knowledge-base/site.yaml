@@ -1,7 +1,7 @@
 # Global site configuration
 title: "Sandeep Malviya | Agentic AI & Machine Learning Engineer"
 description: "Agentic AI Engineer and Data Scientist (MSc Distinction, University of Exeter) with 5+ years shipping production systems across enterprise AI, healthcare IoT, FinTech, and ride-hailing."
-url: "https://sandeepmalviya.me"
+url: "https://sandeepmalviya.dev"
 author: "Sandeep Malviya"
 
 # Floating navigation (left → right)
@@ -43,7 +43,7 @@ seo:
 # Social / contact links (used in nav, footer, structured data)
 social:
   github: "https://github.com/SandyCompetent"
-  linkedin: "https://www.linkedin.com/in/sandeep-malviya-ml"
+  linkedin: "https://www.linkedin.com/in/sandeep-malviya-ml/"
   email: "sandy.competent@gmail.com"
   upwork: "https://www.upwork.com/freelancers/~01654271500de88294"
   chatbud: "https://chatbud-official.web.app"

@@ -1,1 +1,0 @@
-import{t as e}from"./gsap.CvDoa17S.js";import{t}from"./ScrollTrigger.C7HwZxAz.js";e.registerPlugin(t),document.querySelectorAll(`.footer-reveal`).forEach(t=>{e.fromTo(t,{opacity:0,y:40},{opacity:1,y:0,duration:.9,ease:`power3.out`,scrollTrigger:{trigger:t,start:`top 88%`,toggleActions:`play none none reverse`}})});

@@ -6,7 +6,7 @@ buttons:
   - label: "Email Me"
     href: "mailto:sandy.competent@gmail.com"
   - label: "LinkedIn"
-    href: "https://www.linkedin.com/in/sandeep-malviya-ml"
+    href: "https://www.linkedin.com/in/sandeep-malviya-ml/"
   - label: "GitHub"
     href: "https://github.com/SandyCompetent"
   - label: "View CV"

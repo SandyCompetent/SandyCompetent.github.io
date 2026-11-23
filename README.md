@@ -26,6 +26,6 @@ This repository contains the source code for my interactive portfolio. It is bui
 
 I am actively open to data science and machine learning engineering roles in the UK.
 
-* [LinkedIn](https://www.linkedin.com/in/sandy-competent/)
+* [LinkedIn](https://www.linkedin.com/in/sandeep-malviya-ml/)
 * [GitHub Profile](https://github.com/SandyCompetent)
 * [Email](mailto:sandy.competent@gmail.com)

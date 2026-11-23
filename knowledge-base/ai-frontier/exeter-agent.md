@@ -11,8 +11,8 @@ tags:
   - "AWS Bedrock & Copilot Studio"
   - "£50,000/yr Cost Savings"
 links:
-  repo: "https://github.com/SandyCompetent/exeter_academic_agent"
-  demo: "https://sandycompetent.github.io/exeter_academic_agent/"
+  repo: "https://github.com/SandyCompetent/chatbud"
+  demo: "https://chatbud-official.web.app"
 ---
 
 Deployed 3 production AI agents (course-content reviewer, job-description generator, tender finder)
