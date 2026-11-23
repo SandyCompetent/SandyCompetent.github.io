@@ -1,5 +1,7 @@
 # Sandeep Malviya | Portfolio
 
+[![Deploy](https://github.com/SandyCompetent/SandyCompetent.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/SandyCompetent/SandyCompetent.github.io/actions/workflows/deploy.yml)
+
 The source of **https://sandeepmalviya.dev/**: a fast, static portfolio for a Machine Learning Engineer and Data Scientist (MSc Data Science, Distinction, University of Exeter).
 
 ## What it is
